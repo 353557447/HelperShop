@@ -235,7 +235,7 @@ public class PersonalFragment extends BaseLazyFragment implements ServiceFunctio
                 getShopState();
                 break;
             case R.id.total_balance_ll:
-                skipActivity(MyWalletActivity.class);
+                skipActivity(MyWalletNewActivity.class);
                 break;
             case R.id.total_return_money_ll:
                skipActivity(MyReturnMoneyNewActivity.class);

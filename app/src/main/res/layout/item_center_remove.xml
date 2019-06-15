@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
     android:orientation="vertical"
-    android:gravity="center_horizontal">
+    >
     <ImageView
+        android:layout_centerVertical="true"
         android:id="@+id/image"
         android:layout_width="76dp"
         android:layout_height="76dp"
-        android:background="#F6F5F5"
         android:src="@drawable/default_img"/>
+    
+    <TextView
+        android:id="@+id/goods_name"
+        android:layout_marginLeft="@dimen/margin16"
+        android:layout_alignTop="@id/image"
+        android:layout_toRightOf="@id/image"
+        style="@style/textBlack14"/>
+
+    <TextView
+        android:layout_marginLeft="@dimen/margin16"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        android:textColor="@color/common_red"
+        android:layout_alignBottom="@id/image"
+        android:id="@+id/goods_price"
+        android:layout_toRightOf="@id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
     <ImageView
+        android:layout_marginBottom="@dimen/margin16"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
         android:id="@+id/shopcart"
         android:layout_width="23dp"
         android:layout_height="23dp"
-        android:src="@drawable/to_shopping"
+        android:src="@drawable/join_shoppingcart_icon"
         android:layout_marginTop="9dp"/>
-</LinearLayout>
+    <TextView
+        android:layout_alignParentBottom="true"
+        style="@style/deviderGray" />
+</RelativeLayout>

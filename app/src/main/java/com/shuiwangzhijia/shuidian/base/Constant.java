@@ -15,11 +15,11 @@ public class Constant {
 //    public static final String url = "https://testapi.fndwater.com/";
    // public static String url = "https://api.fndwater.com/";
     public static String url = "https://api.waterhelper.cn/";
-    public static   String GOODS_IMAGE_URL;
-    public static   String SHOP_IMAGE_URL;
-    public static   String COMMENT_IMAGE_URL;
-    public static   String BANNER_IMAGE_URL;
-    public static   String CACHE_IMAGE_URL;
+//    public static   String GOODS_IMAGE_URL;
+//    public static   String SHOP_IMAGE_URL;
+//    public static   String COMMENT_IMAGE_URL;
+//    public static   String BANNER_IMAGE_URL;
+//    public static   String CACHE_IMAGE_URL;
     public static void setUrl(String s) {
         url = s;
         GOODS_IMAGE_URL =  s+ "goods/";
@@ -33,11 +33,11 @@ public class Constant {
         return url;
     }
 
-//    public static final String GOODS_IMAGE_URL = Constant.getUrl() + "goods/";
-//    public static final String SHOP_IMAGE_URL = Constant.getUrl() + "wtshop/";
-//    public static final String COMMENT_IMAGE_URL = Constant.getUrl() + "/comments/";
-//    public static final String BANNER_IMAGE_URL = Constant.getUrl() + "/banner/";
-//    public static final String CACHE_IMAGE_URL = Constant.getUrl() + "/cache/";
+    public static  String GOODS_IMAGE_URL = Constant.getUrl() + "goods/";
+    public static  String SHOP_IMAGE_URL = Constant.getUrl() + "wtshop/";
+    public static  String COMMENT_IMAGE_URL = Constant.getUrl() + "/comments/";
+    public static  String BANNER_IMAGE_URL = Constant.getUrl() + "/banner/";
+    public static  String CACHE_IMAGE_URL = Constant.getUrl() + "/cache/";
 
 
     //图片裁剪

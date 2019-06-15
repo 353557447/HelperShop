@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.bean.GMNewBean;
 import com.shuiwangzhijia.shuidian.utils.MyUtils;
+import com.socks.library.KLog;
 
 import java.util.List;
 

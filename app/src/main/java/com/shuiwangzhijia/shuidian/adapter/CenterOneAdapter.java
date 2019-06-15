@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.shuiwangzhijia.shuidian.R;
@@ -23,9 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
-/**
- * Created by xxc on 2019/4/1.
- */
+
 
 public class CenterOneAdapter extends RecyclerView.Adapter<CenterOneAdapter.ViewHolder> {
     private final Context mContext;
@@ -48,6 +47,8 @@ public class CenterOneAdapter extends RecyclerView.Adapter<CenterOneAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         final GoodsBean item = getItem(position);
         Glide.with(mContext).load(Constant.GOODS_IMAGE_URL + item.getPicturl()).placeholder(R.drawable.wutupian).into(holder.mImage);
+        holder.mGoodsName.setText(item.getGname());
+        holder.mGoodsPrice.setText("￥"+item.getPrice());
         holder.mShopcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,6 +92,10 @@ public class CenterOneAdapter extends RecyclerView.Adapter<CenterOneAdapter.View
         ImageView mImage;
         @BindView(R.id.shopcart)
         ImageView mShopcart;
+        @BindView(R.id.goods_name)
+        TextView mGoodsName;
+        @BindView(R.id.goods_price)
+        TextView mGoodsPrice;
 
         public ViewHolder(View itemView) {
             super(itemView);

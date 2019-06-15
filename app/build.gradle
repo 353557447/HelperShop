@@ -22,21 +22,14 @@ android {
         }
         multiDexEnabled true
     }
-/*    signingConfigs {
+    signingConfigs {
         debug {
-            v1SigningEnabled true
-            v2SigningEnabled true
-            keyAlias 'yinmi'
-            keyPassword 'yinmi2018'
-            storeFile file('E:/key/yinmi.jks')
-            storePassword 'yinmi2018'
+            keyAlias 'blackandwhiteboard'
+            keyPassword '123456'
+            storeFile file('D:/jks/bawbjks.jks')
+            storePassword '123456'
         }
-        release {
-            v1SigningEnabled true
-            v2SigningEnabled true
-
-        }
-    }*/
+    }
 
     buildTypes {
 

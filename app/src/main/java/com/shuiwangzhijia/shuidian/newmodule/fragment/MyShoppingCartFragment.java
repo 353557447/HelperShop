@@ -112,6 +112,7 @@ public class MyShoppingCartFragment extends BaseLazyFragment implements Shopping
                 mShoppingCartAdapter.notifyDataSetChanged();
                 setTotalPrice();
             }else{
+                if(mShoppingCartAdapter.getItemCount()==0)
                 setCentreViewShow(R.drawable.konggouwuche,"购物车还是空的哦~");
             }
         } else {

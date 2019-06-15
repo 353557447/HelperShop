@@ -8,6 +8,8 @@ import android.os.Bundle;
 import com.pingplusplus.ui.PaySuccessActivity;
 import com.shuiwangzhijia.shuidian.base.App;
 import com.shuiwangzhijia.shuidian.event.WechatPayResultEvent;
+import com.shuiwangzhijia.shuidian.ui.OrderPayActivity;
+import com.shuiwangzhijia.shuidian.ui.PurchaseOrderActivity;
 import com.socks.library.KLog;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
@@ -47,16 +49,15 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
             if(baseResp.errCode==0){
                 //支付成功
                 EventBus.getDefault().post(new WechatPayResultEvent(1));
-             /*   Intent intent = new Intent(WXPayEntryActivity.this, PaySuccessActivity.class);
-                startActivity(intent);*/
-//                MyOrderActivity.statAct(this, 2);
+                PurchaseOrderActivity.statAct(this, 2);
             }else if (baseResp.errCode == -1){
                 //支付失败
                 EventBus.getDefault().post(new WechatPayResultEvent(0));
+                PurchaseOrderActivity.statAct(this, 0);
             }else if (baseResp.errCode == -2){
                 //支付取消
                 EventBus.getDefault().post(new WechatPayResultEvent(2));
-               // MyOrderActivity.statAct(this, 1);
+                PurchaseOrderActivity.statAct(this, 0);
             }
         }
         finish();

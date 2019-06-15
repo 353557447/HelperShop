@@ -18,6 +18,7 @@ import com.shuiwangzhijia.shuidian.bean.BucketOrderBean;
 import com.shuiwangzhijia.shuidian.bean.OrderBean;
 import com.shuiwangzhijia.shuidian.bean.PayBean;
 import com.shuiwangzhijia.shuidian.event.PayFinishEvent;
+import com.shuiwangzhijia.shuidian.event.WechatPayResultEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 import com.shuiwangzhijia.shuidian.utils.DateUtils;
@@ -33,6 +34,8 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -360,6 +363,17 @@ public class OrderPayActivity extends BaseAct {
                 String errorMsg = data.getExtras().getString("error_msg"); // 错误信息
                 String extraMsg = data.getExtras().getString("extra_msg"); // 错误信息
             }
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void payResultEvent(WechatPayResultEvent event){
+        if(event.getResult()==1){
+            finish();
+        }else if(event.getResult()==0){
+            finish();
+        }else{
+            finish();
         }
     }
 }

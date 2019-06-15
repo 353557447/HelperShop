@@ -15,11 +15,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <ImageView
+                android:paddingBottom="@dimen/padding16"
+                android:paddingRight="@dimen/d50"
+                android:paddingTop="@dimen/padding20"
                 android:paddingLeft="@dimen/padding16"
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="20dp"
                 android:src="@drawable/left_arrow" />
 
             <TextView
@@ -61,10 +64,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <com.androidkun.xtablayout.XTabLayout
+            android:layout_marginTop="73dp"
             android:id="@+id/my_order_xTablayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="53dp"
             android:background="#00ffffff"
             app:xTabIndicatorColor="#FFF"
             app:xTabIndicatorHeight="3dp"

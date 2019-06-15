@@ -26,9 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xcc on 2019/4/1.
- */
+
 
 public class CenterAdapter extends RecyclerView.Adapter<CenterAdapter.ViewHolder> {
 
@@ -92,7 +90,7 @@ public class CenterAdapter extends RecyclerView.Adapter<CenterAdapter.ViewHolder
         if (rebate == null || rebate.size() == 0) {
             holder.mFanliLL.setVisibility(View.GONE);
         } else {
-            holder.mRvTwo.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+            holder.mRvTwo.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
             holder.mRvTwo.setHasFixedSize(true);
             mDivider = new DividerItemDecoration(mContext, DividerItemDecoration.HORIZONTAL);
             mDivider.setDrawable(mContext.getResources().getDrawable(R.drawable.divider_bg_tran_big));
@@ -104,7 +102,7 @@ public class CenterAdapter extends RecyclerView.Adapter<CenterAdapter.ViewHolder
 
         if (activity_type == 2) {
             holder.mManJian.setText("满赠");
-            holder.mRvOne.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+            holder.mRvOne.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
             holder.mRvOne.setHasFixedSize(true);
             mDivider = new DividerItemDecoration(mContext, DividerItemDecoration.HORIZONTAL);
             mDivider.setDrawable(mContext.getResources().getDrawable(R.drawable.divider_bg_tran_big));
@@ -114,7 +112,7 @@ public class CenterAdapter extends RecyclerView.Adapter<CenterAdapter.ViewHolder
             centerOneAdapter.setData(full_giving);
         } else if (activity_type == 1) {
             holder.mManJian.setText("满减");
-            holder.mRvOne.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.HORIZONTAL, false));
+            holder.mRvOne.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
             holder.mRvOne.setHasFixedSize(true);
             mDivider = new DividerItemDecoration(mContext, DividerItemDecoration.HORIZONTAL);
             mDivider.setDrawable(mContext.getResources().getDrawable(R.drawable.divider_bg_tran_big));
@@ -157,13 +155,13 @@ public class CenterAdapter extends RecyclerView.Adapter<CenterAdapter.ViewHolder
 
             }
         });
-        if (type == 1) {
+ /*       if (type == 1) {
             holder.mFoldPreferential.setVisibility(View.GONE);
             holder.mTopUp.setVisibility(View.GONE);
         } else {
             holder.mFoldPreferential.setVisibility(View.VISIBLE);
             holder.mTopUp.setVisibility(View.VISIBLE);
-        }
+        }*/
         holder.mTopUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

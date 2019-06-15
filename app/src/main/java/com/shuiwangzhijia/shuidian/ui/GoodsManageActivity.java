@@ -28,10 +28,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 商品管理
- * created by wangsuli on 2018/8/20.
- */
+
 public class GoodsManageActivity extends BaseAct {
     @BindView(R.id.typeRecyclerView)
     RecyclerView typeRecyclerView;

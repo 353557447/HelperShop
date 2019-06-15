@@ -11,10 +11,7 @@ import com.shuiwangzhijia.shuidian.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 加载中弹窗
- * created by wangsuli on 2018/8/20.
- */
+
 public class LoadingDialog extends BottomDialog {
 
 
@@ -26,7 +23,7 @@ public class LoadingDialog extends BottomDialog {
         setContentView(R.layout.dialog_loading);
         setCanceledOnTouchOutside(true);
         ButterKnife.bind(this);
-        Glide.with(context).load(R.drawable.load).into(ivGif);
+        Glide.with(context).load(R.drawable.loading_gif).into(ivGif);
     }
 
     @Override

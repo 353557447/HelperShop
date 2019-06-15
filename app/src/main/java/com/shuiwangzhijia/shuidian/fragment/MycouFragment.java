@@ -107,6 +107,9 @@ public class MycouFragment extends BaseFragment implements SwipeRefreshLayout.On
             public void onResponse(Call<EntityObject<MycouBean>> call, Response<EntityObject<MycouBean>> response) {
                 hintLoad();
                 EntityObject<MycouBean> body = response.body();
+                if(body==null){
+                    return;
+                }
                 if (body.getCode() == 200 ){
                     MycouBean result = body.getResult();
                     if(result==null)

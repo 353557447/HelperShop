@@ -24,6 +24,14 @@ import com.google.gson.Gson;
 import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
+import com.shuiwangzhijia.shuidian.bean.RechargeCenterInfoBean;
+import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.newmodule.activity.MyReturnMoneyNewActivity;
+import com.shuiwangzhijia.shuidian.newmodule.activity.MyWalletNewActivity;
+import com.shuiwangzhijia.shuidian.newmodule.activity.RechargeCenterNewActivity;
+import com.shuiwangzhijia.shuidian.ui.LoginActivity;
+import com.shuiwangzhijia.shuidian.utils.CalculateUtils;
+import com.shuiwangzhijia.shuidian.utils.MeasureUtil;
 import com.socks.library.KLog;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.adapter.BaseFmAdapter;
@@ -59,6 +67,8 @@ import java.util.Map;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
+import retrofit2.Call;
+import retrofit2.Callback;
 
 
 /**
@@ -145,6 +155,7 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
     protected void initData() {
         super.initData();
         getBannerData();
+        getRechargeAct();
     }
 
     @Override
@@ -194,6 +205,9 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
                         getGoodsType();
                     } else {
 
+                    }
+                    if("您无权访问".equals(object.getString("msg"))){
+                        skipActivity(LoginActivity.class);
                     }
                 } catch (Exception e) {
                     KLog.e(e.getMessage());
@@ -394,28 +408,77 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
         Bundle bundle;
         switch (view.getId()) {
             case R.id.water_factory_policy:
-                bundle = new Bundle();
+      /*          bundle = new Bundle();
                 bundle.putInt("did", Integer.parseInt(CommonUtils.getDid()));
                 bundle.putString("waterFactoryName", "九重岩水厂");
-                skipActivity(ReturnMoneyPolicyActivity.class, bundle);
+                skipActivity(ReturnMoneyPolicyActivity.class, bundle);*/
+                skipActivity(MyReturnMoneyNewActivity.class);
                 break;
             case R.id.regular_list:
                 skipActivity(KeepListActivity.class);
                 break;
             case R.id.my_wallet:
-                skipActivity(MyWalletActivity.class);
+                skipActivity(MyWalletNewActivity.class);
                 break;
             case R.id.purchase_order:
                 PurchaseOrderActivity.statAct(mContext, 0);
                 break;
             case R.id.recharge_immediately:
-                skipActivity(RechargeCenterActivity.class);
+                skipActivity(RechargeCenterNewActivity.class);
                 break;
             case R.id.featured_middle_iv:
                 CenterActivity.startAct(mContext, 0);
                 break;
 
         }
+    }
+
+
+    private void getRechargeAct() {
+        showLoadingDialog();
+        RetrofitUtils.getInstances().create().getRechargeCenterList(CommonUtils.getToken()).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, retrofit2.Response<Object> response) {
+                try {
+                    String datas = mGson.toJson(response.body());
+                    KLog.e(datas);
+                    JSONObject object = new JSONObject(datas);
+                    int scode = object.getInt("scode");
+                    if (scode == 200) {
+                        RechargeCenterInfoBean rechargeCenterInfoBean = mGson.fromJson(datas, RechargeCenterInfoBean.class);
+                        List<RechargeCenterInfoBean.DataBean.ListBean> list = rechargeCenterInfoBean.getData().getList();
+
+                        List<RechargeCenterInfoBean.DataBean.ListBean.RechargeBean> recharge = list.get(0).getRecharge();
+                        String regulation="";
+                        if (recharge != null && recharge.size() != 0) {
+                            for (int i = 0; i < recharge.size(); i++) {
+                                RechargeCenterInfoBean.DataBean.ListBean.RechargeBean rechargeBean = recharge.get(0);
+                                String sailAmount = rechargeBean.getSail_amount();
+                                String ramount = rechargeBean.getRamount();
+
+                                double sailAmountInt = Double.parseDouble(sailAmount);
+                                double ramountInt = Double.parseDouble(ramount);
+                                double gift = CalculateUtils.sub(ramountInt,sailAmountInt);
+                                regulation+= "充" + sailAmountInt + "赠" + gift;
+                            }
+                              mActInfoTv.setText(regulation);
+                        }
+                    } else {
+
+                    }
+                } catch (Exception e) {
+                    KLog.e(e.getMessage());
+                } finally {
+                    dismissLoadingDialog();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                KLog.e(t.getMessage());
+                dismissLoadingDialog();
+            }
+        });
     }
 
 

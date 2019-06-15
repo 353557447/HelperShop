@@ -25,7 +25,7 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:name="com.shuiwangzhijia.shuidian.base.App"
+        android:name=".base.App"
         android:allowBackup="true"
         android:icon="@mipmap/logo"
         android:label="@string/app_name"
@@ -33,10 +33,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:name">
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.MyReturnMoneyNewActivity" />
-        <!-- android:theme="@style/SplashThemeImage" -->
+        <activity android:name=".newmodule.activity.RechargeCenterNewActivity"></activity>
+        <activity android:name=".newmodule.activity.MyReturnMoneyNewActivity" /> <!-- android:theme="@style/SplashThemeImage" -->
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.SplashActivity"
+            android:name=".ui.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -45,152 +45,148 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.LoginActivity"
+            android:name=".ui.LoginActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.MainActivity"
+            android:name=".ui.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.MsgActivity"
+            android:name=".ui.MsgActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopManageActivity"
+            android:name=".ui.ShopManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.GoodsManageActivity"
+            android:name=".ui.GoodsManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CashActivity"
+            android:name=".ui.CashActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ConsumerDetailActivity"
+            android:name=".ui.ConsumerDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CustomerManageActivity"
+            android:name=".ui.CustomerManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.OrderManageActivity"
+            android:name=".ui.OrderManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopCountActivity"
+            android:name=".ui.ShopCountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.SetActivity"
+            android:name=".ui.SetActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.AddressManageActivity"
+            android:name=".ui.AddressManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.EditAddressActivity"
+            android:name=".ui.EditAddressActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopSpreadActivity"
+            android:name=".ui.ShopSpreadActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopStudyActivity"
+            android:name=".ui.ShopStudyActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ConfirmOrderActivity"
+            android:name=".ui.ConfirmOrderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.OrderPayActivity"
+            android:name=".ui.OrderPayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CountActivity"
+            android:name=".ui.CountActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.AboutActivity"
+            android:name=".ui.AboutActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CustomerDetailActivity"
+            android:name=".ui.CustomerDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.PurchaseOrderActivity"
+            android:name=".ui.PurchaseOrderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.PhotoViewActivity"
+            android:name=".ui.PhotoViewActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.WalletActivity"
+            android:name=".ui.WalletActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.TicketActivity"
+            android:name=".ui.TicketActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.DiscountTicketActivity"
+            android:name=".ui.DiscountTicketActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.TicketPayActivity"
+            android:name=".ui.TicketPayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.WebActivity"
+            android:name=".ui.WebActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopMarketActivity"
+            android:name=".ui.ShopMarketActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopTicketActivity"
+            android:name=".ui.ShopTicketActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopCouponActivity"
+            android:name=".ui.ShopCouponActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CreateCouponActivity"
+            android:name=".ui.CreateCouponActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.CreateTicketActivity"
+            android:name=".ui.CreateTicketActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.SelectGoodsActivity"
+            android:name=".ui.SelectGoodsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.ShopInfoActivity"
+            android:name=".ui.ShopInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.SelectImageActivity"
+            android:name=".ui.SelectImageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.LocationInfoActivity"
+            android:name=".ui.LocationInfoActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketManageActivity"
+            android:name=".ui.BucketManageActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketRecordActivity"
+            android:name=".ui.BucketRecordActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketOrderActivity"
+            android:name=".ui.BucketOrderActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketRecordDetailActivity"
+            android:name=".ui.BucketRecordDetailActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketOrderPayActivity"
+            android:name=".ui.BucketOrderPayActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketListActivity"
+            android:name=".ui.BucketListActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.BucketStoreOweActivity"
+            android:name=".ui.BucketStoreOweActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.shuiwangzhijia.shuidian.ui.SelectWaterPlantActivity"
-            android:screenOrientation="portrait" />
-        <!-- 腾讯地图 -->
+            android:name=".ui.SelectWaterPlantActivity"
+            android:screenOrientation="portrait" /> <!-- 腾讯地图 -->
         <meta-data
             android:name="TencentMapSDK"
-            android:value="FUIBZ-NZV3X-6ZP4Z-T4RBO-BUXRF-XTB7W" />
-        <!-- 第四方支付 -->
+            android:value="FUIBZ-NZV3X-6ZP4Z-T4RBO-BUXRF-XTB7W" /> <!-- 第四方支付 -->
         <activity
             android:name="com.pingplusplus.android.PaymentActivity"
             android:configChanges="orientation|keyboardHidden|navigation|screenSize"
             android:launchMode="singleTask"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             tools:replace="android:launchMode" />
-
-
         <activity
             android:name=".wxapi.WXPayEntryActivity"
             android:exported="true"
@@ -206,31 +202,7 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
             android:screenOrientation="behind"
-            android:windowSoftInputMode="adjustResize|stateHidden" />
-
-      <!--  <activity-alias
-            android:name=".wxapi.WXPayEntryActivity"
-            android:exported="true"
-            android:targetActivity="com.pingplusplus.android.PaymentActivity" />
-
-        <activity
-            android:name="com.alipay.sdk.app.H5PayActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:exported="false"
-            android:screenOrientation="behind" />
-        <activity
-            android:name="com.alipay.sdk.auth.AuthActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:exported="false"
-            android:screenOrientation="behind" />
-        <activity
-            android:name="com.pingplusplus.ui.PayActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <activity
-            android:name="com.pingplusplus.ui.PaySuccessActivity"
-            android:configChanges="orientation|keyboardHidden|navigation|screenSize" /> -->
-        <!-- 图片路径资源 版本问题 -->
+            android:windowSoftInputMode="adjustResize|stateHidden" /> <!-- 图片路径资源 版本问题 -->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.shuiwangzhijia.shuidian.fileprovider"
@@ -259,7 +231,7 @@
             </intent-filter>
         </receiver> <!-- 信鸽推送 -->
         <receiver
-            android:name="com.shuiwangzhijia.shuidian.xinge.MessageReceiver"
+            android:name=".xinge.MessageReceiver"
             android:exported="true">
             <intent-filter>
 
@@ -311,7 +283,7 @@
             android:value="${XG_ACCESS_KEY}" />
 
         <receiver
-            android:name="com.shuiwangzhijia.shuidian.ui.NetworkConnectChangedReceiver"
+            android:name=".ui.NetworkConnectChangedReceiver"
             android:enabled="true"
             android:exported="true">
             <intent-filter>
@@ -321,48 +293,48 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.WaterShareActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.DetermineBuyActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.PurchaseDetailsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.OperationOrderActivityNew" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.CenterActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.KeepListActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.CommitOrderActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.SelectCouponsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.SelectWaterActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.ui.MyCouActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.MyWalletActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.RechargeCenterActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.RechargeCouponPayActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.RechargeRecordActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.GoToBalanceActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.MyReturnMoneyActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ReturnMoneyPolicyActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ShopEarningsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.BalanceRechargeActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.BalanceWalletActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ReturnMoneyDetailsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ReturnMoneyRecordActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.FlashSaleActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.FlashSaleAddActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.MarketingToolsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.FlashSaleAddGoodsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.SmartEquipActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.EquipDetailsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.EquipOrderDetailsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.AddEquipGoodsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ApplyShopEarningsWithdrawActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.ShopEarningsWithdrawRecordActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.SpEarnWdRecordDetailsActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.WalletWithdrawActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.EquipMapActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.GoodsManageNewActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.RegularListActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.UserAgreementActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.DiscountsWaterCouponActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.HomePageActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.MyWalletNewActivity" />
-        <activity android:name="com.shuiwangzhijia.shuidian.newmodule.activity.SettleAccountsActivity"></activity>
+        <activity android:name=".ui.WaterShareActivity" />
+        <activity android:name=".ui.DetermineBuyActivity" />
+        <activity android:name=".ui.PurchaseDetailsActivity" />
+        <activity android:name=".ui.OperationOrderActivityNew" />
+        <activity android:name=".ui.CenterActivity" />
+        <activity android:name=".ui.KeepListActivity" />
+        <activity android:name=".ui.CommitOrderActivity" />
+        <activity android:name=".ui.SelectCouponsActivity" />
+        <activity android:name=".ui.SelectWaterActivity" />
+        <activity android:name=".ui.MyCouActivity" />
+        <activity android:name=".newmodule.activity.MyWalletActivity" />
+        <activity android:name=".newmodule.activity.RechargeCenterActivity" />
+        <activity android:name=".newmodule.activity.RechargeCouponPayActivity" />
+        <activity android:name=".newmodule.activity.RechargeRecordActivity" />
+        <activity android:name=".newmodule.activity.GoToBalanceActivity" />
+        <activity android:name=".newmodule.activity.MyReturnMoneyActivity" />
+        <activity android:name=".newmodule.activity.ReturnMoneyPolicyActivity" />
+        <activity android:name=".newmodule.activity.ShopEarningsActivity" />
+        <activity android:name=".newmodule.activity.BalanceRechargeActivity" />
+        <activity android:name=".newmodule.activity.BalanceWalletActivity" />
+        <activity android:name=".newmodule.activity.ReturnMoneyDetailsActivity" />
+        <activity android:name=".newmodule.activity.ReturnMoneyRecordActivity" />
+        <activity android:name=".newmodule.activity.FlashSaleActivity" />
+        <activity android:name=".newmodule.activity.FlashSaleAddActivity" />
+        <activity android:name=".newmodule.activity.MarketingToolsActivity" />
+        <activity android:name=".newmodule.activity.FlashSaleAddGoodsActivity" />
+        <activity android:name=".newmodule.activity.SmartEquipActivity" />
+        <activity android:name=".newmodule.activity.EquipDetailsActivity" />
+        <activity android:name=".newmodule.activity.EquipOrderDetailsActivity" />
+        <activity android:name=".newmodule.activity.AddEquipGoodsActivity" />
+        <activity android:name=".newmodule.activity.ApplyShopEarningsWithdrawActivity" />
+        <activity android:name=".newmodule.activity.ShopEarningsWithdrawRecordActivity" />
+        <activity android:name=".newmodule.activity.SpEarnWdRecordDetailsActivity" />
+        <activity android:name=".newmodule.activity.WalletWithdrawActivity" />
+        <activity android:name=".newmodule.activity.EquipMapActivity" />
+        <activity android:name=".newmodule.activity.GoodsManageNewActivity" />
+        <activity android:name=".newmodule.activity.RegularListActivity" />
+        <activity android:name=".newmodule.activity.UserAgreementActivity" />
+        <activity android:name=".newmodule.activity.DiscountsWaterCouponActivity" />
+        <activity android:name=".newmodule.activity.HomePageActivity" />
+        <activity android:name=".newmodule.activity.MyWalletNewActivity" />
+        <activity android:name=".newmodule.activity.SettleAccountsActivity" />
     </application>
 
 </manifest>

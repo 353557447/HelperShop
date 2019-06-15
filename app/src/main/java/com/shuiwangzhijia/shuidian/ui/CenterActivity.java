@@ -64,7 +64,7 @@ public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClick
             mTitle.setText("我的水厂");
             mShopcart.setVisibility(View.GONE);
         }else {
-            mTitle.setText("活动中心");
+            mTitle.setText("优惠活动");
             mShopcart.setVisibility(View.VISIBLE);
         }
 //        initRecycleView();

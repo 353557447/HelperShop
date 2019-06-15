@@ -19,10 +19,7 @@ import okhttp3.ResponseBody;
 import okio.Buffer;
 import okio.BufferedSource;
 
-/**
- * 网络请求拦截打印类
- * Created by wangsuli on 2018/8/22.
- */
+
 public class LoggingInterceptor implements Interceptor {
     private final Charset UTF8 = Charset.forName("UTF-8");
     private String TAG = "retrofit";

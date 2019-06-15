@@ -17,10 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 地址适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class RechargeCenterCouponAdapter extends RecyclerView.Adapter<RechargeCenterCouponAdapter.ViewHolder> {
     private final Context mContext;
     private OnCouponItemClickListener mOnItemClickListener;

@@ -71,9 +71,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * Created by xxc on 2019/4/1.
- */
+
 
 public class KeepListFragment extends BaseFragment implements KeepListAdapter.OnViewItemClickListener {
     protected View mRootView;

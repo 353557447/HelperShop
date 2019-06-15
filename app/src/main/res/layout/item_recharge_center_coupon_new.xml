@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_rl"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    android:background="@drawable/recarge_center_new_item_bg"
+    >
+
+
+    <TextView
+        android:id="@+id/water_factory_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天晶水厂"
+        android:textColor="@color/textBlack"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_marginLeft="@dimen/d23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值劵"
+            android:textColor="#FF4D14"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/face_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="35.00"
+            android:textColor="@color/textBlack"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/d23"
+            android:id="@+id/regulation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/d5"
+            android:textColor="#FF4D14"
+            android:textSize="@dimen/d18"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginLeft="@dimen/d23"
+            android:id="@+id/time"
+            style="@style/textGray12"
+            android:layout_marginTop="@dimen/margin10" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/recharge_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/margin20"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即"
+            android:textColor="@color/textWhite"
+            android:textSize="@dimen/d20" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值"
+            android:textColor="@color/textWhite"
+            android:textSize="@dimen/d20" />
+    </LinearLayout>
+
+
+</RelativeLayout>

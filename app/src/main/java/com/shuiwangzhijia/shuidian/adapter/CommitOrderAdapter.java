@@ -19,12 +19,10 @@ import com.shuiwangzhijia.shuidian.bean.ActiveBean;
 import com.shuiwangzhijia.shuidian.bean.GoodsBean;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.socks.library.KLog;
 
 import java.util.List;
 
-/**
- * Created by xxc on 2019/4/2.
- */
 
 public class CommitOrderAdapter extends RecyclerView.Adapter<CommitOrderAdapter.ViewHolder> {
     private final Context mContext;
@@ -53,6 +51,7 @@ public class CommitOrderAdapter extends RecyclerView.Adapter<CommitOrderAdapter.
             holder.mNumber.setText("x" + bean.getCount());
 //        }
         Glide.with(mContext).load(Constant.GOODS_IMAGE_URL + bean.getPicturl()).placeholder(R.drawable.wutupian).into(holder.mGoodsPic);
+        KLog.e(Constant.GOODS_IMAGE_URL + bean.getPicturl());
         int activity_type = bean.getActivity_type();
         String active = bean.getActive();
         if (activity_type == 1){

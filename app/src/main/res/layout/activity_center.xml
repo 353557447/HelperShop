@@ -9,7 +9,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="305dp"
-        android:background="@drawable/shop_bg"
         android:orientation="horizontal"
         android:paddingLeft="17dp"
         android:paddingRight="11dp">
@@ -19,14 +18,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:src="@drawable/left_arrow"/>
+            android:src="@drawable/black_left_arrow"/>
         <TextView
             android:id="@+id/center_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="活动中心"
+            android:text="优惠活动"
             android:textSize="18sp"
-            android:textColor="#FFF"
+            android:textColor="@color/textBlack"
             android:layout_marginTop="35dp"
             android:layout_centerHorizontal="true"/>
         <ImageView
@@ -46,6 +45,7 @@
         <!--android:orientation="vertical"-->
         <!--android:layout_marginRight="11dp"-->
         <!--android:layout_marginLeft="11dp">-->
+
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/mRecyclerView"

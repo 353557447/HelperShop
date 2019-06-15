@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.App;
 import com.shuiwangzhijia.shuidian.base.Constant;
+import com.socks.library.KLog;
 
 import java.text.DecimalFormat;
 
@@ -23,20 +24,21 @@ public class MyUtils {
 
     public static void setImg(ImageView iv, String imgPath, String elsePath) {
         if (imgPath != null && imgPath.length() != 0) {
-            Glide.with(App.getContext()).load(Constant.url + elsePath + imgPath).placeholder(R.drawable.morentouxiang).into(iv);
+            Glide.with(App.getContext()).load(Constant.url + elsePath + imgPath).placeholder(R.drawable.wutupian).into(iv);
+            KLog.e(Constant.url + elsePath + imgPath);
         } else {
             //占位图
-            iv.setImageResource(R.drawable.morentouxiang);
+            iv.setImageResource(R.drawable.wutupian);
         }
         iv = null;
     }
 
     public static void setLocalImg(ImageView iv, String imgPath) {
         if (imgPath != null && imgPath.length() != 0) {
-            Glide.with(App.getContext()).load(imgPath).placeholder(R.drawable.morentouxiang).into(iv);
+            Glide.with(App.getContext()).load(imgPath).placeholder(R.drawable.wutupian).into(iv);
         } else {
             //占位图
-            iv.setImageResource(R.drawable.login_logo);
+            iv.setImageResource(R.drawable.wutupian);
         }
         iv = null;
     }

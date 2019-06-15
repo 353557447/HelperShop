@@ -6,6 +6,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.shuiwangzhijia.shuidian.bean.RechargeCenterInfoBean;
+import com.shuiwangzhijia.shuidian.utils.CalculateUtils;
+import com.shuiwangzhijia.shuidian.utils.CommonUtils;
 import com.socks.library.KLog;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.BaseActivity;
@@ -80,6 +83,7 @@ public class MyWalletNewActivity extends BaseActivity {
     @Override
     protected void initData() {
         getData();
+        getRechargeAct();
     }
 
     private void getData() {
@@ -124,7 +128,7 @@ public class MyWalletNewActivity extends BaseActivity {
         Bundle bundle;
         switch (view.getId()) {
             case R.id.recharge_immediately:
-                skipActivity(RechargeCenterActivity.class);
+                skipActivity(RechargeCenterNewActivity.class);
                 break;
             case R.id.water_coupon_counts_ll:
                 skipActivity(TicketActivity.class);
@@ -151,5 +155,49 @@ public class MyWalletNewActivity extends BaseActivity {
                 skipActivity(BalanceWalletActivity.class,bundle);
                 break;
         }
+    }
+
+    private void getRechargeAct() {
+        RetrofitUtils.getInstances().create().getRechargeCenterList(CommonUtils.getToken()).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, retrofit2.Response<Object> response) {
+                try {
+                    String datas = mGson.toJson(response.body());
+                    KLog.e(datas);
+                    JSONObject object = new JSONObject(datas);
+                    int scode = object.getInt("scode");
+                    if (scode == 200) {
+                        RechargeCenterInfoBean rechargeCenterInfoBean = mGson.fromJson(datas, RechargeCenterInfoBean.class);
+                        List<RechargeCenterInfoBean.DataBean.ListBean> list = rechargeCenterInfoBean.getData().getList();
+
+                        List<RechargeCenterInfoBean.DataBean.ListBean.RechargeBean> recharge = list.get(0).getRecharge();
+                        String regulation="";
+                        if (recharge != null && recharge.size() != 0) {
+                            for (int i = 0; i < recharge.size(); i++) {
+                                RechargeCenterInfoBean.DataBean.ListBean.RechargeBean rechargeBean = recharge.get(0);
+                                String sailAmount = rechargeBean.getSail_amount();
+                                String ramount = rechargeBean.getRamount();
+
+                                double sailAmountInt = Double.parseDouble(sailAmount);
+                                double ramountInt = Double.parseDouble(ramount);
+                                double gift = CalculateUtils.sub(ramountInt,sailAmountInt);
+                                regulation+= "充" + sailAmountInt + "赠" + gift;
+                            }
+                            mActInfoTv.setText(regulation);
+                        }
+                    } else {
+
+                    }
+                } catch (Exception e) {
+                    KLog.e(e.getMessage());
+                } finally {
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                KLog.e(t.getMessage());
+            }
+        });
     }
 }

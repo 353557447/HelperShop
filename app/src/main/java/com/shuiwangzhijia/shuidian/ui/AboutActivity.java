@@ -8,9 +8,7 @@ import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.BaseAct;
 import com.shuiwangzhijia.shuidian.utils.CommonUtils;
 
-/**关于我们
- * created by wangsuli on 2018/8/23.
- */
+
 public class AboutActivity extends BaseAct {
 
     private TextView versionName;

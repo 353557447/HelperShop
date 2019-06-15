@@ -18,13 +18,6 @@
             android:layout_centerVertical="true"
             android:layout_width="@dimen/d60"
             android:layout_height="@dimen/d60" />
-
-        <TextView
-            android:background="#400000ff"
-            android:layout_width="@dimen/d70"
-            android:layout_height="@dimen/d70" />
-
-
     </RelativeLayout>
 
 

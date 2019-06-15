@@ -184,7 +184,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginLeft="@dimen/margin20"
                             android:layout_toRightOf="@id/youhuichongzhi"
-                            android:text="充200送20，充300送30"
+                            android:text="暂无充值活动"
                             android:textColor="#FF8300"
                             android:textSize="@dimen/d16" />
 
