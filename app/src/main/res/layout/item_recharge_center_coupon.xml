@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/root_rl"
+    android:layout_height="95dp"
+    android:background="@drawable/item_touch_balance_bg"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/water_factory_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天晶水厂"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <TextView
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/face_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35.00"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/regulation"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="充1000赠100"
+        android:textColor="#FFFFFF"
+        android:textSize="11dp"
+        android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

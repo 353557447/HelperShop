@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/root_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:clickable="false"
+            android:id="@+id/goods_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:drawableLeft="@drawable/bg_check" />
+
+        <FrameLayout
+            android:id="@+id/goods_pic_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/goods_cb">
+
+            <ImageView
+                android:id="@+id/goods_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#F2F2F2"
+                android:src="@drawable/default_img"
+                android:scaleType="centerCrop"/>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/goods_name"
+            style="@style/textBlack14"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/goods_pic_fl"
+            android:text="美汁源 Minute Maid 果粒橙 果汁饮料  1.25L*12瓶 整箱装 可口可乐公司 ..." />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/goods_name"
+            android:layout_alignLeft="@+id/goods_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp">
+            <TextView
+                android:id="@+id/top_up"
+                android:layout_width="28dp"
+                android:layout_height="12dp"
+                android:text="充值"
+                android:textColor="#3D67BC"
+                android:textSize="8sp"
+                android:gravity="center"
+                android:background="@drawable/blue_rec_bg"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/full_reduction"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:text="满20减5"
+                android:textColor="#A53533"
+                android:textSize="8sp"
+                android:gravity="center"
+                android:background="@drawable/red_rec_bg"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@id/goods_pic_fl"
+            android:text="￥14.00"
+            android:textColor="@color/color_A53533"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="105dp"
+            android:layout_height="26dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/gouwuchejiajianbg"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ovalf2f2f2" />
+
+                <TextView
+                    android:id="@+id/subtract"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="—" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/counts"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/textBlack" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/ovalf2f2f2" />
+
+                <TextView
+                    android:id="@+id/add"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="+" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:text="删除"
+        android:textColor="@android:color/white" />
+</com.mcxtzhang.swipemenulib.SwipeMenuLayout>

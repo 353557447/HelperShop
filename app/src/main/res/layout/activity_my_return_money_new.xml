@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".newmodule.activity.MyReturnMoneyNewActivity">
+
+    <com.shuiwangzhijia.shuidian.view.MyScrollView
+        android:id="@+id/nest_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="186dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/tongji_red_bg" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/margin16"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/return_money_balance"
+                        style="@style/textWhite18"
+                        android:layout_gravity="center_horizontal"
+                        android:text="￥0.00"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/textWhite12"
+                        android:layout_gravity="center_horizontal"
+                        android:text="总返利金" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/d12"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/go_to_balance"
+                                android:layout_width="@dimen/d85"
+                                android:layout_height="@dimen/d25"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/white_stroke_bg"
+                                android:gravity="center"
+                                android:text="转至余额"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/d12" />
+                        </RelativeLayout>
+
+
+                        <RelativeLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/withdraw_deposit"
+                                android:layout_width="@dimen/d85"
+                                android:layout_height="@dimen/d25"
+                                android:layout_centerInParent="true"
+                                android:background="@drawable/white_stroke_bg"
+                                android:gravity="center"
+                                android:text="提现"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/d12" />
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </RelativeLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/d12"
+                android:elevation="@dimen/d5">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/d12">
+
+                    <TextView
+                        style="@style/textBlack15"
+                        android:text="返利资产"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin8"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/r_water_coupon_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/r_water_coupon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/textRed"
+                                android:textSize="@dimen/d13" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin5"
+                                android:text="水票"
+                                android:textColor="@color/textBlack"
+                                android:textSize="@dimen/d12" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0.5dp"
+                            android:layout_height="@dimen/d19"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/lineColor" />
+
+                        <LinearLayout
+                            android:id="@+id/total_r_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/total_r"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="0.00"
+                                android:textColor="@color/textRed"
+                                android:textSize="@dimen/d13" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin5"
+                                android:text="总返利金"
+                                android:textColor="@color/textBlack"
+                                android:textSize="@dimen/d12" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="0.5dp"
+                            android:layout_height="@dimen/d19"
+                            android:layout_gravity="center_vertical"
+                            android:background="@color/lineColor" />
+
+                        <LinearLayout
+                            android:id="@+id/r_record_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/r_record"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="0"
+                                android:textColor="@color/textRed"
+                                android:textSize="@dimen/d13" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/margin5"
+                                android:text="返利记录"
+                                android:textColor="@color/textBlack"
+                                android:textSize="@dimen/d12" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d12"
+                android:layout_marginRight="@dimen/d12"
+                android:paddingLeft="@dimen/d12"
+                android:paddingRight="@dimen/d12">
+
+                <TextView
+                    style="@style/textBlack15"
+                    android:text="返利政策"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="进行中"
+                    android:textColor="@color/textSkyBlue"
+                    android:textSize="@dimen/d14" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/underway_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"></android.support.v7.widget.RecyclerView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d12"
+                android:layout_marginTop="@dimen/d6"
+                android:layout_marginRight="@dimen/d12"
+                android:paddingLeft="@dimen/d12"
+                android:paddingRight="@dimen/d12">
+
+                <TextView
+                    style="@style/textBlack15"
+                    android:text="历史政策"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="已取消"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/d14" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/cancel_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"></android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </LinearLayout>
+    </com.shuiwangzhijia.shuidian.view.MyScrollView>
+
+    <RelativeLayout
+        android:id="@+id/title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:id="@+id/back_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_60"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"
+            android:text="我的返利"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</FrameLayout>

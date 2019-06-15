@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="276dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bar_height">
+
+        <TextView
+            android:id="@+id/sure"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding16"
+            android:paddingRight="@dimen/padding16"
+            android:text="确定"
+            android:textColor="#2995F1"
+            android:textSize="@dimen/d15"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/padding16"
+            android:paddingRight="@dimen/padding16"
+            android:text="取消"
+            android:textColor="@color/textGray"
+            android:textSize="@dimen/d15"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <com.bruce.pickerview.LoopView
+        android:id="@+id/equipLoopView"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        app:centerTextColor="@color/textBlack"
+        app:drawItemCount="7"
+        app:lineColor="@color/lineColor"
+        app:textSize="@dimen/d18"
+        app:topBottomTextColor="@color/textGray" />
+</LinearLayout>

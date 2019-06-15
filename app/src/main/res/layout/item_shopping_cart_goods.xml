@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/d5"
+    app:cardElevation="@dimen/d5"
+    android:layout_height="110dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingRight="@dimen/padding16">
+
+        <CheckBox
+            android:clickable="false"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_centerVertical="true"
+            android:id="@+id/goods_cb"
+            android:button="@drawable/common_check_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:layout_marginLeft="@dimen/margin10"
+            android:layout_toRightOf="@id/goods_cb"
+            android:id="@+id/goods_iv"
+            android:layout_width="@dimen/d81"
+            android:layout_height="@dimen/d81"
+            android:layout_centerVertical="true"
+             />
+
+        <TextView
+            android:id="@+id/goods_name"
+            style="@style/textBlack14"
+            android:layout_alignTop="@id/goods_iv"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_toRightOf="@id/goods_iv"
+            android:lines="2"
+            android:text="美汁源果粒橙 橙汁饮料1.25L*6瓶 可 口可乐" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goods_name"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin3"
+            android:layout_toRightOf="@id/goods_iv"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_marginRight="@dimen/margin10"
+                android:visibility="gone"
+                android:id="@+id/return_money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_solid_two_radius_bg"
+                android:paddingLeft="@dimen/padding10"
+                android:paddingTop="@dimen/padding3"
+                android:paddingRight="@dimen/padding10"
+                android:paddingBottom="@dimen/padding3"
+                android:text="返利"
+                android:textColor="@color/textRed"
+                android:textSize="@dimen/d10" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/full_discounts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gray_solid_two_radius_bg"
+                android:paddingLeft="@dimen/padding10"
+                android:paddingTop="@dimen/padding3"
+                android:paddingRight="@dimen/padding10"
+                android:paddingBottom="@dimen/padding3"
+                android:text="满20减5元"
+                android:textColor="@color/textRed"
+                android:textSize="@dimen/d10" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/goods_iv"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_toRightOf="@id/goods_iv"
+            android:text="￥20.00"
+            android:textColor="@color/textRed"
+            android:textSize="@dimen/d15"
+            android:textStyle="bold" />
+        
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/goods_iv"
+            android:padding="@dimen/d1"
+            android:background="@drawable/gray_solid_two_radius_bg"
+            android:layout_width="@dimen/d81"
+            android:layout_height="@dimen/d21">
+            <RelativeLayout
+                android:id="@+id/goods_subtract"
+                android:background="@color/white"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+            <ImageView
+                android:layout_centerInParent="true"
+                android:src="@drawable/goods_subtract"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginLeft="@dimen/d1"
+                android:background="@color/white"
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/goods_counts"
+                    android:ellipsize="end"
+                    android:lines="1"
+                    android:layout_centerInParent="true"
+                    android:text="0"
+                    style="@style/textBlack12" />
+                
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/goods_add"
+                android:layout_marginLeft="@dimen/d1"
+                android:background="@color/white"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/goods_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="74dp"
+    android:layout_height="64dp">
+    <RelativeLayout
+        android:background="#30eeeeee"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_width="64dp"
+        android:layout_height="64dp">
+    <ImageView
+        android:layout_centerInParent="true"
+        android:id="@+id/iv"
+        android:layout_width="@dimen/d54"
+        android:layout_height="@dimen/d54"
+        android:scaleType="centerInside"
+        android:src="@drawable/shop_head_default_img" />
+    </RelativeLayout>
+</RelativeLayout>

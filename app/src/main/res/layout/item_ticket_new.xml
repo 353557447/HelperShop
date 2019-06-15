@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="102dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:padding="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/ticketName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:text="娃哈哈水厂优惠券"/>
+            <TextView
+                android:id="@+id/price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:layout_weight="1"
+                android:gravity="center_vertical|right"
+                android:text="原价 "
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_14"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/ticketPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_15"
+                android:text="￥130"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_14"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/shopName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="天晶水厂 · 全部商品可用"
+                android:textSize="13sp"
+                android:textColor="#00A2FF"/>
+            <TextView
+                android:id="@+id/limitDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:text="有效期：2018.09.11~2018.10.07"
+                android:textSize="10sp"
+                android:textColor="#999999"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/already_use"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="49dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_marginRight="22dp">
+            <TextView
+                android:id="@+id/leftTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="29dp"
+                android:textColor="#A53533"
+                android:text="10"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+            <TextView
+                android:id="@+id/totalTicket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/leftTicket"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:text="共20张"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_10"
+                android:visibility="gone" />
+            <CheckBox
+                android:id="@+id/check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:button="@drawable/white_bg_check"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/buyBtn"
+                android:layout_width="@dimen/dp_75"
+                android:layout_height="@dimen/dp_20"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/white_line_rectangle"
+                android:gravity="center"
+                android:text="立即购买"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/state"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/image"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_4"
+                android:drawablePadding="@dimen/dp_5"
+                android:drawableRight="@drawable/switch_selector"
+                android:gravity="center_vertical"
+                android:text="营业中"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_12"
+                android:visibility="gone" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:textColor="#A53533"
+                android:text="张"
+                android:textStyle="bold"
+                android:layout_gravity="center_vertical"/>
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

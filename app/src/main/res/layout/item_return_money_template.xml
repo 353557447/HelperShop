@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="159dp"
+    android:layout_height="match_parent"
+    android:id="@+id/root_rl"
+    android:background="@drawable/item_return_money_tem_unselect_bg"
+    android:padding="16dp">
+
+
+    <TextView
+        android:id="@+id/cycle"
+        android:paddingRight="@dimen/padding8"
+        android:paddingLeft="@dimen/padding8"
+        android:background="@drawable/transparent_black_big_radius_bg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="其他周期"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tem_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="返利模版名称1"
+        android:textColor="#A6895F"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tem_state"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/padding5"
+        android:paddingLeft="@dimen/padding5"
+        android:background="@drawable/red_solid_big_radius_bg"
+        android:text="有待申请返利"
+        style="@style/textWhite10" />
+
+</RelativeLayout>

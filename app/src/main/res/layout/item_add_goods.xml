@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/white_solid_five_radius_bg"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/d12"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/goods_cb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:button="@null"
+        android:clickable="false"
+        android:drawableLeft="@drawable/bg_check" />
+
+    <ImageView
+        android:id="@+id/goods_img"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/goods_cb"
+        android:background="#F6F5F5" />
+
+    <TextView
+        android:id="@+id/goods_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/goods_img"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/goods_img"
+        android:lines="2"
+        android:text="美汁源 Minute Maid 果粒橙 果汁饮料
+整箱装 可口可乐公司 ..."
+        android:textColor="#000000"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/goods_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/goods_img"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/goods_img"
+        android:text="￥20"
+        android:textColor="@color/textRed"
+        android:textSize="13sp" />
+</RelativeLayout>

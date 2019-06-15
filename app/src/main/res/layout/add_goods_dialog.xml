@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="#FFF"
+        android:orientation="vertical">
+
+
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/margin16"
+            android:layout_width="match_parent"
+            android:layout_height="85dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/goods_img"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/cb"
+                android:background="#F6F5F5" />
+
+            <TextView
+                android:id="@+id/goods_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/goods_img"
+                android:layout_marginLeft="16dp"
+                android:layout_toRightOf="@+id/goods_img"
+                android:lines="2"
+                android:text="美汁源 Minute Maid 果粒橙 果汁饮料
+整箱装 可口可乐公司 ..."
+                android:textColor="#000000"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/goods_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/goods_img"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/goods_img"
+                android:text="￥20"
+                android:textColor="@color/textRed"
+                android:textSize="13sp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="17dp"
+            android:layout_marginRight="17dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="抢购价"
+                    android:textColor="#1F1F1F"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:inputType="numberDecimal"
+                    android:id="@+id/panic_buying_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEBEB" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="库存"
+                    android:textColor="#1F1F1F"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/repertory_counts"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEBEB" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:text="每人限购"
+                    android:textColor="#1F1F1F"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/purchase_limit_counts"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="@null" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#EFEBEB" />
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/sure"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="@dimen/bar_height"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginRight="@dimen/margin16"
+            android:layout_marginTop="@dimen/margin20"
+            android:background="@drawable/dark_fifteen_radius_bg"
+            android:gravity="center"
+            android:text="确定"
+            android:textColor="#FFF"
+            android:textSize="@dimen/d17" />
+
+            <TextView
+                android:id="@+id/close"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="@dimen/bar_height"
+                android:layout_marginLeft="@dimen/margin16"
+                android:layout_marginRight="@dimen/margin16"
+                android:layout_marginTop="@dimen/margin20"
+                android:background="@drawable/gray_solid_big_radius_bg"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="#FFF"
+                android:textSize="@dimen/d17" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

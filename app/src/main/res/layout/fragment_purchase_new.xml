@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/mCoordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:scrollbars="none">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/mAppBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:elevation="0dp">
+
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed"
+                app:statusBarScrim="@android:color/transparent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="223dp">
+
+                        <ImageView
+                            android:id="@+id/bg_color"
+                            android:layout_width="match_parent"
+                            android:layout_height="189dp"
+                            android:background="#4D5C82"
+                            android:scaleType="fitXY">
+
+                        </ImageView>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_width="match_parent"
+                            android:layout_height="141dp"
+                            android:layout_marginBottom="12dp"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginRight="13dp"
+                            android:layout_marginTop="74dp"
+                            app:cardCornerRadius="5dp"
+                            app:cardElevation="0dp">
+
+                            <com.bigkoo.convenientbanner.ConvenientBanner
+                                android:id="@+id/mCb"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_150"
+                                app:canLoop="true">
+                            </com.bigkoo.convenientbanner.ConvenientBanner>
+                        </android.support.v7.widget.CardView>
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="26dp">
+
+                        <LinearLayout
+                            android:id="@+id/recommended"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_41"
+                                android:layout_height="@dimen/dp_41"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/purchase_money" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:text="充值有礼"
+                                android:textColor="#494848" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/shop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_41"
+                                android:layout_height="@dimen/dp_41"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/purchase_tong" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:text="我的水厂"
+                                android:textColor="#494848" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/good_shop"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_41"
+                                android:layout_height="@dimen/dp_41"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/purchase_pag" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:text="我的钱包"
+                                android:textColor="#494848" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/tenants"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="@dimen/dp_41"
+                                android:layout_height="@dimen/dp_41"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/purchase_order" />
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/dp_8"
+                                android:text="采购订单"
+                                android:textColor="#494848" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="26dp"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/activity_center"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="@drawable/yellow_solid_eight_radius_bg"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="8dp"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/promotion"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="优惠促销"
+                                android:textColor="#FC6D88"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/promotion"
+                                android:layout_marginTop="10dp"
+                                android:text="活动中心"
+                                android:textColor="#1D1D1D"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/center"
+                                android:text="热门活动合集"
+                                android:textColor="#FF9600"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/purchase_gift" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/keep_list"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="13dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/blue_solid_eight_radius_bg"
+                            android:paddingLeft="16dp"
+                            android:paddingRight="8dp"
+                            android:paddingTop="10dp">
+
+                            <TextView
+                                android:id="@+id/promotion_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="一键下单"
+                                android:textColor="#9F8FEE"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:id="@+id/center_two"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/promotion_two"
+                                android:layout_marginTop="10dp"
+                                android:text="常购清单"
+                                android:textColor="#1D1D1D"
+                                android:textSize="15sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/center_two"
+                                android:text="热门活动合集"
+                                android:textColor="#8CBAE7"
+                                android:textSize="12sp" />
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+                                android:src="@drawable/purchase_water" />
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <com.bigkoo.convenientbanner.ConvenientBanner
+                        android:id="@+id/mCb_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="95dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        app:canLoop="true" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/rlEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/iv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/zanwudingdan" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/iv"
+                            android:gravity="center"
+                            android:text="暂无数据"
+                            android:textColor="@color/color_999999"
+                            android:textSize="@dimen/font_12" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:fitsSystemWindows="true"
+                    app:layout_anchorGravity="bottom"
+                    app:layout_collapseMode="pin">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="86dp"
+                            android:layout_height="37dp"
+                            android:src="@drawable/purchase_icon"
+                            android:id="@+id/imageView"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="-6dp"/>
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/image"
+                            android:layout_width="33dp"
+                            android:layout_height="33dp"
+                            android:src="@drawable/shop_head_default_img"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="4dp"/>
+                    </RelativeLayout>
+
+
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <com.androidkun.xtablayout.XTabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:background="#FFF"
+                app:xTabIndicatorColor="#4D5C82"
+                app:xTabIndicatorHeight="@dimen/d2"
+                app:xTabIndicatorWidth="@dimen/d30"
+                app:xTabMinWidth="@dimen/d60"
+                app:xTabMode="scrollable"
+                app:xTabSelectedTextColor="#4D5C82"
+                app:xTabSelectedTextSize="@dimen/d15"
+                app:xTabTextColor="#5D5D5D"
+                app:xTabTextSelectedBold="true"
+                app:xTabTextSize="@dimen/d13"></com.androidkun.xtablayout.XTabLayout>
+
+            <!--<android.support.design.widget.TabLayout-->
+                <!--android:id="@+id/tabLayout"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/dp_50"-->
+                <!--app:tabIndicatorColor="#4D5C82"-->
+                <!--app:tabMinWidth="@dimen/dp_70"-->
+                <!--app:tabMode="scrollable"-->
+                <!--app:tabSelectedTextColor="#4D5C82"-->
+                <!--app:tabTextAppearance="@style/TabLayoutTextStyle"-->
+                <!--app:tabTextColor="@color/color_999999"-->
+                <!--android:background="#FFF"></android.support.design.widget.TabLayout>-->
+
+        </android.support.design.widget.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+
+
+        </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+
+</LinearLayout>

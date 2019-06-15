@@ -1,0 +1,829 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#f4f4f4"
+    tools:context="com.shuiwangzhijia.shuidian.fragment.MyFragment">
+
+    <com.shuiwangzhijia.shuidian.view.MyFragmentScrollView
+        android:id="@+id/nest_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="236dp"
+                android:background="@drawable/my_bg"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/shop_basic_info_rl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="23dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_marginTop="75dp"
+                    android:gravity="center_vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/shop_head"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:src="@drawable/shop_head_default_img" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_toRightOf="@id/shop_head"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/shop_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="明天会更美好"
+                            android:textColor="@color/white"
+                            android:textSize="16dp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/shop_name"
+                            android:layout_marginTop="@dimen/margin8"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:src="@drawable/white_location_icon" />
+
+                            <TextView
+                                android:id="@+id/shop_address"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginLeft="5dp"
+                                android:text="华强北华能大厦中区25楼"
+                                android:textColor="@color/white"
+                                android:textSize="11dp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/d25"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/total_balance_ll"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/total_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="0.00"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:text="总余额"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d10" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0.5dp"
+                        android:layout_height="@dimen/d19"
+                        android:layout_gravity="center_vertical"
+                        android:background="#BDBCBC" />
+
+                    <LinearLayout
+                        android:id="@+id/total_return_money_ll"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/total_return_money"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="0.00"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:text="返利金"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d10" />
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="0.5dp"
+                        android:layout_height="@dimen/d19"
+                        android:layout_gravity="center_vertical"
+                        android:background="#BDBCBC" />
+
+                    <LinearLayout
+                        android:id="@+id/discount_coupon_counts_ll"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/discount_coupon_counts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:text="优惠券"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d10" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="0.5dp"
+                        android:layout_height="@dimen/d19"
+                        android:layout_gravity="center_vertical"
+                        android:background="#BDBCBC" />
+
+                    <LinearLayout
+                        android:id="@+id/water_coupon_counts_ll"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/water_coupon_counts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="0"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d12" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/margin5"
+                            android:text="水票"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/d10" />
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_marginTop="207dp"
+                android:background="@drawable/voucher_center_bg"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp">
+
+                    <TextView
+                        android:id="@+id/qian"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="￥"
+                        android:textColor="@color/white"
+                        android:textSize="24dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@id/qian"
+                        android:text="充值中心"
+                        android:textColor="@color/white"
+                        android:textSize="12dp" />
+
+                    <TextView
+                        android:id="@+id/recharge_immediately"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/white_stroke_bg"
+                        android:paddingBottom="3dp"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="3dp"
+                        android:text="立即充值"
+                        android:textColor="@color/white" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/recharge_act_counts"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="共有0个"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/recharge_act_counts"
+                            android:text="充值活动"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:id="@+id/recharge_act_one_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/white_five_radius_stroke_bg"
+                        android:padding="1dp"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:id="@+id/recharge_act_one_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="￥--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:id="@+id/recharge_act_one_gift"
+                            android:layout_width="match_parent"
+                            android:layout_height="21dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/bottom_deep_green"
+                            android:gravity="center"
+                            android:text="赠送--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/recharge_act_two_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/white_five_radius_stroke_bg"
+                        android:padding="1dp"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:id="@+id/recharge_act_two_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="￥--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:id="@+id/recharge_act_two_gift"
+                            android:layout_width="match_parent"
+                            android:layout_height="21dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/bottom_deep_green"
+                            android:gravity="center"
+                            android:text="赠送--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/recharge_act_three_rl"
+                        android:layout_width="0dp"
+                        android:layout_height="51dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/white_five_radius_stroke_bg"
+                        android:padding="@dimen/d1"
+                        android:visibility="invisible">
+
+                        <TextView
+                            android:id="@+id/recharge_act_three_money"
+                            android:layout_width="match_parent"
+                            android:layout_height="30dp"
+                            android:gravity="center"
+                            android:text="￥--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                        <TextView
+                            android:id="@+id/recharge_act_three_gift"
+                            android:layout_width="match_parent"
+                            android:layout_height="21dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="@drawable/bottom_deep_green"
+                            android:gravity="center"
+                            android:text="赠送--"
+                            android:textColor="@color/white"
+                            android:textSize="11dp" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="253dp"
+                android:background="#00ffffff">
+
+                <LinearLayout
+                    android:id="@+id/bottom_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingBottom="20dp"
+                    android:paddingLeft="14dp"
+                    android:paddingRight="14dp"
+                    android:paddingTop="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="采购订单"
+                        android:textColor="#212121"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/for_payment"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/unpaid_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="待付款"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/for_distribution"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/for_the_shipping" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="待配送"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/distributioning"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/in_the_distribution" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="配送中"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/in_arrears"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/in_arrears" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="欠款中"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/since_the_lift"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/pending_take" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="待自提"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/lineColor"></TextView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="零售订单"
+                        android:textColor="#212121"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/new_order"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/new_order_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="新订单"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/shipping"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/retail_for_the_shipping" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="待配送"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/distribution"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/retail_in_the_distribution" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="配送中"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/completed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/retail_finish_icon" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="10dp"
+                                android:text="已完成"
+                                android:textColor="#595858"
+                                android:textSize="12dp" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="74dp"
+                        android:layout_marginTop="24dp">
+
+                        <com.shuiwangzhijia.shuidian.view.MyLinearLayout
+                            android:id="@+id/coupons"
+                            android:layout_width="match_parent"
+                            android:layout_height="74dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/my_middle_bg" />
+                        </com.shuiwangzhijia.shuidian.view.MyLinearLayout>
+
+                        <com.shuiwangzhijia.shuidian.view.RxTextViewVertical
+                            android:id="@+id/run_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_marginBottom="@dimen/margin10"></com.shuiwangzhijia.shuidian.view.RxTextViewVertical>
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="店铺活动"
+                        android:textColor="#212121"
+                        android:textSize="15dp"
+                        android:textStyle="bold"
+                        android:visibility="gone" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/qianggou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/a53533_stroke_bg"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:text="抢购"
+                            android:textColor="#A53533"
+                            android:textSize="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_toRightOf="@id/qianggou"
+                            android:text="2019-3-20  08:00~11:59场"
+                            android:textSize="12dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:text="进行中"
+                            android:textColor="#A53533"
+                            android:textSize="12dp" />
+
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/act_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:layout_marginTop="25dp"></android.support.v7.widget.RecyclerView>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="16dp"
+                        android:background="@color/lineColor" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="我的服务"
+                        android:textColor="#212121"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <GridView
+                        android:id="@+id/my_service_gv"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:layout_marginTop="16dp"
+                        android:columnWidth="100dp"
+                        android:numColumns="4"
+                        android:stretchMode="spacingWidthUniform"></GridView>
+
+
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </com.shuiwangzhijia.shuidian.view.MyFragmentScrollView>
+
+    <RelativeLayout
+        android:id="@+id/title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="16dp">
+
+        <ImageView
+            android:id="@+id/setting"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="40dp"
+            android:padding="6dp"
+            android:src="@drawable/my_setting_icon" />
+
+        <TextView
+            style="@style/textWhite18"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="我的"
+            android:textStyle="bold" />
+
+
+        <Switch
+            android:id="@+id/shop_status_switch"
+            android:layout_width="47dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/image"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"
+            android:thumb="@drawable/new_thumb"
+            android:track="@drawable/new_track" />
+
+        <TextView
+            android:id="@+id/on_or_off"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_toLeftOf="@id/shop_status_switch"
+            android:text="营业中"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </RelativeLayout>
+</FrameLayout>

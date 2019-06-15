@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.WalletWithdrawActivity">
+
+    <TextView style="@style/deviderGray1" />
+
+    <LinearLayout
+        android:padding="@dimen/padding16"
+        android:layout_margin="@dimen/d20"
+        android:orientation="vertical"
+        android:background="@drawable/white_solid_five_radius_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提现金额（元）"
+        android:textColor="@color/textBlack"
+        android:textSize="@dimen/d15"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/d40"
+        android:layout_marginRight="@dimen/margin16"
+        android:layout_marginTop="@dimen/margin16"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥"
+            android:textColor="#C4C2C2"
+            android:textSize="36dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/withdraw_deposit_money"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin10"
+            android:background="@null"
+            android:hint="请输入提现金额"
+            android:inputType="numberDecimal"
+            android:textColor="@color/textBlack"
+            android:textSize="@dimen/d30" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="5dp"
+        android:background="#eeeeee" />
+
+    <TextView
+        android:id="@+id/withdraw_deposit_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="#212121"
+        android:textSize="15dp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/dark_fifteen_radius_bg"
+        android:gravity="center"
+        android:text="确定提交"
+        android:textColor="@color/white"
+        android:textSize="18dp" />
+
+</LinearLayout>

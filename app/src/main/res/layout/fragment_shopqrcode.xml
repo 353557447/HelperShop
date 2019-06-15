@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.dd.ShadowLayout
+        android:layout_marginTop="@dimen/margin16"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/d2"
+        app:sl_shadowColor="#15eeeeee"
+        >
+    <LinearLayout
+        android:background="@drawable/white_solid_five_radius_bg"
+        android:id="@+id/shopqr_rootview"
+        android:layout_width="344dp"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="68dp"
+                android:orientation="vertical"
+                android:gravity="center_vertical">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/circle_iv"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:src="@drawable/morenshuidian" />
+                <TextView
+                    android:textStyle="bold"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="888水店"
+                    android:textColor="@color/textBlack"
+                    android:textSize="16sp" />
+            </LinearLayout>
+            <View
+                android:layout_marginTop="@dimen/margin16"
+                android:layout_height="@dimen/d1"
+                android:background="#FF4D14"
+               android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/margin16"
+                android:layout_marginRight="@dimen/margin16"/>
+
+
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="166dp"
+                android:layout_height="166dp"
+                android:layout_marginTop="@dimen/d20"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="二维码分享"
+                android:textColor="#FF7A0F"
+                android:textSize="15sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="27dp"/>
+
+          <TextView
+              android:layout_marginBottom="@dimen/d28"
+              android:layout_marginTop="@dimen/d50"
+              android:layout_gravity="center_horizontal"
+              android:textColor="#FF0167"
+              android:text="邀请更多用户获得更多福利"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </com.dd.ShadowLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_alignParentBottom="true"
+        android:background="#FFF"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+        <TextView
+            android:id="@+id/share"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="分享"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/red_fifteen_radius_bg"/>
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:text="保存至本地"
+            android:layout_gravity="center_vertical"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:background="@drawable/dark_fifteen_radius_bg"/>
+    </LinearLayout>
+
+</RelativeLayout>

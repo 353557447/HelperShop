@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_ffffff">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/shopName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginTop="@dimen/dp_5"
+            android:drawableLeft="@drawable/shop"
+            android:drawablePadding="@dimen/dp_10"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="空气水水店1000分店"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_12" />
+        <ImageView
+            android:layout_marginRight="11dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/caigouordercall"
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!--<TextView
+            android:id="@+id/phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#7C7B7B"
+            android:drawableLeft="@drawable/dianhua_red"
+            android:drawablePadding="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_5"
+            android:layout_marginRight="11dp"
+            android:text="联系厂家"/>-->
+    </RelativeLayout>
+
+    <com.shuiwangzhijia.shuidian.view.CustomRecycle
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></com.shuiwangzhijia.shuidian.view.CustomRecycle>
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_f5f5f5"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_ffffff"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp_20"
+        android:paddingTop="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/recordName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="记录名称：退桶"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:id="@+id/dateTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="操作时间：2018-10-23"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:id="@+id/waterProdName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="水厂名称：hha"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:id="@+id/bucketNumTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="空桶数量：12"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_15" />
+
+        <TextView
+            android:id="@+id/returnMoneyTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/dp_10"
+            android:text="返回金额：￥120"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/font_15" />
+    </LinearLayout>
+
+    <com.shuiwangzhijia.shuidian.view.BucketView
+        android:id="@+id/bucketView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_20"></com.shuiwangzhijia.shuidian.view.BucketView>
+</LinearLayout>

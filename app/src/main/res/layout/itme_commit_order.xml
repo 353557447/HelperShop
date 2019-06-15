@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:orientation="vertical"
+    android:clickable="true">
+
+    <RelativeLayout
+        android:id="@+id/root_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <CheckBox
+            android:id="@+id/goods_cb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:button="@null"
+            android:drawableLeft="@drawable/bg_check"
+            android:visibility="gone"/>
+
+        <FrameLayout
+            android:id="@+id/goods_pic_fl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/goods_cb">
+
+            <ImageView
+                android:id="@+id/goods_pic"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="#F2F2F2"
+                android:scaleType="fitXY"
+                android:src="@drawable/default_img" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/goods_name"
+            style="@style/textBlack14"
+            android:layout_marginLeft="11dp"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/goods_pic_fl"
+            android:text="美汁源 Minute Maid 果粒橙 果汁饮料  1.25L*12瓶 整箱装 可口可乐公司 ..." />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_below="@+id/goods_name"
+            android:layout_alignLeft="@+id/goods_name"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp">
+            <TextView
+                android:layout_width="28dp"
+                android:layout_height="12dp"
+                android:text="充值"
+                android:textColor="@color/textRed"
+                android:textSize="8sp"
+                android:gravity="center"
+                android:background="@drawable/gray_solid_two_radius_bg"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/full_reduction"
+                android:layout_width="wrap_content"
+                android:layout_height="12dp"
+                android:paddingRight="5dp"
+                android:paddingLeft="5dp"
+                android:text="满20减5"
+                android:textColor="@color/textRed"
+                android:textSize="8sp"
+                android:gravity="center"
+                android:background="@drawable/gray_solid_two_radius_bg"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="11dp"
+            android:layout_toRightOf="@id/goods_pic_fl"
+            android:text="￥14.00"
+            android:textColor="@color/textRed"
+            android:textSize="@dimen/dp_14"
+            android:textStyle="bold" />
+
+        <TextView
+            android:textColor="#ABABAB"
+            android:layout_marginBottom="15dp"
+            android:id="@+id/number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="X10"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="16dp"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="120dp"
+        android:layout_height="match_parent"
+        android:background="@color/red"
+        android:text="删除"
+        android:textColor="@android:color/white" />
+</LinearLayout>

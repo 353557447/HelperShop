@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bgColor"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.SmartEquipActivity">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></FrameLayout>
+    <TextView
+        style="@style/deviderGray"
+         />
+    <RadioGroup
+        android:background="@color/white"
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:drawableTop="@drawable/equip_icon_selector"
+            android:id="@+id/my_equip_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="我的设备"
+            android:textColor="@drawable/equip_text_selector"
+            />
+
+
+        <RadioButton
+            android:drawableTop="@drawable/equip_goods_icon_selector"
+            android:id="@+id/equip_goods_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="设备商品"
+            android:textColor="@drawable/equip_text_selector"
+            />
+
+        <RadioButton
+            android:drawableTop="@drawable/equip_order_icon_selector"
+            android:id="@+id/equip_order_rb"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="设备订单"
+            android:textColor="@drawable/equip_text_selector"
+        />
+    </RadioGroup>
+</LinearLayout>

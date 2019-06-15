@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.MyReturnMoneyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="236dp"
+        android:background="@drawable/return_money_top_bg"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/title_bar_rl"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <RelativeLayout
+                android:id="@+id/back_return"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="30dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:paddingRight="@dimen/dp_60"
+                    android:src="@drawable/back" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="37dp"
+                android:text="我的返利"
+                android:textColor="@color/white"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin16"
+            android:layout_marginRight="@dimen/margin16">
+
+            <TextView
+                android:id="@+id/water_factory_name"
+                style="@style/textWhite15"
+                android:text="天晶水厂"
+                android:textSize="15dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/return_money_policy"
+                style="@style/textWhite12"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="@dimen/padding3"
+                android:paddingLeft="@dimen/d20"
+                android:paddingTop="@dimen/padding3"
+                android:text="返利政策" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/return_money_balance"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35.00"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="返利余额（元）" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/line0.5"
+                android:layout_height="@dimen/d19"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/has_withdraw"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35.00"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="已提现（元）" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/line0.5"
+                android:layout_height="@dimen/d19"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/has_roll_out"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35.00"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="已转出（元）" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/line0.5"
+                android:layout_height="@dimen/d19"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/history_return_money"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35.00"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="历史返利（元）" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin20"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/remain_coupon_counts"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="待返利水票（张)" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/line0.5"
+                android:layout_height="@dimen/d19"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/total_coupon_counts"
+                    style="@style/textWhite16"
+                    android:layout_gravity="center_horizontal"
+                    android:text="35"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite12"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin8"
+                    android:text="总返利水票（张）" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <com.androidkun.xtablayout.XTabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        app:xTabIndicatorColor="#4D5C82"
+        app:xTabIndicatorHeight="@dimen/d2"
+        app:xTabIndicatorWidth="@dimen/d30"
+        app:xTabMinWidth="@dimen/d60"
+        app:xTabMode="scrollable"
+        app:xTabSelectedTextColor="#4D5C82"
+        app:xTabSelectedTextSize="@dimen/d15"
+        app:xTabTextColor="@color/textBlack"
+        app:xTabTextSelectedBold="true"
+        app:xTabTextSize="@dimen/d12"></com.androidkun.xtablayout.XTabLayout>
+
+    <TextView style="@style/deviderGray1" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+</LinearLayout>
+
+

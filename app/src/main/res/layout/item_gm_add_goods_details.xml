@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:paddingTop="@dimen/padding10"
+    android:paddingBottom="@dimen/padding10"
+    >
+    <RelativeLayout
+        android:layout_marginLeft="@dimen/margin10"
+        android:background="#B8DBF2"
+        android:id="@+id/goods_iv_rl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_centerInParent="true"
+            android:src="@drawable/default_img"
+            android:id="@+id/goods_iv"
+            android:layout_centerVertical="true"
+            android:layout_width="@dimen/d60"
+            android:layout_height="@dimen/d60" />
+
+        <TextView
+            android:background="#400000ff"
+            android:layout_width="@dimen/d70"
+            android:layout_height="@dimen/d70" />
+
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/goods_name"
+        android:layout_marginRight="@dimen/margin16"
+        android:ellipsize="end"
+        android:lines="1"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_toRightOf="@id/goods_iv_rl"
+        android:layout_alignTop="@id/goods_iv_rl"
+        android:text="怡宝纯净水18.9L怡宝纯净水参..."
+        style="@style/textBlack14" />
+
+    <TextView
+        android:id="@+id/reference_price"
+        android:layout_marginLeft="@dimen/margin10"
+        android:layout_toRightOf="@id/goods_iv_rl"
+        android:layout_alignBottom="@id/goods_iv_rl"
+        android:textColor="@color/textRed"
+        android:textSize="@dimen/d13"
+        android:text="￥20.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_marginRight="@dimen/margin16"
+        android:textColor="@color/textYellow"
+        android:id="@+id/up_goods"
+        android:layout_width="@dimen/d55"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/goods_iv_rl"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/c515f85_stroke_bg"
+        android:paddingBottom="3dp"
+        android:paddingTop="3dp"
+        android:text="上架" />
+
+</RelativeLayout>

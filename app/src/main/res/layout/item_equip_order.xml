@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="@dimen/d15"
+    app:cardCornerRadius="@dimen/d5">
+
+    <LinearLayout
+        android:id="@+id/root_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/d10"
+        android:paddingRight="@dimen/d10">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bar_height">
+
+            <ImageView
+                android:id="@+id/equip_icon"
+                android:layout_width="@dimen/d19"
+                android:layout_height="@dimen/d19"
+                android:layout_centerVertical="true"
+                android:src="@drawable/equip_order_shop_icon" />
+
+            <TextView
+                android:id="@+id/equip_name"
+                style="@style/textBlack15"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_toRightOf="@id/equip_icon"
+                android:text="福能达智能售货机"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/state"
+                style="@style/textGray12"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:text="已完成"
+                android:textColor="@color/textGray" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:id="@+id/goods_iv"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/default_img" />
+
+            <TextView
+                android:id="@+id/goods_name"
+                style="@style/textBlack13"
+                android:layout_marginLeft="@dimen/margin16"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@id/goods_iv"
+                android:text="福能达智能售货机福能达智能售货机福能 达智能售货机" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="15dp"
+                android:layout_toRightOf="@id/goods_iv">
+
+                <TextView
+                    android:id="@+id/goods_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin16"
+                    android:text="￥13888"
+                    android:textColor="#A53533"
+                    android:textSize="@dimen/d12" />
+
+                <TextView
+                    android:id="@+id/goods_counts"
+                    style="@style/textGray12"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="8dp"
+                    android:text="x1" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/d10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/order_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="2019-03-21 13:35:26" />
+
+            <TextView
+                android:id="@+id/total_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="￥13888"
+                android:textColor="@color/textRed"
+                android:textSize="17sp" />
+
+            <TextView
+                style="@style/textBlack12"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/total_price"
+                android:text="共 1 件商品，总金额" />
+        </RelativeLayout>
+
+        <TextView style="@style/deviderGray" />
+
+        <RelativeLayout
+            android:id="@+id/bottom_rl"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="84dp"
+                android:layout_height="31dp"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/d10"
+                android:gravity="center"
+                android:text="查看物流"
+                android:textColor="#9d9d9d"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/right_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/c515f85_stroke_bg"
+                android:gravity="center"
+                android:minWidth="@dimen/d55"
+                android:text="退款"
+                android:textColor="#515f85"
+                android:textSize="@dimen/d12" />
+
+            <TextView
+                android:id="@+id/lease_order_identifying"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:padding="3dp"
+                android:text="租赁订单"
+                android:textColor="#F6AB1A"
+                android:textSize="10sp"
+                android:visibility="gone" />
+        </RelativeLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

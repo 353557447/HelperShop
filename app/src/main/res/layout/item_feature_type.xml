@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="match_parent">
+    <TextView
+        android:paddingRight="@dimen/d12"
+        android:paddingLeft="@dimen/d12"
+        android:minWidth="@dimen/d50"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:textSize="@dimen/d15"
+        android:layout_height="@dimen/d27"
+        android:id="@+id/type_name"
+        android:layout_width="wrap_content" />
+
+</RelativeLayout>

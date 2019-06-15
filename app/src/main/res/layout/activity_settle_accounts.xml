@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.SettleAccountsActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.shuiwangzhijia.shuidian.view.MyScrollView
+            android:id="@+id/nest_scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="186dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/tongji_red_bg" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/d100"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="@dimen/d10"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:layout_marginRight="@dimen/margin20">
+
+                            <TextView
+                                android:id="@+id/r_type"
+                                style="@style/textWhite15"
+                                android:layout_centerVertical="true"
+                                android:text="单笔返利：" />
+
+                            <TextView
+                                android:id="@+id/time"
+                                android:layout_width="@dimen/d86"
+                                android:layout_height="@dimen/d25"
+                                android:layout_alignParentRight="true"
+                                android:background="@drawable/white_stroke_bg"
+                                android:gravity="center"
+                                android:text="2019-02"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/d12" />
+                        </RelativeLayout>
+
+                        <TextView
+                            android:id="@+id/rule_details"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:layout_marginRight="@dimen/margin20"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:text="规则内容规则内容规则内容规则内容规则内容规则内容规则内容 规则内容规"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="blocksDescendants">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
+            </LinearLayout>
+        </com.shuiwangzhijia.shuidian.view.MyScrollView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/color_ffffff"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="17dp">
+
+            <TextView
+                android:id="@+id/hintBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:text="共300桶，返利"
+                android:textColor="@color/textBlack"
+                android:textSize="12sp" />
+
+            <TextView
+
+                android:id="@+id/money"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/hintBtn"
+                android:text="￥20.00"
+                android:textColor="@color/common_red"
+                android:textSize="@dimen/d20" />
+
+
+            <TextView
+                android:id="@+id/payBtn"
+                android:layout_width="105dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:background="#FF4D14"
+                android:gravity="center"
+                android:text="结算"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font_16" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:id="@+id/back_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_60"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="37dp"
+            android:text="结算"
+            android:textColor="@color/white"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</FrameLayout>
+
+

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.GoodsManageNewActivity">
+
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+    </FrameLayout>
+
+    <TextView
+        style="@style/deviderGray"
+        />
+
+    <RadioGroup
+        android:background="@color/white"
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:drawableTop="@drawable/gm_in_the_sale_selector"
+            android:id="@+id/in_the_sale"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="售卖中"
+            android:textColor="@drawable/black_gray_text_selector"
+            android:background="@drawable/gm_bg_selector"
+            />
+
+        <RadioButton
+            android:drawableTop="@drawable/gm_library_of_goods_selector"
+            android:id="@+id/library_of_goods"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:text="商品库"
+            android:textColor="@drawable/black_gray_text_selector"
+            android:background="@drawable/gm_bg_selector"
+            />
+    </RadioGroup>
+
+
+
+</LinearLayout>

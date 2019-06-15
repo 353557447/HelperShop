@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#40000000">
+
+    <LinearLayout
+        android:id="@+id/root_ll"
+        android:layout_width="305dp"
+        android:layout_height="367dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/white_solid_five_radius_bg"
+        android:orientation="vertical"
+        android:padding="@dimen/padding16">
+
+        <TextView
+            style="@style/textBlack15"
+            android:layout_gravity="center_horizontal"
+            android:text="选择商品"
+            android:textStyle="bold" />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_marginTop="@dimen/margin16"
+            android:id="@+id/dialog_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"></android.support.v7.widget.RecyclerView>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/margin20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/clear_grid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/c515f85_stroke_bg"
+                android:paddingLeft="@dimen/padding10"
+                android:paddingRight="@dimen/padding10"
+                android:text="清空格子"
+                android:textColor="#515f85" />
+
+            <TextView
+                android:id="@+id/confirm_select"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/d34"
+                android:background="@drawable/c515f85_solid_bg"
+                android:paddingLeft="@dimen/padding10"
+                android:paddingRight="@dimen/padding10"
+                android:text="确定选择"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ImageView
+        android:padding="@dimen/d10"
+        android:id="@+id/center_dialog_close"
+        android:layout_marginTop="@dimen/d12"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/root_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_select_centre_dialog_icon" />
+
+</RelativeLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="146dp"
+    android:layout_height="match_parent"
+    android:background="@drawable/item_touch_balance_bg"
+    android:padding="10dp">
+
+
+    <TextView
+        android:id="@+id/water_factory_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="天晶水厂"
+        android:textColor="@color/white"
+        android:textSize="12dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/face_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="35.00"
+        android:textColor="#FFFFFF"
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

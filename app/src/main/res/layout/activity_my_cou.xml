@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MyCouActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/coupons_xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            app:xTabIndicatorColor="@color/common_red"
+            app:xTabIndicatorHeight="2dp"
+            app:xTabIndicatorWidth="22dp"
+            app:xTabMode="fixed"
+            app:xTabSelectedTextColor="@color/common_red"
+            app:xTabSelectedTextSize="16sp"
+            app:xTabTextColor="#161616"
+            app:xTabTextSelectedBold="true"
+            app:xTabTextSize="14sp" />
+    </RelativeLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/coupons_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
+</LinearLayout>

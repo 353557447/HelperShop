@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <com.shuiwangzhijia.shuidian.view.MyCircleProgress
+        app:drawStyle="STROKE"
+        app:strokeWidth="30"
+        app:max="100"
+        app:r="70"
+        app:bgColor="#E8E3E3"
+        app:fgColor="#D2BA80"
+        android:layout_gravity="center_vertical"
+        android:id="@+id/my_circle_progress"
+        android:layout_width="70dp"
+        android:layout_height="70dp" />
+    
+    <LinearLayout
+        android:layout_marginLeft="@dimen/margin16"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/goods_name"
+            android:text="农夫山泉矿泉水18.9L 拷贝 2"
+            style="@style/textBlack13" />
+
+        <TextView
+            android:id="@+id/rule_content"
+            android:layout_marginTop="@dimen/margin3"
+            android:text="满50桶，返xxxx水票x张"
+            style="@style/textGray12" />
+
+        <TextView
+            android:id="@+id/goods_completed_counts"
+            android:layout_marginTop="@dimen/margin3"
+            android:text="已完成170桶"
+            style="@style/textGray11" />
+    </LinearLayout>
+
+
+</LinearLayout>

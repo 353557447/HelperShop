@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.ui.CenterActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="305dp"
+        android:background="@drawable/shop_bg"
+        android:orientation="horizontal"
+        android:paddingLeft="17dp"
+        android:paddingRight="11dp">
+        <ImageView
+            android:paddingRight="30dp"
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/left_arrow"/>
+        <TextView
+            android:id="@+id/center_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="活动中心"
+            android:textSize="18sp"
+            android:textColor="#FFF"
+            android:layout_marginTop="35dp"
+            android:layout_centerHorizontal="true"/>
+        <ImageView
+            android:id="@+id/shopcart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/shopping"/>
+    </RelativeLayout>
+
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/swipeRefreshLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_marginTop="65dp"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_marginRight="11dp"-->
+        <!--android:layout_marginLeft="11dp">-->
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="80dp"></android.support.v7.widget.RecyclerView>
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+</FrameLayout>

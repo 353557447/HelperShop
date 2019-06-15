@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/bgColor"
+    android:orientation="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/my_order_xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            app:xTabIndicatorColor="#FE0233"
+            app:xTabIndicatorHeight="2dp"
+            app:xTabIndicatorWidth="30dp"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#FE0233"
+            app:xTabTextSelectedBold="true"
+            app:xTabSelectedTextSize="16sp"
+            app:xTabTextColor="#161616"
+            app:xTabTextSize="14sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/my_order_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></android.support.v4.view.ViewPager>
+    </LinearLayout>
+    <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--android:id="@+id/swipeRefreshLayout"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<android.support.v7.widget.RecyclerView-->
+            <!--android:id="@+id/mRecyclerView"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_marginTop="@dimen/dp_10"></android.support.v7.widget.RecyclerView>-->
+
+    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/rlEmpty"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:visibility="gone">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@drawable/zanwudingdan" />-->
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_below="@+id/iv"-->
+            <!--android:gravity="center"-->
+            <!--android:text="暂无商品售卖"-->
+            <!--android:textColor="@color/color_999999"-->
+            <!--android:textSize="@dimen/font_12" />-->
+    <!--</RelativeLayout>-->
+</LinearLayout>

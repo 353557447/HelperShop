@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.ui.KeepListActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="299dp"
+        android:background="@drawable/red_top_bg">
+        <RelativeLayout
+            android:id="@+id/head_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:paddingLeft="@dimen/padding16"
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:src="@drawable/left_arrow" />
+
+            <TextView
+                android:id="@+id/status_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="35dp"
+                android:text="常购清单"
+                android:textColor="#FFF"
+                android:textSize="18sp"/>
+            <TextView
+                android:id="@+id/status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="水厂配送"
+                android:textColor="#FFF"
+                android:layout_marginTop="26dp"
+                android:layout_centerHorizontal="true"
+                android:textSize="11sp"
+                android:visibility="gone"/>
+            <TextView
+                android:id="@+id/adress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/status"
+                android:text="福田区华强北华能大厦25楼"
+                android:drawableRight="@drawable/white_arrow_right"
+                android:drawablePadding="5dp"
+                android:textColor="#FFF"
+                android:layout_centerHorizontal="true"
+                android:textSize="11sp"
+                android:visibility="gone"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.androidkun.xtablayout.XTabLayout
+            android:id="@+id/my_order_xTablayout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="53dp"
+            android:background="#00ffffff"
+            app:xTabIndicatorColor="#FFF"
+            app:xTabIndicatorHeight="3dp"
+            app:xTabIndicatorWidth="30dp"
+            app:xTabMode="scrollable"
+            app:xTabSelectedTextColor="#FFF"
+            app:xTabTextSelectedBold="true"
+            app:xTabSelectedTextSize="16sp"
+            app:xTabTextColor="#FFF"
+            app:xTabTextSize="14sp" />
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/my_order_vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></android.support.v4.view.ViewPager>
+    </LinearLayout>
+
+
+</FrameLayout>

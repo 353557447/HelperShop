@@ -1,0 +1,99 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.fragment.MyEquipFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="156dp"
+        android:background="@color/color_425274">
+
+        <TextView
+            android:id="@+id/lishishouyi"
+            style="@style/textWhite13"
+            android:layout_marginLeft="@dimen/margin20"
+            android:layout_marginTop="@dimen/margin20"
+            android:text="历史收益"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/history_earnings"
+            style="@style/textWhite18"
+            android:layout_below="@id/lishishouyi"
+            android:layout_marginLeft="@dimen/d18"
+            android:layout_marginTop="@dimen/margin5"
+            android:textStyle="bold" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/d25"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/top_today_earnings"
+                    style="@style/textWhite15"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite13"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:text="今日收益" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="@dimen/line0.5"
+                android:layout_height="@dimen/d30"
+                android:layout_gravity="center_vertical"
+                android:background="@color/white" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/top_sale_counts"
+                    style="@style/textWhite15"
+                    android:layout_gravity="center_horizontal"
+                    android:textStyle="bold" />
+
+                <TextView
+                    style="@style/textWhite13"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:text="今日销量" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

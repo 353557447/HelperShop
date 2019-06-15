@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:elevation="@dimen/d20"
+        app:cardCornerRadius="5dp">
+
+        <RelativeLayout
+            android:background="#364568"
+            android:id="@+id/root_view_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/d10">
+
+            <TextView
+                android:id="@+id/counter_counts"
+                style="@style/textWhite12"
+                android:textStyle="bold"
+                android:text="柜子数量：1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/current_counter_name"
+                    android:textStyle="bold"
+                    style="@style/textWhite18"
+                    android:layout_gravity="center_vertical"
+                    android:text="一号柜子" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:src="@drawable/equip_details_arrow" />
+            </LinearLayout>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

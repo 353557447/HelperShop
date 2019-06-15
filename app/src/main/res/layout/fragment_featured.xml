@@ -1,0 +1,309 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.fragment.FeaturedFragment">
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:elevation="0dp">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@android:color/transparent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/bg_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="189dp"
+                        android:background="#FF014E"
+                        android:scaleType="fitXY">
+
+                    </ImageView>
+
+
+                    <com.bigkoo.convenientbanner.ConvenientBanner
+                        android:id="@+id/cb"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="@dimen/d13"
+                        android:layout_marginTop="@dimen/d90"
+                        android:layout_marginRight="@dimen/d13"
+                        app:canLoop="true"></com.bigkoo.convenientbanner.ConvenientBanner>
+                </RelativeLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/d28"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/water_factory_policy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/d43"
+                            android:layout_height="@dimen/d43"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/water_factory_policy_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/d8"
+                            android:text="水厂政策"
+                            android:textColor="#494848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/regular_list"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/d43"
+                            android:layout_height="@dimen/d43"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/regular_list_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/d8"
+                            android:text="常购清单"
+                            android:textColor="#494848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/my_wallet"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/d43"
+                            android:layout_height="@dimen/d43"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/my_wallet_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/d8"
+                            android:text="我的钱包"
+                            android:textColor="#494848" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/purchase_order"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="@dimen/d43"
+                            android:layout_height="@dimen/d43"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/purchase_order_icon" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="@dimen/d8"
+                            android:text="采购订单"
+                            android:textColor="#494848" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d57"
+                    android:layout_marginLeft="@dimen/d13"
+                    android:layout_marginTop="@dimen/d24"
+                    android:layout_marginRight="@dimen/d13"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:background="@color/white"
+                    app:cardCornerRadius="@dimen/d5"
+                    app:cardElevation="@dimen/d10">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingLeft="@dimen/padding16"
+                        android:paddingRight="@dimen/padding16">
+
+                        <ImageView
+                            android:id="@+id/youhuichongzhi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/youhuichongzhi" />
+
+                        <TextView
+                            android:id="@+id/act_info_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/margin20"
+                            android:layout_toRightOf="@id/youhuichongzhi"
+                            android:text="充200送20，充300送30"
+                            android:textColor="#FF8300"
+                            android:textSize="@dimen/d16" />
+
+                        <TextView
+                            android:id="@+id/recharge_immediately"
+                            style="@style/textWhite12"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/red_solid_big_radius_bg"
+                            android:paddingLeft="@dimen/padding10"
+                            android:paddingTop="@dimen/padding5"
+                            android:paddingRight="@dimen/padding10"
+                            android:paddingBottom="@dimen/padding5"
+                            android:text="立即充值" />
+
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/featured_middle_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="135dp"
+                    android:layout_marginLeft="@dimen/d13"
+                    android:layout_marginRight="@dimen/d13"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/featured_middle_bg" />
+
+            </LinearLayout>
+
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:fitsSystemWindows="true"
+                app:layout_anchorGravity="bottom"
+                app:layout_collapseMode="pin">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/d30"
+                    android:layout_marginLeft="@dimen/d13"
+                    android:layout_marginTop="@dimen/d45"
+                    android:layout_marginRight="@dimen/d13"
+                    android:layout_marginBottom="@dimen/margin10">
+
+                    <TextView
+                        android:id="@+id/water_factory_name"
+                        style="@style/textBlack16"
+                        android:layout_centerVertical="true"
+                        android:text="九重岩水厂"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        style="@style/textWhite14"
+                        android:layout_alignBottom="@id/water_factory_name"
+                        android:layout_marginLeft="@dimen/margin3"
+                        android:layout_toRightOf="@id/water_factory_name"
+                        android:text="采购中心" />
+
+                    <ImageView
+                        android:id="@+id/contact"
+                        android:layout_width="@dimen/d30"
+                        android:layout_height="@dimen/d30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingTop="@dimen/padding3"
+                        android:paddingBottom="@dimen/padding3"
+                        android:src="@drawable/phone_icon" />
+                </RelativeLayout>
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bar_height"
+            android:paddingTop="@dimen/padding8"
+            android:paddingLeft="@dimen/d12"
+            android:paddingRight="@dimen/d12"
+            android:paddingBottom="@dimen/padding8"
+            app:tabBackground="@drawable/tab_bg_selector"
+            app:tabIndicatorColor="@color/black"
+            app:tabIndicatorHeight="0dp"
+            app:tabMode="scrollable"
+            app:tabSelectedTextColor="#fff"
+            app:tabTextColor="@color/black"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:visibility="gone"
+            android:paddingTop="@dimen/padding10"
+            android:id="@+id/type_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/d13"
+            android:layout_marginRight="@dimen/d13"></android.support.v7.widget.RecyclerView>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bgColor"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+           <android.support.v4.view.ViewPager
+               android:id="@+id/viewpager"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"></android.support.v4.view.ViewPager>
+
+            <com.shuiwangzhijia.shuidian.view.MyRecyclerView
+                android:visibility="gone"
+                android:id="@+id/content_rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:nestedScrollingEnabled="false"></com.shuiwangzhijia.shuidian.view.MyRecyclerView>
+    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>

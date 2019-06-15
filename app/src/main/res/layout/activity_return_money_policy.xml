@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgColor"
+    tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.ReturnMoneyPolicyActivity">
+
+    <LinearLayout
+        android:id="@+id/root_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.shuiwangzhijia.shuidian.view.MyScrollView
+            android:id="@+id/scroll_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="197dp"
+                    android:background="@drawable/return_money_top_bg"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/return_money_template_rv"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="70dp"
+                        android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/tem_return_money_details_ll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/d30"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_marginTop="180dp"
+                    android:background="@drawable/white_solid_five_radius_bg"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding16">
+
+                    <TextView
+                        android:id="@+id/status"
+                        style="@style/textBlack15"
+                        android:text="生效中"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin16"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:id="@+id/has_return_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/has_return_money"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="35.00"
+                                android:textColor="@color/textDeepBlue"
+                                android:textSize="@dimen/d16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/has_return_money_unit"
+                                style="@style/textBlack12"
+                                android:layout_gravity="center_horizontal"
+                                android:text="已返利（张）" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/pending_apply_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/pending_apply"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="35.00"
+                                android:textColor="@color/textDeepBlue"
+                                android:textSize="@dimen/d16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/pending_apply_unit"
+                                style="@style/textBlack12"
+                                android:layout_gravity="center_horizontal"
+                                android:text="待申请（张）" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/applying_ll"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/applying"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:text="35"
+                                android:textColor="@color/textDeepBlue"
+                                android:textSize="@dimen/d16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/applying_unit"
+                                style="@style/textBlack12"
+                                android:layout_gravity="center_horizontal"
+                                android:text="申请中（张）" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/return_money_progress_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin16"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/little_circle_blue" />
+
+                            <TextView
+                                style="@style/textBlack13"
+                                android:layout_marginLeft="@dimen/margin8"
+                                android:text="最新进度" />
+
+                            <TextView
+                                android:id="@+id/anticipated_return"
+                                style="@style/textBlack12"
+                                android:layout_marginLeft="@dimen/margin10"
+                                />
+
+
+                        </LinearLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/return_money_progress_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/d5"
+                            android:layout_marginTop="@dimen/margin8"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/return_money_cycle_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/gray_solid_five_radius_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding10">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="返利周期"
+                            android:textColor="@color/textDeepBlue"
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/return_money_cycle"
+                            style="@style/textBlack13"
+                            android:layout_marginTop="@dimen/margin8"
+                            android:text="2019年2月-8月" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin10"
+                        android:background="@drawable/gray_solid_five_radius_bg"
+                        android:orientation="vertical"
+                        android:padding="@dimen/padding10">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="返利规则"
+                                android:textColor="@color/textDeepBlue"
+                                android:textSize="15dp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/rule_r_way"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/margin5"
+                                    android:background="@drawable/c515f85_stroke_bg"
+                                    android:paddingBottom="@dimen/padding3"
+                                    android:paddingLeft="@dimen/padding10"
+                                    android:paddingRight="@dimen/padding10"
+                                    android:paddingTop="@dimen/padding3"
+                                    android:text="水票"
+                                    android:textColor="@color/textDeepBlue"
+                                    android:textSize="@dimen/d10" />
+
+                                <TextView
+                                    android:id="@+id/rule_r_basis"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/margin5"
+                                    android:background="@drawable/c515f85_stroke_bg"
+                                    android:paddingBottom="@dimen/padding3"
+                                    android:paddingLeft="@dimen/padding10"
+                                    android:paddingRight="@dimen/padding10"
+                                    android:paddingTop="@dimen/padding3"
+                                    android:text="按商品"
+                                    android:textColor="@color/textDeepBlue"
+                                    android:textSize="@dimen/d10" />
+
+                                <TextView
+                                    android:id="@+id/rule_r_rule"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:background="@drawable/c515f85_stroke_bg"
+                                    android:paddingBottom="@dimen/padding3"
+                                    android:paddingLeft="@dimen/padding10"
+                                    android:paddingRight="@dimen/padding10"
+                                    android:paddingTop="@dimen/padding3"
+                                    android:text="范围返利"
+                                    android:textColor="@color/textDeepBlue"
+                                    android:textSize="@dimen/d10" />
+                            </LinearLayout>
+
+                        </RelativeLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/return_money_policy_rv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin10"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"></android.support.v7.widget.RecyclerView>
+
+                        <TextView
+                            android:id="@+id/period_of_validity"
+                            style="@style/textGray10"
+                            android:layout_gravity="right"
+                            android:layout_marginTop="@dimen/d40"
+                            android:text="有效期：2019年4月1日~2019年7月31日" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </com.shuiwangzhijia.shuidian.view.MyScrollView>
+
+        <TextView
+            android:id="@+id/check_return_money_record"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bar_height50"
+            android:background="#505E84"
+            android:gravity="center"
+            android:text="查看返利记录"
+            android:textColor="@color/white"
+            android:textSize="@dimen/d16" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/title_bar_rl"
+        android:layout_width="match_parent"
+        android:layout_height="70dp">
+
+        <RelativeLayout
+            android:id="@+id/back_return"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/back_iv_src"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_60"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/water_factory_name"
+                style="@style/textWhite10"
+                android:layout_gravity="center_horizontal" />
+
+            <TextView
+                android:id="@+id/fanlizhengce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="返利政策"
+                android:textColor="@color/white"
+                android:textSize="14dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </RelativeLayout>
+</FrameLayout>
