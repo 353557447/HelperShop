@@ -18,10 +18,12 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
 import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
 
 
 public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     private IWXAPI api;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +36,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         super.onNewIntent(intent);
         setIntent(intent);
         api.handleIntent(intent, this);
+
     }
 
 

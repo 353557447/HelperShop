@@ -22,7 +22,7 @@ import okio.BufferedSource;
 
 public class LoggingInterceptor implements Interceptor {
     private final Charset UTF8 = Charset.forName("UTF-8");
-    private String TAG = "retrofit";
+    private String TAG = "LoggingInterceptor";
 
 
     @Override

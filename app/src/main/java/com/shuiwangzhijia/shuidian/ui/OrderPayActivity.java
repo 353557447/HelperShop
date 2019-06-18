@@ -1,9 +1,12 @@
 package com.shuiwangzhijia.shuidian.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
@@ -11,9 +14,13 @@ import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.alipay.sdk.app.PayTask;
+import com.pingplusplus.ui.PaySuccessActivity;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.App;
 import com.shuiwangzhijia.shuidian.base.BaseAct;
+import com.shuiwangzhijia.shuidian.bean.AlipayBean;
+import com.shuiwangzhijia.shuidian.bean.AlipayNewBean;
 import com.shuiwangzhijia.shuidian.bean.BucketOrderBean;
 import com.shuiwangzhijia.shuidian.bean.OrderBean;
 import com.shuiwangzhijia.shuidian.bean.PayBean;
@@ -26,6 +33,7 @@ import com.shuiwangzhijia.shuidian.utils.MyUtils;
 import com.shuiwangzhijia.shuidian.utils.ToastUitl;
 import com.google.gson.Gson;
 import com.pingplusplus.android.Pingpp;
+import com.shuiwangzhijia.shuidian.utils.ToastUtils;
 import com.socks.library.KLog;
 import com.tencent.mm.opensdk.modelpay.PayReq;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
@@ -42,6 +50,7 @@ import retrofit2.Response;
 
 
 public class OrderPayActivity extends BaseAct {
+    private static final int SDK_PAY_FLAG = 100;
     @BindView(R.id.orderId)
     TextView orderId;
     @BindView(R.id.orderDate)
@@ -73,6 +82,35 @@ public class OrderPayActivity extends BaseAct {
     private int mDelivery_type;  //0配送  1自提
     private String mBalance;
     private PayBean mSubmitOrderWxData;
+
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 100:
+                    try {
+                        String aliPayResult = (String) msg.obj;
+                        KLog.e(aliPayResult);
+                        if (aliPayResult.contains("resultStatus=9000")) {
+                            ToastUitl.showToastCustom("支付成功");
+                            PurchaseOrderActivity.statAct(OrderPayActivity.this, 2);
+                            finish();
+                        } else {
+
+
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        KLog.e(e.getMessage());
+                    }
+
+                    break;
+            }
+        }
+    };
+    private String mUnifyOrderAliDataBean;
 
 
     public static void startAtc(Context context, OrderBean data, int fromType) {
@@ -161,24 +199,50 @@ public class OrderPayActivity extends BaseAct {
     }
 
     private void getChannelInfo() {
-        showLoad();
-        RetrofitUtils.getInstances().create().getPayChannelInfo(mData.getOrder_no(), pay_type == 1 ? "wx" : "alipay").enqueue(new Callback<EntityObject<PayBean>>() {
-            @Override
-            public void onResponse(Call<EntityObject<PayBean>> call, Response<EntityObject<PayBean>> response) {
-                hintLoad();
-                EntityObject<PayBean> body = response.body();
-                KLog.e(new Gson().toJson(body.getResult()));
-                mSubmitOrderWxData = body.getResult();
-                toWXPay();
+        if(pay_type==1){
+            //微信支付
+            showLoad();
+            RetrofitUtils.getInstances().create().getPayChannelInfo(mData.getOrder_no(), "wx" ).enqueue(new Callback<EntityObject<PayBean>>() {
+                @Override
+                public void onResponse(Call<EntityObject<PayBean>> call, Response<EntityObject<PayBean>> response) {
+                    hintLoad();
+                    EntityObject<PayBean> body = response.body();
+                    KLog.e(new Gson().toJson(body.getResult()));
+                    mSubmitOrderWxData = body.getResult();
+                    toWXPay();
             /*    hint(body.getMsg());
                 Pingpp.createPayment(OrderPayActivity.this, new Gson().toJson(body.getResult()));*/
-            }
+                }
 
-            @Override
-            public void onFailure(Call<EntityObject<PayBean>> call, Throwable t) {
+                @Override
+                public void onFailure(Call<EntityObject<PayBean>> call, Throwable t) {
 
-            }
-        });
+                }
+            });
+        }else{
+            //支付宝支付
+            KLog.e("我执行了么3");
+            showLoad();
+            RetrofitUtils.getInstances().create().getAliPayChannelInfo(mData.getOrder_no(), "alipay").enqueue(new Callback<EntityObject<String>>() {
+                @Override
+                public void onResponse(Call<EntityObject<String>> call, Response<EntityObject<String>> response) {
+                    hintLoad();
+                    EntityObject<String> body = response.body();
+                    KLog.e(new Gson().toJson(body.getResult()));
+                    mUnifyOrderAliDataBean = body.getResult();
+                    KLog.e("我执行了么2");
+                    toAliPay();
+            /*    hint(body.getMsg());
+                Pingpp.createPayment(OrderPayActivity.this, new Gson().toJson(body.getResult()));*/
+                }
+
+                @Override
+                public void onFailure(Call<EntityObject<String>> call, Throwable t) {
+                    KLog.e(t.getMessage());
+                }
+            });
+        }
+
     }
 
     private void getYuerInfo() {
@@ -299,6 +363,26 @@ public class OrderPayActivity extends BaseAct {
             aliPayBtn.setChecked(type == 2 ? true : false);
             mYuerPay.setChecked(type == 3 ? true : false);
         }
+    }
+
+    //调起支付宝支付的方法
+    private void toAliPay() {
+        KLog.e("我执行了么1");
+        final String orderInfo = mUnifyOrderAliDataBean; // 订单信息（app支付请求参数字符串，主要包含商户的订单信息，key=value形式，以&连接。）
+        Runnable payRunnable = new Runnable() {
+            @Override
+            public void run() {
+                PayTask alipay = new PayTask(OrderPayActivity.this);
+                String result = String.valueOf(alipay.payV2(orderInfo, true));
+                Message msg = Message.obtain();
+                msg.what = SDK_PAY_FLAG;
+                msg.obj = result;
+                mHandler.sendMessage(msg);
+            }
+        };
+        // 必须异步调用
+        Thread payThread = new Thread(payRunnable);
+        payThread.start();
     }
 
     /**

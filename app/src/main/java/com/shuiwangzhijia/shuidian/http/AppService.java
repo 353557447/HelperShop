@@ -4,6 +4,7 @@ package com.shuiwangzhijia.shuidian.http;
 import com.shuiwangzhijia.shuidian.bean.ActivityPlantsBean;
 import com.shuiwangzhijia.shuidian.bean.AddressBean;
 import com.shuiwangzhijia.shuidian.bean.AlbumItem;
+import com.shuiwangzhijia.shuidian.bean.AlipayNewBean;
 import com.shuiwangzhijia.shuidian.bean.BannerBean;
 import com.shuiwangzhijia.shuidian.bean.BannerBeanNew;
 import com.shuiwangzhijia.shuidian.bean.BucketBean;
@@ -65,10 +66,7 @@ import retrofit2.http.Query;
 import retrofit2.http.Streaming;
 import retrofit2.http.Url;
 
-/**
- * 网络请求方法类
- * Created by wangsuli on 2018/8/22.
- */
+
 public interface AppService {
 
     /**
@@ -376,7 +374,13 @@ public interface AppService {
      */
     @GET("shop/v1.Pingpp/pay")
     Call<EntityObject<PayBean>> getPayChannelInfo(@Query("order_no") String order_no, @Query("channel") String channel);
-
+    /**
+     * 支付宝在线支付
+     *
+     * @return
+     */
+    @GET("shop/v1.Pingpp/pay")
+    Call<EntityObject<String>> getAliPayChannelInfo(@Query("order_no") String order_no, @Query("channel") String channel);
     /**
      * 订单管理-采购订单
      *
@@ -933,6 +937,18 @@ public interface AppService {
      */
     @GET("shop/v1.Rebateoperation/rebateList")
     Call<Object> getMyReturnMoneyList(@Query("did") int did);
+    /**
+      * 结算返利订单列表
+      token	是	string	token
+      did	是	int	水厂id
+      r_id	是	int	水厂id
+      start_time	是	int	周期开始时间
+      end_time	是	int	周期结束时间
+     *
+     * @return
+     */
+    @GET("shop/v1.Rebateoperation/getOrderList")
+    Call<Object> getMyReturnMoneyCheckOutList(@Query("did") int did,@Query("r_id") int r_id,@Query("start_time") long start_time,@Query("end_time") long end_time);
     /**
      * 我的返利底部信息
      token	是	string	token
