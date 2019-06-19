@@ -10,10 +10,7 @@ import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.SpeechConstant;
 import com.iflytek.cloud.SpeechSynthesizer;
 
-/**
- * 讯飞语音播放
- * created by wangsuli on 2018/10/19.
- */
+
 public class XunFeiUtils {
 
     private static SpeechSynthesizer mTts;

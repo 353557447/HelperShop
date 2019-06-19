@@ -62,6 +62,30 @@ public class CommonUtils {
         return PreferenceUtils.getString(SettingItems.Mobile);
 
     }
+
+    public static void putWaterFactoryMobile(String Mobile) {
+        PreferenceUtils.putString(SettingItems.WaterFactoryMobile, Mobile);
+    }
+
+    /**
+     * @return
+     */
+    public static String getWaterFactoryMobile() {
+        return PreferenceUtils.getString(SettingItems.WaterFactoryMobile);
+    }
+
+
+    public static void putWaterFactoryName(String Mobile) {
+        PreferenceUtils.putString(SettingItems.WaterFactoryName, Mobile);
+    }
+
+    /**
+     * @return
+     */
+    public static String getWaterFactoryName() {
+        return PreferenceUtils.getString(SettingItems.WaterFactoryName);
+    }
+
     public static String getUUID() {
         return java.util.UUID.randomUUID().toString();
     }
@@ -332,5 +356,7 @@ public class CommonUtils {
         public static final String Distance = "distance";
         public static final String Did = "did";
         public static final String ISLOGIN = "islogin";
+        public static String WaterFactoryMobile="WaterFactoryMobile";
+        public static String WaterFactoryName="WaterFactoryName";
     }
 }

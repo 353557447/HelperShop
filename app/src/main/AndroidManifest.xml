@@ -211,7 +211,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/filepaths" />
-        </provider> <!-- 【必须】 信鸽receiver广播接收 -->
+        </provider>
+        <!-- 【必须】 信鸽receiver广播接收 -->
         <receiver
             android:name="com.tencent.android.tpush.XGPushReceiver"
             android:process=":xg_service_v4"
@@ -253,31 +254,37 @@
             android:name="com.tencent.android.tpush.service.XGPushServiceV4"
             android:exported="true"
             android:persistent="true"
-            android:process=":xg_service_v4" /> <!-- 【必须】 提高service的存活率 -->
+            android:process=":xg_service_v4" />
+        <!-- 【必须】 提高service的存活率 -->
         <service
             android:name="com.tencent.android.tpush.rpc.XGRemoteService"
             android:exported="true">
             <intent-filter>
 
                 <!-- 【必须】 请修改为当前APP包名 .PUSH_ACTION, 如demo的包名为：com.qq.xgdemo -->
-                <action android:name="com.fnd.waterstore.PUSH_ACTION" />
+                <action android:name="com.shuiwangzhijia.shuidian.PUSH_ACTION" />
             </intent-filter>
-        </service> <!-- 【必须】 【注意】authorities修改为 包名.AUTH_XGPUSH, 如demo的包名为：com.qq.xgdemo -->
+        </service>
+        <!-- 【必须】 【注意】authorities修改为 包名.AUTH_XGPUSH, 如demo的包名为：com.qq.xgdemo -->
         <provider
             android:name="com.tencent.android.tpush.XGPushProvider"
             android:authorities="com.shuiwangzhijia.shuidian.AUTH_XGPUSH"
-            android:exported="true" /> <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER, 如demo的包名为：com.qq.xgdemo -->
+            android:exported="true" />
+        <!-- 【必须】 【注意】authorities修改为 包名.TPUSH_PROVIDER, 如demo的包名为：com.qq.xgdemo -->
         <provider
             android:name="com.tencent.android.tpush.SettingsContentProvider"
             android:authorities="com.shuiwangzhijia.shuidian.TPUSH_PROVIDER"
-            android:exported="false" /> <!-- 【必须】 【注意】authorities修改为 包名.TENCENT.MID.V3, 如demo的包名为：com.qq.xgdemo -->
+            android:exported="false" />
+        <!-- 【必须】 【注意】authorities修改为 包名.TENCENT.MID.V3, 如demo的包名为：com.qq.xgdemo -->
         <provider
             android:name="com.tencent.mid.api.MidProvider"
             android:authorities="com.shuiwangzhijia.shuidian.TENCENT.MID.V3"
-            android:exported="true" /> <!-- 【必须】 请将YOUR_ACCESS_ID修改为APP的AccessId，“21”开头的10位数字，中间没空格 -->
+            android:exported="true" />
+        <!-- 【必须】 请将YOUR_ACCESS_ID修改为APP的AccessId，“21”开头的10位数字，中间没空格 -->
         <meta-data
             android:name="XG_V2_ACCESS_ID"
-            android:value="${XG_ACCESS_ID}" /> <!-- 【必须】 请将YOUR_ACCESS_KEY修改为APP的AccessKey，“A”开头的12位字符串，中间没空格 -->
+            android:value="${XG_ACCESS_ID}" />
+        <!-- 【必须】 请将YOUR_ACCESS_KEY修改为APP的AccessKey，“A”开头的12位字符串，中间没空格 -->
         <meta-data
             android:name="XG_V2_ACCESS_KEY"
             android:value="${XG_ACCESS_KEY}" />

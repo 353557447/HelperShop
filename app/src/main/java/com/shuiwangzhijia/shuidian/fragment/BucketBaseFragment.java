@@ -38,10 +38,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 空桶订单 基础类
- * created by wangsuli on 2018/8/20.
- */
+
 public class BucketBaseFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, BucketOrderAdapterNew.OnViewItemClickListener{
 
     @BindView(R.id.mRecyclerView)

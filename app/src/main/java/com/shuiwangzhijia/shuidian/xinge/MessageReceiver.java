@@ -19,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class MessageReceiver extends XGPushBaseReceiver {
-    private Intent intent = new Intent("com.fnd.waterstore.Receiver");
+    private Intent intent = new Intent("com.shuiwangzhijia.shuidian.Receiver");
     public static final String LogTag = "TPushReceiver";
 
     private void show(Context context, String text) {

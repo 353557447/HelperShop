@@ -1,8 +1,7 @@
 package com.shuiwangzhijia.shuidian.bean;
 
-/**
- * created by wangsuli on 2018/8/22.
- */
+
+
 public class LoginBean {
 
 
@@ -17,6 +16,15 @@ public class LoginBean {
     private UserInfoBean user_info;
     private int user_id;
     private int did;
+    private WaterBean water;
+
+    public WaterBean getWater() {
+        return water;
+    }
+
+    public void setWater(WaterBean water) {
+        this.water = water;
+    }
 
     public String getToken() {
         return token;
@@ -113,6 +121,53 @@ public class LoginBean {
 
         public void setHeader_pic(String header_pic) {
             this.header_pic = header_pic;
+        }
+    }
+
+    public static class WaterBean {
+
+        /**
+         * phone : 13480127920
+         * seat_no : 18565676759
+         * header_pic :
+         * sname : 九重岩水厂
+         */
+
+        private String phone;
+        private String seat_no;
+        private String header_pic;
+        private String sname;
+
+        public String getPhone() {
+            return phone;
+        }
+
+        public void setPhone(String phone) {
+            this.phone = phone;
+        }
+
+        public String getSeat_no() {
+            return seat_no;
+        }
+
+        public void setSeat_no(String seat_no) {
+            this.seat_no = seat_no;
+        }
+
+        public String getHeader_pic() {
+            return header_pic;
+        }
+
+        public void setHeader_pic(String header_pic) {
+            this.header_pic = header_pic;
+        }
+
+        public String getSname() {
+            return sname;
+        }
+
+        public void setSname(String sname) {
+            this.sname = sname;
         }
     }
 }

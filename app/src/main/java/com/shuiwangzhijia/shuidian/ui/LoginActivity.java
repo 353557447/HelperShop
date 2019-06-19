@@ -111,6 +111,8 @@ public class LoginActivity extends BaseAct {
                     CommonUtils.putDid(bean.getDid() + "");
                     CommonUtils.putHeaderpic(bean.getUser_info().getHeader_pic());
                     CommonUtils.putLogin(true);
+                    CommonUtils.putWaterFactoryMobile(bean.getWater().getPhone());
+                    CommonUtils.putWaterFactoryName(bean.getWater().getSname());
                     skipActivity(HomePageActivity.class);
                     finish();
                 } else {

@@ -18,9 +18,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
-/**启动页面
- * created by wangsuli on 2018/8/17.
- */
+
 @FndViewInject(contentViewId = R.layout.activity_splash)
 public class SplashActivity extends BaseActivity {
     private static final int sleepTime = 2000;

@@ -1,6 +1,11 @@
 package com.shuiwangzhijia.shuidian.newmodule.activity;
 
 import android.Manifest;
+import android.app.Dialog;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.v4.app.FragmentTransaction;
@@ -10,6 +15,15 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.shuiwangzhijia.shuidian.bean.UpdateInfo;
+import com.shuiwangzhijia.shuidian.dialog.NoticeDialog;
+import com.shuiwangzhijia.shuidian.dialog.UpdatingDialog;
+import com.shuiwangzhijia.shuidian.http.EntityObject;
+import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.ui.MainActivity;
+import com.shuiwangzhijia.shuidian.ui.OrderManageActivity;
+import com.shuiwangzhijia.shuidian.ui.TicketActivity;
+import com.shuiwangzhijia.shuidian.xinge.XGNotification;
 import com.socks.library.KLog;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.BaseActivity;
@@ -20,10 +34,18 @@ import com.shuiwangzhijia.shuidian.newmodule.fragment.MyShoppingCartFragment;
 import com.shuiwangzhijia.shuidian.newmodule.fragment.PersonalFragment;
 import com.shuiwangzhijia.shuidian.ui.LoginActivity;
 import com.shuiwangzhijia.shuidian.utils.CommonUtils;
+import com.tencent.android.tpush.XGPushConfig;
+import com.tencent.android.tpush.XGPushManager;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import butterknife.BindView;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 @FndViewInject(contentViewId = R.layout.activity_home_page)
@@ -43,6 +65,7 @@ public class HomePageActivity extends BaseActivity {
     private FeaturedFragment mFeaturedFragment;
     private MyShoppingCartFragment mShoppingCartFragment;
     private PersonalFragment mMyFragment;
+    private MsgReceiver mMsgReceiver;
 
     @Override
     protected void beforeSetContentView() {
@@ -69,8 +92,82 @@ public class HomePageActivity extends BaseActivity {
 
     @Override
     protected void initData() {
+        checkVersion();
+        initXGPush();
+    }
+
+    private void initXGPush() {
+        //开启信鸽的日志输出，线上版本不建议调用
+        XGPushConfig.enableDebug(this, true);
+        String token = XGPushConfig.getToken(this);
+        KLog.e("token:"+token);
+        //注册数据更新监听器
+        mMsgReceiver = new MsgReceiver();
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("com.shuiwangzhijia.shuidian.Receiver");
+        registerReceiver(mMsgReceiver, intentFilter);
+        XGPushManager.bindAccount(HomePageActivity.this, CommonUtils.getMobile());
+    }
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        fromNoticeMessage(intent);
+    }
+    private void fromNoticeMessage(Intent intent) {
+        int status = intent.getIntExtra("status", -1);
+        switch (status) {
+            case 1:
+   //             startActivity(new Intent(MainActivity.this, CouponActivity.class));
+                break;
+            case 2:
+                startActivity(new Intent(HomePageActivity.this, TicketActivity.class));
+                break;
+            case 3:
+                OrderManageActivity.startAtc(HomePageActivity.this, 0);
+                break;
+        }
+    }
+
+
+    private void checkVersion() {
+        RetrofitUtils.getInstances().create().getAppVersionInfo(0, 1).enqueue(new Callback<EntityObject<UpdateInfo>>() {
+            @Override
+            public void onResponse(Call<EntityObject<UpdateInfo>> call, Response<EntityObject<UpdateInfo>> response) {
+                EntityObject<UpdateInfo> body = response.body();
+                if (body.getCode() == 200) {
+                    UpdateInfo result = body.getResult();
+                    if (result == null) {
+                        return;
+                    }
+                    int download_type = result.getDownload_type();
+                    String versionName = CommonUtils.getAppVersionName(HomePageActivity.this);
+                    String version = result.getVersion();
+                    int isUpdate = -1;
+                    if (CommonUtils.isUpdate(version, versionName)) {
+                        //最新版本比当前高 建议更新
+                        isUpdate = 1;
+                    }
+                    if (CommonUtils.isUpdate(version, versionName)) {
+                        //支持的最低版本比当前高 强制更新
+                        isUpdate = 2;
+                    }
+                    if (isUpdate != -1) {
+                        UpdatingDialog updatingDialog = new UpdatingDialog(HomePageActivity.this, result, isUpdate, false,download_type);
+                        updatingDialog.show();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<EntityObject<UpdateInfo>> call, Throwable t) {
+
+            }
+        });
 
     }
+
 
     @Override
     protected void onResume() {
@@ -148,6 +245,33 @@ public class HomePageActivity extends BaseActivity {
         } else {
             mRedPoint.setVisibility(View.VISIBLE);
             mRedPoint.setText(redPointCounts + "");
+        }
+    }
+
+    /**
+     * 推送消息
+     */
+    public class MsgReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            XGNotification data = (XGNotification) intent.getSerializableExtra("data");
+            try {
+                JSONObject jsonObject = new JSONObject(data.getCustom_content());
+                String orderSn = jsonObject.getString("order_sn");
+                String address = jsonObject.getString("address");
+                NoticeDialog noticeDialog = new NoticeDialog(HomePageActivity.this, orderSn, address, new NoticeDialog.OnConfirmClickListener() {
+                    @Override
+                    public void onConfirm(Dialog dialog) {
+                        dialog.dismiss();
+                        OrderManageActivity.startAtc(HomePageActivity.this, 0);
+                    }
+                });
+                noticeDialog.show();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }

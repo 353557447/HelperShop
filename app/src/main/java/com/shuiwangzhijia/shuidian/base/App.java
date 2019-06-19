@@ -31,7 +31,7 @@ public class App extends Application {
         mApp = this;
         KLog.init(true);
         //讯飞
-        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5b96724d");
+        SpeechUtility.createUtility(this, SpeechConstant.APPID + "=5d09f7fa");
         initData();
         ToastUtils.init(this);
         initWeixin();

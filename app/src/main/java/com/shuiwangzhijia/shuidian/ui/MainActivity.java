@@ -2,10 +2,7 @@ package com.shuiwangzhijia.shuidian.ui;
 
 import com.shuiwangzhijia.shuidian.base.BaseAct;
 
-/**
- * 主页
- * created by wangsuli on 2018/8/17.
- */
+
 public class MainActivity extends BaseAct {
    /* private FragmentTabHost mainTabHost;
     private int index = 0;

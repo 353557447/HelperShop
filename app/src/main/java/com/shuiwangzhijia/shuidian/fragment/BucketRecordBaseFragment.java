@@ -39,10 +39,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 空桶记录 基础类
- * created by wangsuli on 2018/8/20.
- */
+
 public class BucketRecordBaseFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener, BucketRecordAdapter.OnRecyclerViewItemClickListener {
 
     @BindView(R.id.mRecyclerView)

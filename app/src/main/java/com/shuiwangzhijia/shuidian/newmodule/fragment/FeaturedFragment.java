@@ -1,7 +1,10 @@
 package com.shuiwangzhijia.shuidian.newmodule.fragment;
 
 
+import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -15,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.androidkun.xtablayout.XTabLayout;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.holder.Holder;
@@ -25,6 +29,7 @@ import com.lzy.okgo.callback.StringCallback;
 import com.lzy.okgo.model.Response;
 import com.lzy.okgo.request.base.Request;
 import com.shuiwangzhijia.shuidian.bean.RechargeCenterInfoBean;
+import com.shuiwangzhijia.shuidian.dialog.HintDialog;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 import com.shuiwangzhijia.shuidian.newmodule.activity.MyReturnMoneyNewActivity;
 import com.shuiwangzhijia.shuidian.newmodule.activity.MyWalletNewActivity;
@@ -109,7 +114,7 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
     @BindView(R.id.content_rv)
     RecyclerView mContentRv;
     @BindView(R.id.tabLayout)
-    TabLayout mTabLayout;
+    XTabLayout mTabLayout;
     @BindView(R.id.viewpager)
     ViewPager mViewpager;
     private List<BannerBean.DataBean.IndexBean> mIndex;
@@ -143,12 +148,10 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
         mTypeRv.setAdapter(mFeaturedTypeAdapter);
 
 
-
         adapter = new BaseFmAdapter(getChildFragmentManager(), pageList, titles);
         mViewpager.setAdapter(adapter);
         mTabLayout.setupWithViewPager(mViewpager);
     }
-
 
 
     @Override
@@ -206,7 +209,7 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
                     } else {
 
                     }
-                    if("您无权访问".equals(object.getString("msg"))){
+                    if ("您无权访问".equals(object.getString("msg"))) {
                         skipActivity(LoginActivity.class);
                     }
                 } catch (Exception e) {
@@ -260,18 +263,11 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
                         //getGoodsTypeContent(mGoodsTypeList.get(mFeaturedTypeAdapter.getSelectedItem()).getGtype());
                         titles.clear();
                         pageList.clear();
-                        for (FeaturedGoodsTypeBean.DataBean bean: mGoodsTypeList) {
+                        for (FeaturedGoodsTypeBean.DataBean bean : mGoodsTypeList) {
                             titles.add(bean.getT_name());
                             pageList.add(setFragment(bean.getGtype()));
                         }
-                 /*       titles.add("未知");
-                        pageList.add(setFragment("5"));
-                        titles.add("未知");
-                        pageList.add(setFragment("5"));
-                        titles.add("未知");
-                        pageList.add(setFragment("5"));*/
                         adapter.notifyDataSetChanged();
-
                     } else {
 
                     }
@@ -402,7 +398,7 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
 
     @OnClick({R.id.water_factory_policy, R.id.regular_list, //
             R.id.my_wallet, R.id.purchase_order, R.id.recharge_immediately,//
-            R.id.featured_middle_iv
+            R.id.featured_middle_iv,R.id.contact
     })
     public void onViewClicked(View view) {
         Bundle bundle;
@@ -429,6 +425,19 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
             case R.id.featured_middle_iv:
                 CenterActivity.startAct(mContext, 0);
                 break;
+            case R.id.contact:
+                HintDialog hintDialog = new HintDialog(mContext, "确认拨打电话？", new HintDialog.OnConfirmClickListener() {
+                    @Override
+                    public void onConfirm(Dialog dialog) {
+                        dialog.dismiss();
+                        Intent intent = new Intent(Intent.ACTION_DIAL);
+                        Uri data = Uri.parse("tel:" + CommonUtils.getWaterFactoryMobile());
+                        intent.setData(data);
+                        startActivity(intent);
+                    }
+                });
+                hintDialog.show();
+                break;
 
         }
     }
@@ -449,7 +458,7 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
                         List<RechargeCenterInfoBean.DataBean.ListBean> list = rechargeCenterInfoBean.getData().getList();
 
                         List<RechargeCenterInfoBean.DataBean.ListBean.RechargeBean> recharge = list.get(0).getRecharge();
-                        String regulation="";
+                        String regulation = "";
                         if (recharge != null && recharge.size() != 0) {
                             for (int i = 0; i < recharge.size(); i++) {
                                 RechargeCenterInfoBean.DataBean.ListBean.RechargeBean rechargeBean = recharge.get(0);
@@ -458,10 +467,10 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
 
                                 double sailAmountInt = Double.parseDouble(sailAmount);
                                 double ramountInt = Double.parseDouble(ramount);
-                                double gift = CalculateUtils.sub(ramountInt,sailAmountInt);
-                                regulation+= "充" + sailAmountInt + "赠" + gift;
+                                double gift = CalculateUtils.sub(ramountInt, sailAmountInt);
+                                regulation += "充" + sailAmountInt + "赠" + gift;
                             }
-                              mActInfoTv.setText(regulation);
+                            mActInfoTv.setText(regulation);
                         }
                     } else {
 
@@ -480,8 +489,6 @@ public class FeaturedFragment extends BaseLazyFragment implements FeaturedTypeAd
             }
         });
     }
-
-
 
 
     public class ImageViewHolder extends Holder<BannerBean.DataBean.IndexBean> {

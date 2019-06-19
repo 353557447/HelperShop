@@ -2,9 +2,7 @@ package com.shuiwangzhijia.shuidian.xinge;
 
 import java.io.Serializable;
 
-/**
- * Created by admin on 2017/2/13.
- */
+
 
 public class XGNotification implements Serializable {
     private Integer id;
