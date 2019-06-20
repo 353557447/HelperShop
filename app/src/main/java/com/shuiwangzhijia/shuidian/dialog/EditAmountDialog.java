@@ -17,9 +17,6 @@ import com.shuiwangzhijia.shuidian.utils.ToastUitl;
 import java.util.Timer;
 import java.util.TimerTask;
 
-/**
- * Created by wangsuli on 2017/11/9.
- */
 
 public class EditAmountDialog extends Dialog implements View.OnClickListener {
     private final TextView cutBtn, addBtn;

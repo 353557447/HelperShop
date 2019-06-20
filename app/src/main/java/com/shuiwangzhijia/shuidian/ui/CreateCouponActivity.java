@@ -26,10 +26,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 创建优惠券
- * created by wangsuli on 2018/10/11.
- */
 public class CreateCouponActivity extends BaseAct {
     @BindView(R.id.money)
     EditText money;

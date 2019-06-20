@@ -27,10 +27,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 客户明细
- * created by wangsuli on 2018/8/20.
- */
+
 public class CustomerDetailActivity extends BaseAct implements SwipeRefreshLayout.OnRefreshListener {
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;

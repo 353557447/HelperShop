@@ -34,10 +34,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 采购统计和订单统计页面
- * created by wangsuli on 2018/8/22.
- */
 public class CountActivity extends BaseAct implements Callback<EntityObject<ArrayList<CountBean>>> {
     public static final int TYPE_BUY = 0;
     public static final int TYPE_ORDER = 1;

@@ -14,10 +14,6 @@ import android.widget.Toast;
 import com.shuiwangzhijia.shuidian.R;
 
 
-/**
- * Created by wangsuli on 2017/11/9.
- */
-
 public class EditBucketCountDialog extends Dialog implements View.OnClickListener {
     private final TextView cutBtn, addBtn;
     private final EditText editNum;

@@ -31,10 +31,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 店铺优惠券
- * created by wangsuli on 2018/10/11.
- */
 public class ShopCouponActivity extends BaseAct implements SwipeRefreshLayout.OnRefreshListener, CouponAdapter.OnRecyclerViewItemClickListener {
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;

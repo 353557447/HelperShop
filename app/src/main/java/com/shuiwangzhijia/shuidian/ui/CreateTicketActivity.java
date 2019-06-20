@@ -31,10 +31,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 创建水票
- * created by wangsuli on 2018/10/11.
- */
 public class CreateTicketActivity extends BaseAct {
 
     @BindView(R.id.ticketName)

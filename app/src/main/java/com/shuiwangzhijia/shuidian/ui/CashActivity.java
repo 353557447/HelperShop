@@ -23,11 +23,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 提现页面
- * created by wangsuli on 2018/8/20.
- */
-
 @FndViewInject(contentViewId = R.layout.activity_cash, title = "提现")
 public class CashActivity extends BaseActivity {
     @BindView(R.id.editMoney)

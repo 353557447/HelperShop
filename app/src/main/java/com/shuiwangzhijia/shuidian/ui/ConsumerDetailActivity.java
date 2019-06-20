@@ -25,10 +25,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 消费明细
- * created by wangsuli on 2018/8/20.
- */
 @FndViewInject(contentViewId = R.layout.activity_consumer_detail, title = "收益明细")
 public class ConsumerDetailActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener {
     @BindView(R.id.recyclerView)

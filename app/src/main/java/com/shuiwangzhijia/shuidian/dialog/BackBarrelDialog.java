@@ -20,10 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 自营桶弹窗
- * Created by wangsuli on 2017/5/23.
- */
+
 public class BackBarrelDialog extends Dialog {
 
     private OnConfirmClickListener listener;

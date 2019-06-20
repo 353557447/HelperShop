@@ -8,12 +8,6 @@ import android.view.WindowManager;
 
 import com.shuiwangzhijia.shuidian.R;
 
-
-/**
- * 底部弹窗基类
- * Created by wangsuli on 2017/12/19.
- */
-
 public class BottomDialog extends Dialog {
     public final Window window;
     public final int width;

@@ -34,10 +34,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 空桶存欠记录页面
- * created by wangsuli on 2018/9/5.
- */
+
 public class BucketStoreOweActivity extends BaseAct {
     @BindView(R.id.name)
     TextView nameTv;

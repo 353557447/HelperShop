@@ -18,10 +18,7 @@ import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
-/**
- * 图片展示
- * Created by wangsuli on 2018/9/3.
- */
+
 
 public class PhotoViewActivity extends BaseAct {
 

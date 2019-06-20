@@ -15,10 +15,6 @@ import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.bean.GoodsBean;
 
 
-/**
- * Created by wangsuli on 2017/11/9.
- */
-
 public class EditPurchaseAmountDialog extends Dialog implements View.OnClickListener {
     private final TextView cutBtn, addBtn;
     private final EditText editNum;

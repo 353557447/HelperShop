@@ -8,10 +8,6 @@ import com.shuiwangzhijia.shuidian.R;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2018/12/28.
- */
-
 public class ShopQrDialog extends BottomDialog{
     public ShopQrDialog(Context context) {
         super(context);

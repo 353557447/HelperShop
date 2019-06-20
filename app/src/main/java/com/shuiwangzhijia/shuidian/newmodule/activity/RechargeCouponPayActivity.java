@@ -17,6 +17,7 @@ import com.shuiwangzhijia.shuidian.base.App;
 import com.shuiwangzhijia.shuidian.base.BaseActivity;
 import com.shuiwangzhijia.shuidian.base.FndViewInject;
 import com.shuiwangzhijia.shuidian.bean.PayBean;
+import com.shuiwangzhijia.shuidian.event.WechatPayFromWhichEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 import com.shuiwangzhijia.shuidian.ui.OrderPayActivity;
@@ -81,8 +82,7 @@ public class RechargeCouponPayActivity extends BaseActivity implements View.OnCl
                             skipActivity(MyWalletNewActivity.class);
                             finish();
                         } else {
-
-
+                            ToastUitl.showToastCustom("充值失败");
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -235,7 +235,7 @@ public class RechargeCouponPayActivity extends BaseActivity implements View.OnCl
         request.nonceStr = mSubmitOrderWxData.getNoncestr();
         request.timeStamp = mSubmitOrderWxData.getTimestamp() + "";
         request.sign = mSubmitOrderWxData.getSign();
-        //EventBus.getDefault().postSticky(new WeChatPaySuccessEvent(mOrderId, mOrderCode, "buy"));
+        EventBus.getDefault().postSticky(new WechatPayFromWhichEvent("RechargeCouponPayActivity"));
         wxapi.sendReq(request);//发送调起微信的请求
     }
 

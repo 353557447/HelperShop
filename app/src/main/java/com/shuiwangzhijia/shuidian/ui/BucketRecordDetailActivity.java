@@ -27,10 +27,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 空桶记录详情页面
- * created by wangsuli on 2018/10/17.
- */
 public class BucketRecordDetailActivity extends BaseAct {
 
     @BindView(R.id.recordName)

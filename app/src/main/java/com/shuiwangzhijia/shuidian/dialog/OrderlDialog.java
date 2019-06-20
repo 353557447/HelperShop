@@ -17,9 +17,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * created by xxc on 2019/3/26.
- */
 public class OrderlDialog extends BottomDialog implements OftenBuyAdapter.OnViewItemClickListener {
 
     private final Context mContext;

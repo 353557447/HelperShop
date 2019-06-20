@@ -11,11 +11,7 @@ import android.widget.TextView;
 import com.shuiwangzhijia.shuidian.R;
 
 
-/**
- * SelectImageDialog
- * 0表示拍照 1表示相册
- * Created by wangsuli on 2017/5/5
- */
+
 public class SelectImageDialog extends BottomDialog {
     private final Window window;
     private final int width;

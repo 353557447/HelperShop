@@ -52,6 +52,7 @@ import com.shuiwangzhijia.shuidian.bean.UseTicketBean;
 import com.shuiwangzhijia.shuidian.bean.ShopMarketData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import okhttp3.ResponseBody;
@@ -949,6 +950,23 @@ public interface AppService {
      */
     @GET("shop/v1.Rebateoperation/getOrderList")
     Call<Object> getMyReturnMoneyCheckOutList(@Query("did") int did,@Query("r_id") int r_id,@Query("start_time") long start_time,@Query("end_time") long end_time);
+
+    /**
+     * 结算返利
+     token	是	string	token
+     did	是	int	水厂id
+     r_id	是	int	水厂id
+     start_time	是	int	周期开始时间
+     end_time	是	int	周期结束时间
+     order_arr	是	int	订单数组
+     total_rebate	是	int	总返利总额
+     *
+     * @return
+     */
+    @POST("api/wtapis.CoffeeOrders/submitOrder")
+    @FormUrlEncoded
+    Call<Object> returnMoneyCheckOut(@Field("did") int did, @Field("r_id") int r_id, @Field("start_time") long start_time, @Field("end_time") long end_time, @Field("order_arr[]")List<Integer> orderArr, @Field("total_rebate")String total_rebate);
+
     /**
      * 我的返利底部信息
      token	是	string	token

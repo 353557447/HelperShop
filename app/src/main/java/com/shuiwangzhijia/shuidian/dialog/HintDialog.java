@@ -13,10 +13,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 提示框
- * created by wangsuli on 2018/8/20.
- */
 public class HintDialog extends BottomDialog {
 
     @BindView(R.id.contentTv)

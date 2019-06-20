@@ -33,11 +33,6 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-
-/**
- * 版本更新提示
- * Created by wangsuli on 2017/5/23.
- */
 public class UpdatingDialog extends Dialog {
 
     static final String TAG = UpdatingDialog.class.getSimpleName();

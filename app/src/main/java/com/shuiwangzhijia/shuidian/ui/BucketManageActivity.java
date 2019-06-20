@@ -13,10 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 空桶管理
- * created by wangsuli on 2018/10/17.
- */
+
 public class BucketManageActivity extends BaseAct {
 
     @BindView(R.id.buyBtn)

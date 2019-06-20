@@ -53,10 +53,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 确认订单页面
- * created by wangsuli on 2018/8/22.
- */
 public class ConfirmOrderActivity extends BaseAct {
     @BindView(R.id.name)
     TextView name;

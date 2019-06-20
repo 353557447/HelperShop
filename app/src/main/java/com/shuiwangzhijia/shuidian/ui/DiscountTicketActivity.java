@@ -49,10 +49,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 优惠水票 选择水票页面
- * created by wangsuli on 2018/9/26.
- */
 public class DiscountTicketActivity extends BaseAct implements SwipeRefreshLayout.OnRefreshListener, TicketAdapter.OnRecyclerViewItemClickListener {
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;

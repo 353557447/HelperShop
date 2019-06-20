@@ -9,9 +9,7 @@ import com.shuiwangzhijia.shuidian.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * created by xxc on 2019/3/26.
- */
+
 public class AddGoodsDialog extends BottomDialog {
 
     private final Context mContext;

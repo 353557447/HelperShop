@@ -25,9 +25,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * Created by wangsuli on 2017/6/2.
- */
 public class SelectImageActivity extends BaseAct implements AdapterView.OnItemClickListener, View.OnClickListener {
     public static final String LIMIT = "limit";//可选几张图片
     public static final int REQUEST_AVATAR = 110;  // 头像请求

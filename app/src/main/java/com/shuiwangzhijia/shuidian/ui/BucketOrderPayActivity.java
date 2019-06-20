@@ -38,10 +38,7 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-/**
- * 空桶订单支付页面
- * created by wangsuli on 2018/8/22.
- */
+
 public class BucketOrderPayActivity extends BaseAct {
     @BindView(R.id.bucketView)
     BucketView bucketView;

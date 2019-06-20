@@ -17,10 +17,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 時間
- * created by wangsuli on 2018/8/20.
- */
 public class DateDialog extends BottomDialog {
 
     @BindView(R.id.firstWheelView)

@@ -28,10 +28,6 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-/**
- * 选择商品
- * created by wangsuli on 2018/8/20.
- */
 public class SelectGoodsActivity extends BaseAct {
     @BindView(R.id.typeRecyclerView)
     RecyclerView typeRecyclerView;

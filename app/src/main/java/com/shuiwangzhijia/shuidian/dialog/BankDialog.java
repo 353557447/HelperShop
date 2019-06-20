@@ -10,9 +10,7 @@ import com.shuiwangzhijia.shuidian.adapter.BankAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * created by wangsuli on 2018/8/20.
- */
+
 public class BankDialog extends BottomDialog {
     private final BankAdapter mBankAdapter;
     @BindView(R.id.recyclerView)

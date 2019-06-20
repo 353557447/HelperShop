@@ -14,10 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 分享弹窗
- * created by wangsuli on 2018/8/20.
- */
+
 public class ShareDialog extends BottomDialog {
 
     private final GridLayoutManager layoutManager;
