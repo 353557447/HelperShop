@@ -17,10 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 空桶记录适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class BucketRecordAdapter extends RecyclerView.Adapter<BucketRecordAdapter.ViewHolder> {
     private final Context mContext;
 
@@ -84,7 +81,7 @@ public class BucketRecordAdapter extends RecyclerView.Adapter<BucketRecordAdapte
 
         } else {
             holder.type.setVisibility(View.GONE);
-            holder.shopName.setVisibility(View.VISIBLE);
+          //  holder.shopName.setVisibility(View.VISIBLE);
             holder.shopName.setText(item.getSname());
             String flag = "";
             switch (item.getStatus()) {

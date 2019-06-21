@@ -4,27 +4,28 @@
     android:layout_height="wrap_content"
     android:background="@color/color_ffffff"
     android:gravity="center_vertical"
-    android:orientation="horizontal"
-    android:padding="@dimen/dp_10">
+    android:orientation="vertical"
+    >
 
 
     <TextView
+        android:layout_gravity="center_horizontal"
         android:id="@+id/title"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:gravity="center_vertical"
-        android:paddingLeft="@dimen/dp_10"
         android:text="欠桶数量"
-        android:textColor="@color/color_666666"
+        android:textColor="#464444"
         android:textSize="@dimen/font_14" />
 
     <TextView
+        android:layout_marginTop="@dimen/margin16"
+        android:layout_gravity="center_horizontal"
         android:id="@+id/num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:text="100"
-        android:textColor="@color/color_666666"
+        android:textColor="#6A6868"
         android:textSize="@dimen/font_14" />
 </LinearLayout>

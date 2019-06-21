@@ -29,6 +29,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/shopName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -45,22 +46,24 @@
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:text="2018-10-17 12:35:50"
-            android:textColor="@color/color_999999"
+            android:textColor="@color/textGray"
             android:textSize="@dimen/font_13" />
 
     </LinearLayout>
 
     <View
+        android:visibility="gone"
         style="@style/line_vertical"
         android:layout_marginLeft="@dimen/dp_10" />
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="@dimen/dp_80"
         android:layout_height="match_parent"
         android:gravity="end"
         android:orientation="vertical">
 
         <TextView
+            android:layout_centerHorizontal="true"
             android:id="@+id/type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -71,15 +74,17 @@
             />
 
         <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/type"
             android:id="@+id/numTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="+12"
-            android:textColor="@color/color_333333"
+            android:textColor="@color/textBlack"
             android:textSize="@dimen/font_16"
-            android:textStyle="bold" />
-    </LinearLayout>
+            />
+    </RelativeLayout>
 
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.shuiwangzhijia.shuidian.R;
@@ -55,11 +56,11 @@ public class BucketOrderPayActivity extends BaseAct {
     //    @BindView(R.id.name)
 //    TextView name;
     @BindView(R.id.remove)
-    TextView remove;
+    RelativeLayout remove;
     @BindView(R.id.account)
     TextView account;
     @BindView(R.id.add)
-    TextView add;
+    RelativeLayout add;
     @BindView(R.id.moneyTv)
     TextView moneyTv;
     @BindView(R.id.can_use_yuer)

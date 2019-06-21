@@ -28,9 +28,7 @@ import java.util.List;
 
 import de.greenrobot.event.EventBus;
 
-/**
- * Created by xxc on 2019/4/2.
- */
+
 
 public class ShopcartItemAdapter extends RecyclerView.Adapter<ShopcartItemAdapter.ViewHolder> {
     private final Context mContext;

@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_60"
@@ -17,23 +18,31 @@
         android:textColor="@color/color_333333"
         android:textSize="@dimen/font_14" />
 
-    <View style="@style/line" />
+    <View
+        android:visibility="gone"
+        style="@style/line" />
 
     <android.support.v7.widget.RecyclerView
+        android:visibility="gone"
         android:id="@+id/rv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"></android.support.v7.widget.RecyclerView>
 
-    <android.support.design.widget.TabLayout
+    <com.androidkun.xtablayout.XTabLayout
+        android:background="@color/white"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        app:tabSelectedTextColor="#4D5C82"
-        app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabTextColor="#000000"
-        app:tabIndicatorColor="#4D5C82"></android.support.design.widget.TabLayout>
-
+        app:xTabMode="fixed"
+        app:xTabSelectedTextColor="@color/common_red"
+        app:xTabIndicatorHeight="@dimen/d2"
+        app:xTabIndicatorWidth="@dimen/d30"
+        app:xTabIndicatorColor="@color/common_red"
+        app:xTabTextColor="@color/textBlack"
+        ></com.androidkun.xtablayout.XTabLayout>
+    <View
+        style="@style/line" />
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"

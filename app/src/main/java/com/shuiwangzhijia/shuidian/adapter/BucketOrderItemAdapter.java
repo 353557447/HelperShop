@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -22,9 +23,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/2/18.
- */
 
 public class BucketOrderItemAdapter extends RecyclerView.Adapter<BucketOrderItemAdapter.ViewHolder> {
     private final Context mContext;
@@ -93,7 +91,7 @@ public class BucketOrderItemAdapter extends RecyclerView.Adapter<BucketOrderItem
         @BindView(R.id.policyHint)
         TextView mPolicyHint;
         @BindView(R.id.llPolicy)
-        LinearLayout mLlPolicy;
+        RelativeLayout mLlPolicy;
         public ViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);

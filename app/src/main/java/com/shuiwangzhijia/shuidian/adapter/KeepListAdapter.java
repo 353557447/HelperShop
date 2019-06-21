@@ -26,9 +26,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/4/1.
- */
+
 
 public class KeepListAdapter extends RecyclerView.Adapter<KeepListAdapter.ViewHolder> {
     private final Context mContext;

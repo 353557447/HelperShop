@@ -24,10 +24,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 空桶订单适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class BucketOrderAdapterNew extends RecyclerView.Adapter<BucketOrderAdapterNew.ViewHolder> {
     private final Context mContext;
     private final int type;//0 表示去购买空桶 1显示数量信息 2 修改购买数量

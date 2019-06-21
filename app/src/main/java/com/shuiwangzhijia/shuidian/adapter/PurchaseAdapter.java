@@ -22,10 +22,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 采购适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class PurchaseAdapter extends RecyclerView.Adapter<PurchaseAdapter.ViewHolder> {
     public static final int TYPE_ALL = 0;
     public static final int TYPE_ALL_1 = 1;

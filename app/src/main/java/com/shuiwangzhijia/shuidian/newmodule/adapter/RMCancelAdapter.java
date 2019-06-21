@@ -2,10 +2,12 @@ package com.shuiwangzhijia.shuidian.newmodule.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.shuiwangzhijia.shuidian.R;
@@ -39,7 +41,7 @@ public class RMCancelAdapter extends RecyclerView.Adapter<RMCancelAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        MyReturnMoneyListBean.DataBean.HistoryBean historyBean = data.get(position);
+        final MyReturnMoneyListBean.DataBean.HistoryBean historyBean = data.get(position);
         // 1单笔返利，2月度返利，3季度返利，4年度返利，5其他返利
         int rtype = historyBean.getRtype();
         switch (rtype) {
@@ -82,7 +84,13 @@ public class RMCancelAdapter extends RecyclerView.Adapter<RMCancelAdapter.ViewHo
         holder.mLijijiesuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int rId = historyBean.getR_id();
+                historyBean.getStart_time();
+
                 Intent intent=new Intent(mContext,SettleAccountsActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putInt("rId",rId);
+                intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
         });

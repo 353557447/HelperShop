@@ -17,10 +17,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 定位地址适配器
- * created by wangsuli on 2018/8/17.
- */
 public class LocationAdapter extends RecyclerView.Adapter<LocationAdapter.ViewHolder> {
     private final Context mContext;
 

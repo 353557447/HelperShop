@@ -17,10 +17,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 购物车适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class CustomerManageAdapter extends RecyclerView.Adapter<CustomerManageAdapter.ViewHolder> {
     private final Context mContext;
 

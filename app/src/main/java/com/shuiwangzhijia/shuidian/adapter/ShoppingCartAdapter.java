@@ -24,10 +24,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 购物车适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class ShoppingCartAdapter extends RecyclerView.Adapter<ShoppingCartAdapter.ViewHolder> implements SlidingButtonView.IonSlidingButtonListener {
     private final Context mContext;
 

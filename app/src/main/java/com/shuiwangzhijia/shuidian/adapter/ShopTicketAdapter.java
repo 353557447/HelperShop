@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 
 import com.shuiwangzhijia.shuidian.R;
 
-/**
- * Created by xxc on 2019/5/10.
- */
+
 
 public class ShopTicketAdapter extends RecyclerView.Adapter<ShopTicketAdapter.ViewHolder>{
     private Context mContext;

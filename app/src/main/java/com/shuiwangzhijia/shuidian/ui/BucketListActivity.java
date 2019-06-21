@@ -20,6 +20,8 @@ import com.shuiwangzhijia.shuidian.bean.BucketBean;
 import com.shuiwangzhijia.shuidian.event.PayFinishEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.utils.MeasureUtil;
+import com.shuiwangzhijia.shuidian.view.SpacesItemDecoration;
 
 import java.util.ArrayList;
 
@@ -59,9 +61,9 @@ public class BucketListActivity extends BaseAct implements SwipeRefreshLayout.On
         layoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-        DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg));
-        mRecyclerView.addItemDecoration(divider);
+      /*  DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
+        divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg));*/
+        mRecyclerView.addItemDecoration(new SpacesItemDecoration(this, MeasureUtil.dip2px(this,12)));
         bucketOrderAdapter = new BucketOrderAdapter(this, 0);
         bucketOrderAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapter(bucketOrderAdapter);

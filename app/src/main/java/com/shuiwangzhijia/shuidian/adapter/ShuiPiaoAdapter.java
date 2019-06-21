@@ -15,9 +15,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/2/19.
- */
 
 public class ShuiPiaoAdapter extends RecyclerView.Adapter<ShuiPiaoAdapter.ViewHolder> {
     private final Context mContext;

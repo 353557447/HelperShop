@@ -6,6 +6,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 
+import com.androidkun.xtablayout.XTabLayout;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.adapter.BaseFmAdapter;
 import com.shuiwangzhijia.shuidian.base.BaseAct;
@@ -18,13 +19,10 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 空桶订单
- * created by wangsuli on 2018/10/17.
- */
+
 public class BucketOrderActivity extends BaseAct {
     @BindView(R.id.tabLayout)
-    TabLayout tabLayout;
+    XTabLayout tabLayout;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
     private List<Fragment> pageList = new ArrayList<>();

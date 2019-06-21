@@ -16,10 +16,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 选择城市
- * created by wangsuli on 2018/9/27.
- */
 public class SelectCityAdapter extends RecyclerView.Adapter {
     private final Context mContext;
     private List<CityBean> data;

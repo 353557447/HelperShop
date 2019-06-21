@@ -13,9 +13,7 @@ import com.shuiwangzhijia.shuidian.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * created by wangsuli on 2018/8/17.
- */
+
 public class ManageAdapter extends RecyclerView.Adapter<ManageAdapter.ViewHolder> {
     private final Context mContext;
     private final String[] titles;

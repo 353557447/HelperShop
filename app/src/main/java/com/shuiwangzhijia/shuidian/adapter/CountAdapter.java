@@ -16,10 +16,6 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 统计适配器
- * created by wangsuli on 2018/8/17.
- */
 public class CountAdapter extends RecyclerView.Adapter<CountAdapter.ViewHolder> {
     private final Context mContext;
     private final boolean isOrder;

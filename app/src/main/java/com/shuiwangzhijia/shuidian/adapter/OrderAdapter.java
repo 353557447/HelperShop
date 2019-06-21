@@ -25,10 +25,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 订单适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.ViewHolder> {
     private final Context mContext;
     private final int type;

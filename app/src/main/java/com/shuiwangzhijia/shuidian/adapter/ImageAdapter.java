@@ -16,10 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 商家评论-图片集适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> {
     private final Context mContext;
     private final List<String> data;

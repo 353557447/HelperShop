@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 import com.shuiwangzhijia.shuidian.R;
 
 
-/**
- * Created by Administrator on 2019/4/1.
- */
 
 public class KeepListItemAdapter extends RecyclerView.Adapter<KeepListItemAdapter.ViewHolder> {
     private final Context mContext;

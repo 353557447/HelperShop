@@ -17,9 +17,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2018/12/5.
- */
+
 
 public class OrderDialogAdapter extends RecyclerView.Adapter<OrderDialogAdapter.ViewHolder> {
 

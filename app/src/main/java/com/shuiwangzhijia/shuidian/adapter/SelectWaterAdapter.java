@@ -22,9 +22,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/4/2.
- */
+
 
 public class SelectWaterAdapter extends RecyclerView.Adapter<SelectWaterAdapter.ViewHolder> {
     private final Context mContext;

@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -20,10 +21,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-/**
- * 空桶信息控件
- * created by wangsuli on 2018/10/17.
- */
+
 public class BucketView extends LinearLayout {
 
     @BindView(R.id.image)
@@ -41,7 +39,7 @@ public class BucketView extends LinearLayout {
     @BindView(R.id.policyHint)
     TextView policyHint;
     @BindView(R.id.llPolicy)
-    LinearLayout llPolicy;
+    RelativeLayout llPolicy;
     private Context context;
     private OnItemClickListener onItemClickListener;
     private BucketBean bean;

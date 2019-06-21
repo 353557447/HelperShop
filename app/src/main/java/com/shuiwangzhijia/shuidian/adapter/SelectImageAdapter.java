@@ -13,9 +13,7 @@ import com.shuiwangzhijia.shuidian.R;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by wangsuli on 2017/4/27.
- */
+
 public class SelectImageAdapter extends BaseAdapter {
     private final Context mContext;
     private List<AlbumItem> albumList;

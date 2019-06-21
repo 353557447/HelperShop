@@ -6,12 +6,14 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.androidkun.xtablayout.XTabLayout;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.adapter.BaseFmAdapter;
 import com.shuiwangzhijia.shuidian.adapter.ShopMarketItemAdapter;
@@ -45,7 +47,7 @@ public class BucketRecordActivity extends BaseAct {
     @BindView(R.id.recordBtn)
     TextView recordBtn;
     @BindView(R.id.tabLayout)
-    TabLayout tabLayout;
+    XTabLayout tabLayout;
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     @BindView(R.id.selectShop)
@@ -148,7 +150,7 @@ public class BucketRecordActivity extends BaseAct {
 
     private void initRecyclerView() {
         layoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(layoutManager);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this,5));
         mRecyclerView.setHasFixedSize(true);
         mShopMarketItemAdapter = new ShopMarketItemAdapter(this, true);
         mRecyclerView.setAdapter(mShopMarketItemAdapter);

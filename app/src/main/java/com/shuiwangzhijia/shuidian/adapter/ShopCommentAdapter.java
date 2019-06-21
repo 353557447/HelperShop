@@ -23,10 +23,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 商家评论适配器
- * created by wangsuli on 2018/8/21.
- */
+
 public class ShopCommentAdapter extends RecyclerView.Adapter<ShopCommentAdapter.ViewHolder> {
     private final Context mContext;
 

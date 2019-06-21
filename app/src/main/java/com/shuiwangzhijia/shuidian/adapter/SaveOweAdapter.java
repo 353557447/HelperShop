@@ -19,9 +19,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/2/14.
- */
+
 
 public class SaveOweAdapter extends RecyclerView.Adapter<SaveOweAdapter.ViewHolder> {
     private final ArrayList<SaveOweBean> mData;

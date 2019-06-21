@@ -13,10 +13,7 @@ import com.shuiwangzhijia.shuidian.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 商品类型适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class BankAdapter extends RecyclerView.Adapter<BankAdapter.ViewHolder> {
     private final Context mContext;
     private final String[] bankNames;

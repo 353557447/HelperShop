@@ -19,10 +19,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 添加自营桶适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class TianjiaShuipiaoAdapter extends RecyclerView.Adapter<TianjiaShuipiaoAdapter.ViewHolder> {
     private final Context mContext;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;

@@ -2,57 +2,96 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/color_f5f5f5"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/buyBtn"
+    <LinearLayout
+        android:layout_marginTop="@dimen/d30"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/color_ffffff"
-        android:drawableRight="@drawable/choose"
-        android:drawableLeft="@drawable/goumai"
-        android:drawablePadding="10dp"
-        android:gravity="center_vertical"
-        android:paddingLeft="@dimen/dp_10"
-        android:paddingRight="@dimen/dp_10"
-        android:text="购买空桶"
-        android:textColor="@color/color_333333"
-        android:textSize="@dimen/font_14" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-    <View style="@style/line" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/buyBtn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/recordBtn"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:background="@color/color_ffffff"
-        android:drawableRight="@drawable/choose"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/jilu"
-        android:drawablePadding="10dp"
-        android:paddingLeft="@dimen/dp_10"
-        android:paddingRight="@dimen/dp_10"
-        android:text="空桶记录"
-        android:textColor="@color/color_333333"
-        android:textSize="@dimen/font_14" />
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/buy_empty_bucket_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:text="购买空桶"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
 
-    <View style="@style/line" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/recordBtn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/orderBtn"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:background="@color/color_ffffff"
-        android:drawableRight="@drawable/choose"
-        android:gravity="center_vertical"
-        android:drawableLeft="@drawable/dingdan"
-        android:drawablePadding="10dp"
-        android:paddingLeft="@dimen/dp_10"
-        android:paddingRight="@dimen/dp_10"
-        android:text="空桶订单"
-        android:textColor="@color/color_333333"
-        android:textSize="@dimen/font_14" />
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/empty_bucket_manage_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:text="空桶管理"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:id="@+id/orderBtn"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/empty_bucket_order_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textStyle="bold"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_10"
+                android:paddingRight="@dimen/dp_10"
+                android:text="空桶订单"
+                android:textColor="@color/color_333333"
+                android:textSize="@dimen/font_14" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

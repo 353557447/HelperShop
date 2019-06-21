@@ -183,7 +183,7 @@ public class BucketRecordBaseFragment extends BaseFragment implements SwipeRefre
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
         DividerItemDecoration divider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
-        divider.setDrawable(getActivity().getResources().getDrawable(R.drawable.divider_bg));
+        divider.setDrawable(getActivity().getResources().getDrawable(R.drawable.divider_line));
         mRecyclerView.addItemDecoration(divider);
         mBucketRecordAdapter = new BucketRecordAdapter(getActivity(), fromStoreOwe);
         mBucketRecordAdapter.setOnItemClickListener(this);

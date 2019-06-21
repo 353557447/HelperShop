@@ -27,10 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 水票适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class TicketAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private final Context mContext;
 

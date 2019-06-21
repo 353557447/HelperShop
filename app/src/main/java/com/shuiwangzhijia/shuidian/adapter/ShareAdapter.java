@@ -13,9 +13,7 @@ import com.shuiwangzhijia.shuidian.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * created by wangsuli on 2018/8/17.
- */
+
 public class ShareAdapter extends RecyclerView.Adapter<ShareAdapter.ViewHolder> {
     private final Context mContext;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;

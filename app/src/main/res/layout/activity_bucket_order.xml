@@ -5,19 +5,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.TabLayout
+    <com.androidkun.xtablayout.XTabLayout
+        android:background="@color/white"
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
-        android:layout_marginBottom="@dimen/dp_10"
-        android:layout_marginTop="@dimen/dp_10"
-        android:background="@color/color_ffffff"
-        app:tabSelectedTextColor="#4D5C82"
-        app:tabTextAppearance="@style/TabLayoutTextStyle"
-        app:tabTextColor="#000000"
-        app:tabIndicatorColor="#4D5C82">
+        app:xTabMode="fixed"
+        app:xTabSelectedTextColor="@color/common_red"
+        app:xTabIndicatorHeight="@dimen/d2"
+        app:xTabIndicatorWidth="@dimen/d30"
+        app:xTabIndicatorColor="@color/common_red"
+        app:xTabTextColor="@color/textBlack"
+        ></com.androidkun.xtablayout.XTabLayout>
 
-    </android.support.design.widget.TabLayout>
+    <TextView
+        android:background="@color/lineColor"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"

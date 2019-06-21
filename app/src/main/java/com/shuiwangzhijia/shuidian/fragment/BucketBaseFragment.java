@@ -23,7 +23,9 @@ import com.shuiwangzhijia.shuidian.event.PayFinishEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 import com.shuiwangzhijia.shuidian.ui.DetermineBuyActivity;
+import com.shuiwangzhijia.shuidian.utils.MeasureUtil;
 import com.shuiwangzhijia.shuidian.utils.ToastUitl;
+import com.shuiwangzhijia.shuidian.view.SpacesItemDecoration;
 import com.socks.library.KLog;
 
 import java.util.ArrayList;
@@ -134,9 +136,9 @@ public class BucketBaseFragment extends BaseFragment implements SwipeRefreshLayo
         layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-        DividerItemDecoration divider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
-        divider.setDrawable(getActivity().getResources().getDrawable(R.drawable.divider_bg));
-        mRecyclerView.addItemDecoration(divider);
+      /*  DividerItemDecoration divider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+        divider.setDrawable(getActivity().getResources().getDrawable(R.drawable.divider_bg));*/
+        mRecyclerView.addItemDecoration(new SpacesItemDecoration(getActivity(), MeasureUtil.dip2px(getActivity(),12)));
         mBucketOrderAdapter = new BucketOrderAdapterNew(getActivity(), type);
         mBucketOrderAdapter.setOnItemClickListener(this);
         mRecyclerView.setAdapter(mBucketOrderAdapter);

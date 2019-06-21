@@ -2,6 +2,7 @@ package com.shuiwangzhijia.shuidian.newmodule.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -82,7 +83,11 @@ public class RmUnderwayAdapter extends RecyclerView.Adapter<RmUnderwayAdapter.Vi
         holder.mLijijiesuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int rId = data.get(position).getR_id();
                 Intent intent=new Intent(mContext,SettleAccountsActivity.class);
+                Bundle bundle=new Bundle();
+                bundle.putInt("rId",rId);
+                intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
         });

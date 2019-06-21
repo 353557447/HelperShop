@@ -18,9 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2018/12/7.
- */
+
 
 public class OperationHuiShouAdapter extends RecyclerView.Adapter<OperationHuiShouAdapter.ViewHolder> {
     private final Context mContext;

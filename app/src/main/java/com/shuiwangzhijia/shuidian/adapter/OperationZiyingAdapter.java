@@ -18,9 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2018/12/12.
- */
+
 
 public class OperationZiyingAdapter extends RecyclerView.Adapter<OperationZiyingAdapter.ViewHolder> {
 

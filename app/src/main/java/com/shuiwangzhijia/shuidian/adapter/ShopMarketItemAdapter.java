@@ -16,10 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 营销内部 和 空桶管理统计数据 item适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class ShopMarketItemAdapter extends RecyclerView.Adapter<ShopMarketItemAdapter.ViewHolder> {
     private final Context mContext;
     private boolean ticketMangeFlag = false;
@@ -50,7 +47,7 @@ public class ShopMarketItemAdapter extends RecyclerView.Adapter<ShopMarketItemAd
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.itemView.setBackgroundResource(ticketMangeFlag ? R.color.color_f5f5f5 : R.color.color_ffffff);
+       // holder.itemView.setBackgroundResource(ticketMangeFlag ? R.color.color_f5f5f5 : R.color.color_ffffff);
         ShopMarketBean item = getItem(position);
         holder.title.setText(item.getTitle());
         holder.num.setText(item.getNum());

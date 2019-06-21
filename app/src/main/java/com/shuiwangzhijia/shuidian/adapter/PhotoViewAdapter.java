@@ -17,9 +17,7 @@ import java.util.List;
 
 import uk.co.senab.photoview.PhotoView;
 
-/**
- * Created by wangsuli on 2018/9/3.
- */
+
 public class PhotoViewAdapter extends PagerAdapter {
     public static final String TAG = PhotoViewAdapter.class.getSimpleName();
 

@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 
 import com.shuiwangzhijia.shuidian.R;
 
-/**
- * Created by xxc on 2019/4/2.
- */
+
 
 public class AddGoodsAdapter extends RecyclerView.Adapter<AddGoodsAdapter.ViewHolder>{
     private final Context mContext;

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.shuiwangzhijia.shuidian.R;
@@ -17,11 +18,11 @@ import butterknife.OnClick;
 public class BucketManageActivity extends BaseAct {
 
     @BindView(R.id.buyBtn)
-    TextView buyBtn;
+    LinearLayout buyBtn;
     @BindView(R.id.recordBtn)
-    TextView recordBtn;
+    LinearLayout recordBtn;
     @BindView(R.id.orderBtn)
-    TextView orderBtn;
+    LinearLayout orderBtn;
 
 
     @Override

@@ -23,9 +23,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
-/**
- * Created by xxc on 2019/4/2.
- */
+
 
 public class ShopcartAdapter extends RecyclerView.Adapter<ShopcartAdapter.ViewHolder> {
     private final Context mContext;

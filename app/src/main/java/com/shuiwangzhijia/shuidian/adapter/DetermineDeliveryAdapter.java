@@ -15,9 +15,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * Created by xxc on 2019/3/13.
- */
+
 
 public class DetermineDeliveryAdapter extends RecyclerView.Adapter<DetermineDeliveryAdapter.ViewHolder> {
     private final Context mContext;

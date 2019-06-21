@@ -15,10 +15,7 @@ import com.shuiwangzhijia.shuidian.bean.ShopMarketData;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 店铺营销适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class ShopMarketAdapter extends RecyclerView.Adapter<ShopMarketAdapter.ViewHolder> {
     private final Context mContext;
 

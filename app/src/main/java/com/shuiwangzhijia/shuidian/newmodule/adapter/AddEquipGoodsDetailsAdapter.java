@@ -19,9 +19,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-/**
- * Created by xxc on 2019/3/29.
- */
+
 
 public class AddEquipGoodsDetailsAdapter extends RecyclerView.Adapter<AddEquipGoodsDetailsAdapter.ViewHolder> {
     private Context mContext;

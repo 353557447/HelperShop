@@ -11,7 +11,12 @@ import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.BaseActivity;
 import com.shuiwangzhijia.shuidian.base.FndViewInject;
 import com.shuiwangzhijia.shuidian.bean.RMCheckOutOrderListBean;
+import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.utils.CommonUtils;
 import com.shuiwangzhijia.shuidian.view.MyScrollView;
+import com.socks.library.KLog;
+
+import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -19,6 +24,9 @@ import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 @FndViewInject(contentViewId = R.layout.activity_settle_accounts)
 public class SettleAccountsActivity extends BaseActivity {
@@ -42,6 +50,7 @@ public class SettleAccountsActivity extends BaseActivity {
     RelativeLayout mBackReturn;
     @BindView(R.id.title_bar_rl)
     RelativeLayout mTitleBarRl;
+    private int mRId;
 
     @Override
     protected void beforeSetContentView() {
@@ -50,12 +59,47 @@ public class SettleAccountsActivity extends BaseActivity {
 
     @Override
     protected void initView() {
+        mRId = getIntent().getExtras().getInt("rId");
         setBaseBarHide();
     }
 
     @Override
     protected void initData() {
+        getData();
+    }
 
+    private void getData() {
+      /*  did	是	int	水厂id
+        r_id	是	int	水厂id
+        start_time	是	int	周期开始时间
+        end_time	是	int	周期结束时间*/
+      /*  showLoadingDialog();
+        RetrofitUtils.getInstances().create().getMyReturnMoneyCheckOutList(CommonUtils.getDid(),mRId).enqueue(new Callback<Object>() {
+            @Override
+            public void onResponse(Call<Object> call, Response<Object> response) {
+                try {
+                    String datas = mGson.toJson(response.body());
+                    KLog.e(datas);
+                    JSONObject object =new JSONObject(datas);
+                    int code = object.getInt("code");
+                    if(code==200){
+
+                    }else{
+
+                    }
+                } catch (Exception e) {
+                    KLog.e(e.getMessage());
+                }finally {
+                    dismissLoadingDialog();
+                }
+            }
+            @Override
+            public void onFailure(Call<Object> call, Throwable t) {
+                showErrorToast();
+                KLog.e(t.getMessage());
+                dismissLoadingDialog();
+            }
+        });*/
     }
 
     @Override
@@ -68,7 +112,6 @@ public class SettleAccountsActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.time:
               //  RMCheckOutOrderListBean
-                initTimePickView();
                 break;
             case R.id.payBtn:
                 break;
@@ -76,25 +119,5 @@ public class SettleAccountsActivity extends BaseActivity {
                 closeActivity();
                 break;
         }
-    }
-
-    private void initTimePickView() {
-        //时间选择器
-        TimePickerView pvTime = new TimePickerView.Builder(this, new TimePickerView.OnTimeSelectListener() {
-            @Override
-            public void onTimeSelect(Date date, View v) {//选中事件回调
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM");
-                String format = sdf.format(date);
-               // monthTime = DateUtils.getMonthTime("" + format.split("-")[0] + "-" + format.split("-")[1] + "-01 00:00:00");
-                mTime.setText(format.split("-")[0] + "年" + format.split("-")[1] + "月");
-            }
-        }).setType(new boolean[]{true, true, false, false, false, false})// 默认全部显示
-                .setLabel("年     ","月     ","","","","")
-                .setCancelColor(Color.parseColor("#FE0233"))
-                .setSubmitColor(Color.parseColor("#FE0233"))
-                .setSubmitText("完成")
-                .build();
-        pvTime.setDate(Calendar.getInstance());//注：根据需求来决定是否使用该方法（一般是精确到秒的情况），此项可以在弹出选择器的时候重新设置当前时间，避免在初始化之后由于时间已经设定，导致选中时间与当前时间不匹配的问题。
-        pvTime.show();
     }
 }

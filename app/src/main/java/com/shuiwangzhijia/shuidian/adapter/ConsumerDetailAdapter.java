@@ -17,10 +17,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 消费明细适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class ConsumerDetailAdapter extends RecyclerView.Adapter<ConsumerDetailAdapter.ViewHolder> {
     private final Context mContext;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;

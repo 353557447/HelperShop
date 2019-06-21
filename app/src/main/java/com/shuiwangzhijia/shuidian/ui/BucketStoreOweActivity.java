@@ -11,6 +11,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.TextView;
 
+import com.androidkun.xtablayout.XTabLayout;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.adapter.BaseFmAdapter;
 import com.shuiwangzhijia.shuidian.adapter.SaveOweAdapter;
@@ -39,7 +40,7 @@ public class BucketStoreOweActivity extends BaseAct {
     @BindView(R.id.name)
     TextView nameTv;
     @BindView(R.id.tabLayout)
-    TabLayout tabLayout;
+    XTabLayout tabLayout;
     @BindView(R.id.viewpager)
     ViewPager viewPager;
     @BindView(R.id.rv)

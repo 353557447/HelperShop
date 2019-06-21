@@ -7,9 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-/**
- * Created by wangsuli on 2017/12/12.
- */
+
 public class BaseFmAdapter<T> extends FragmentPagerAdapter {
     public void setList(List<Fragment> list,List<T> titles) {
         this.list = list;

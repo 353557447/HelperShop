@@ -16,10 +16,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-/**
- * 商品类型适配器
- * created by wangsuli on 2018/8/17.
- */
+
 public class WaterPlantAdapter extends RecyclerView.Adapter<WaterPlantAdapter.ViewHolder> {
     private final Context mContext;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
