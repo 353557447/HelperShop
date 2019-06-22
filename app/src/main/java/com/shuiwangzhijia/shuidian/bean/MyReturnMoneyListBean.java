@@ -1,8 +1,9 @@
 package com.shuiwangzhijia.shuidian.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class MyReturnMoneyListBean {
+public class MyReturnMoneyListBean implements Serializable{
 
 
     /**
@@ -49,7 +50,7 @@ public class MyReturnMoneyListBean {
         this.scode = scode;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         private List<HistoryBean> history;
         private List<ConductBean> conduct;
 
@@ -69,7 +70,7 @@ public class MyReturnMoneyListBean {
             this.conduct = conduct;
         }
 
-        public static class HistoryBean {
+        public static class HistoryBean implements Serializable {
             /**
              * r_id : 154469
              * r_way : 1
@@ -224,7 +225,7 @@ public class MyReturnMoneyListBean {
                 this.time = time;
             }
 
-            public static class RuleDetailBean {
+            public static class RuleDetailBean implements Serializable{
                 /**
                  * order : 1
                  * detail : [{"gid":"","s_gid":0,"full":5,"amount":"0.02","snum":0,"gname":null,"s_name":null}]
@@ -249,7 +250,7 @@ public class MyReturnMoneyListBean {
                     this.detail = detail;
                 }
 
-                public static class DetailBean {
+                public static class DetailBean implements Serializable{
                     /**
                      * gid :
                      * s_gid : 0
@@ -265,8 +266,8 @@ public class MyReturnMoneyListBean {
                     private int full;
                     private String amount;
                     private int snum;
-                    private Object gname;
-                    private Object s_name;
+                    private String gname;
+                    private String s_name;
 
                     public String getGid() {
                         return gid;
@@ -308,19 +309,19 @@ public class MyReturnMoneyListBean {
                         this.snum = snum;
                     }
 
-                    public Object getGname() {
+                    public String getGname() {
                         return gname;
                     }
 
-                    public void setGname(Object gname) {
+                    public void setGname(String gname) {
                         this.gname = gname;
                     }
 
-                    public Object getS_name() {
+                    public String getS_name() {
                         return s_name;
                     }
 
-                    public void setS_name(Object s_name) {
+                    public void setS_name(String s_name) {
                         this.s_name = s_name;
                     }
                 }
@@ -382,34 +383,53 @@ public class MyReturnMoneyListBean {
                 }
             }
 
-            public static class TimeBean {
+            public static class TimeBean implements Serializable{
                 /**
                  * timeStamp : 1558108800
                  * time_array : [1557763200,1558108800]
                  */
 
-                private int timeStamp;
-                private List<Integer> time_array;
+                private long timeStamp;
+                private List<Long> time_array;
+                private String time;
 
-                public int getTimeStamp() {
+                public String getTime() {
+                    return time;
+                }
+
+                public void setTime(String time) {
+                    this.time = time;
+                }
+
+                public long getEnd_time() {
+                    return end_time;
+                }
+
+                public void setEnd_time(long end_time) {
+                    this.end_time = end_time;
+                }
+
+                private long end_time;
+
+                public long getTimeStamp() {
                     return timeStamp;
                 }
 
-                public void setTimeStamp(int timeStamp) {
+                public void setTimeStamp(long timeStamp) {
                     this.timeStamp = timeStamp;
                 }
 
-                public List<Integer> getTime_array() {
+                public List<Long> getTime_array() {
                     return time_array;
                 }
 
-                public void setTime_array(List<Integer> time_array) {
+                public void setTime_array(List<Long> time_array) {
                     this.time_array = time_array;
                 }
             }
         }
 
-        public static class ConductBean {
+        public static class ConductBean implements Serializable{
             /**
              * r_id : 154474
              * r_way : 2
@@ -442,7 +462,7 @@ public class MyReturnMoneyListBean {
             private String not_deal_rebate;
             private RuleDetailBeanX rule_detail;
             private RebateBeanX rebate;
-            private List<?> time;
+            private List<TimeBean> time;
 
             public int getR_id() {
                 return r_id;
@@ -556,15 +576,60 @@ public class MyReturnMoneyListBean {
                 this.rebate = rebate;
             }
 
-            public List<?> getTime() {
+            public List<TimeBean> getTime() {
                 return time;
             }
 
-            public void setTime(List<?> time) {
+            public void setTime(List<TimeBean> time) {
                 this.time = time;
             }
 
-            public static class RuleDetailBeanX {
+
+            public static class TimeBean implements Serializable{
+                /**
+                 * timeStamp : 1558108800
+                 * time_array : [1557763200,1558108800]
+                 */
+
+                private long timeStamp;
+                private List<Long> time_array;
+                private long end_time;
+                private String time;
+
+                public String getTime() {
+                    return time;
+                }
+
+                public void setTime(String time) {
+                    this.time = time;
+                }
+
+                public long getEnd_time() {
+                    return end_time;
+                }
+
+                public void setEnd_time(long end_time) {
+                    this.end_time = end_time;
+                }
+
+                public long getTimeStamp() {
+                    return timeStamp;
+                }
+
+                public void setTimeStamp(long timeStamp) {
+                    this.timeStamp = timeStamp;
+                }
+
+                public List<Long> getTime_array() {
+                    return time_array;
+                }
+
+                public void setTime_array(List<Long> time_array) {
+                    this.time_array = time_array;
+                }
+            }
+
+            public static class RuleDetailBeanX implements Serializable{
                 /**
                  * order : 1
                  * detail : [{"gid":"","s_gid":56599428,"full":3,"amount":"0.00","snum":3,"gname":null,"s_name":"财富（仅供测试）水票"},{"gid":"","s_gid":56599639,"full":5,"amount":"0.00","snum":2,"gname":null,"s_name":"幸福水票"}]
@@ -589,7 +654,7 @@ public class MyReturnMoneyListBean {
                     this.detail = detail;
                 }
 
-                public static class DetailBeanX {
+                public static class DetailBeanX implements Serializable{
                     /**
                      * gid :
                      * s_gid : 56599428
@@ -605,7 +670,7 @@ public class MyReturnMoneyListBean {
                     private int full;
                     private String amount;
                     private int snum;
-                    private Object gname;
+                    private String gname;
                     private String s_name;
 
                     public String getGid() {
@@ -648,11 +713,11 @@ public class MyReturnMoneyListBean {
                         this.snum = snum;
                     }
 
-                    public Object getGname() {
+                    public String getGname() {
                         return gname;
                     }
 
-                    public void setGname(Object gname) {
+                    public void setGname(String gname) {
                         this.gname = gname;
                     }
 
@@ -666,7 +731,7 @@ public class MyReturnMoneyListBean {
                 }
             }
 
-            public static class RebateBeanX {
+            public static class RebateBeanX implements Serializable{
                 /**
                  * amount : 0
                  * snum : 0

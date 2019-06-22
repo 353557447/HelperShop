@@ -949,7 +949,7 @@ public interface AppService {
      * @return
      */
     @GET("shop/v1.Rebateoperation/getOrderList")
-    Call<Object> getMyReturnMoneyCheckOutList(@Query("did") int did,@Query("r_id") int r_id,@Query("start_time") long start_time,@Query("end_time") long end_time);
+    Call<Object> getMyReturnMoneyCheckOutList(@Query("did") String did,@Query("r_id") int r_id,@Query("start_time") long start_time,@Query("end_time") long end_time);
 
     /**
      * 结算返利
@@ -963,9 +963,9 @@ public interface AppService {
      *
      * @return
      */
-    @POST("api/wtapis.CoffeeOrders/submitOrder")
+    @POST("shop/v1.Rebateoperation/confirmRebate")
     @FormUrlEncoded
-    Call<Object> returnMoneyCheckOut(@Field("did") int did, @Field("r_id") int r_id, @Field("start_time") long start_time, @Field("end_time") long end_time, @Field("order_arr[]")List<Integer> orderArr, @Field("total_rebate")String total_rebate);
+    Call<Object> returnMoneyCheckOut(@Field("did") String did, @Field("r_id") int r_id, @Field("start_time") long start_time, @Field("end_time") long end_time, @Field("order_arr[]")List<String> orderArr, @Field("total_rebate")String total_rebate);
 
     /**
      * 我的返利底部信息

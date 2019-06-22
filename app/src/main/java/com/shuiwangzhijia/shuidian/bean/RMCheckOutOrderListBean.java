@@ -72,16 +72,16 @@ public class RMCheckOutOrderListBean {
              * rebate_details : [{"gnum":"21","rule":"[{\"full\":1,\"amount\":\"1.00\",\"type\":2}]","amount":21,"snum":0,"gid":"","s_gid":""}]
              */
 
-            private int amount;
+            private double amount;
             private int snum;
-            private String goods_num;
+            private int goods_num;
             private List<RebateDetailsBean> rebate_details;
 
-            public int getAmount() {
+            public double getAmount() {
                 return amount;
             }
 
-            public void setAmount(int amount) {
+            public void setAmount(double amount) {
                 this.amount = amount;
             }
 
@@ -93,11 +93,11 @@ public class RMCheckOutOrderListBean {
                 this.snum = snum;
             }
 
-            public String getGoods_num() {
+            public int getGoods_num() {
                 return goods_num;
             }
 
-            public void setGoods_num(String goods_num) {
+            public void setGoods_num(int goods_num) {
                 this.goods_num = goods_num;
             }
 
@@ -187,7 +187,7 @@ public class RMCheckOutOrderListBean {
              */
 
             private String order_sn;
-            private int create_time;
+            private long create_time;
             private String goods_num;
             private int amount;
             private int snum;
@@ -201,11 +201,11 @@ public class RMCheckOutOrderListBean {
                 this.order_sn = order_sn;
             }
 
-            public int getCreate_time() {
+            public long getCreate_time() {
                 return create_time;
             }
 
-            public void setCreate_time(int create_time) {
+            public void setCreate_time(long create_time) {
                 this.create_time = create_time;
             }
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     android:orientation="vertical"
     tools:context="com.shuiwangzhijia.shuidian.newmodule.activity.SettleAccountsActivity">
 
@@ -70,7 +71,6 @@
                             android:layout_marginLeft="@dimen/margin20"
                             android:layout_marginRight="@dimen/margin20"
                             android:layout_marginTop="@dimen/margin10"
-                            android:text="规则内容规则内容规则内容规则内容规则内容规则内容规则内容 规则内容规"
                             android:textColor="@color/white" />
                     </LinearLayout>
                 </RelativeLayout>
@@ -81,6 +81,7 @@
                     android:descendantFocusability="blocksDescendants">
 
                     <android.support.v7.widget.RecyclerView
+                        android:nestedScrollingEnabled="false"
                         android:id="@+id/rv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>

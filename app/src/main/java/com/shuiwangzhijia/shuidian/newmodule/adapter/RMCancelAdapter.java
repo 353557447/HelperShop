@@ -14,6 +14,7 @@ import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.bean.MyReturnMoneyListBean;
 import com.shuiwangzhijia.shuidian.newmodule.activity.SettleAccountsActivity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -90,6 +91,13 @@ public class RMCancelAdapter extends RecyclerView.Adapter<RMCancelAdapter.ViewHo
                 Intent intent=new Intent(mContext,SettleAccountsActivity.class);
                 Bundle bundle=new Bundle();
                 bundle.putInt("rId",rId);
+                bundle.putInt("rType",historyBean.getRtype());
+                bundle.putInt("rWay",historyBean.getR_way());
+                bundle.putInt("rRule",historyBean.getRule());
+                bundle.putInt("rBasis",historyBean.getRbasis());
+                bundle.putSerializable("timeCancel",(Serializable) historyBean.getTime());
+                bundle.putSerializable("ruleDetailsCancel",(Serializable) historyBean.getRule_detail());
+                bundle.putInt("type",0);
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }

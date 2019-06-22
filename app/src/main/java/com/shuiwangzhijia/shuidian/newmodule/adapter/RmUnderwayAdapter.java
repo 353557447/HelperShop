@@ -13,6 +13,7 @@ import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.bean.MyReturnMoneyListBean;
 import com.shuiwangzhijia.shuidian.newmodule.activity.SettleAccountsActivity;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -39,7 +40,7 @@ public class RmUnderwayAdapter extends RecyclerView.Adapter<RmUnderwayAdapter.Vi
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        MyReturnMoneyListBean.DataBean.ConductBean conductBean = data.get(position);
+        final MyReturnMoneyListBean.DataBean.ConductBean conductBean = data.get(position);
        // 1单笔返利，2月度返利，3季度返利，4年度返利，5其他返利
         int rtype = conductBean.getRtype();
         switch (rtype){
@@ -83,10 +84,17 @@ public class RmUnderwayAdapter extends RecyclerView.Adapter<RmUnderwayAdapter.Vi
         holder.mLijijiesuan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int rId = data.get(position).getR_id();
+                int rId = conductBean.getR_id();
                 Intent intent=new Intent(mContext,SettleAccountsActivity.class);
                 Bundle bundle=new Bundle();
                 bundle.putInt("rId",rId);
+                bundle.putInt("rType",conductBean.getRtype());
+                bundle.putInt("rWay",conductBean.getR_way());
+                bundle.putInt("rRule",conductBean.getRule());
+                bundle.putInt("rBasis",conductBean.getRbasis());
+                bundle.putSerializable("timeUnderway",(Serializable) conductBean.getTime());
+                bundle.putSerializable("ruleDetailsUnderWay",(Serializable) conductBean.getRule_detail());
+                bundle.putInt("type",1);
                 intent.putExtras(bundle);
                 mContext.startActivity(intent);
             }
