@@ -18,6 +18,7 @@ import com.shuiwangzhijia.shuidian.base.BaseActivity;
 import com.shuiwangzhijia.shuidian.base.FndViewInject;
 import com.shuiwangzhijia.shuidian.bean.PayBean;
 import com.shuiwangzhijia.shuidian.event.WechatPayFromWhichEvent;
+import com.shuiwangzhijia.shuidian.event.WechatPayResultEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 import com.shuiwangzhijia.shuidian.ui.OrderPayActivity;
@@ -34,6 +35,8 @@ import com.tencent.mm.opensdk.openapi.IWXAPI;
 import butterknife.BindView;
 import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -83,6 +86,7 @@ public class RechargeCouponPayActivity extends BaseActivity implements View.OnCl
                             finish();
                         } else {
                             ToastUitl.showToastCustom("充值失败");
+                            finish();
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -267,5 +271,10 @@ public class RechargeCouponPayActivity extends BaseActivity implements View.OnCl
                 String extraMsg = data.getExtras().getString("extra_msg"); // 错误信息
             }
         }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void  wxPayResult(WechatPayResultEvent event){
+        finish();
     }
 }

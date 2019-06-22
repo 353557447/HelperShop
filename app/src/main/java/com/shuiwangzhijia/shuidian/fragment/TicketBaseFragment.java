@@ -14,12 +14,16 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import com.shuiwangzhijia.shuidian.R;
+import com.shuiwangzhijia.shuidian.adapter.MyTicketAdapter;
 import com.shuiwangzhijia.shuidian.adapter.TicketAdapter;
 import com.shuiwangzhijia.shuidian.base.BaseFragment;
 import com.shuiwangzhijia.shuidian.bean.TicketBean;
 
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.utils.MeasureUtil;
+import com.shuiwangzhijia.shuidian.view.SpacesItemDecoration;
+
 import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +33,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class TicketBaseFragment extends BaseFragment implements SwipeRefreshLayout.OnRefreshListener {
-
     @BindView(R.id.mRecyclerView)
     RecyclerView mRecyclerView;
     @BindView(R.id.swipeRefreshLayout)
@@ -37,7 +40,7 @@ public class TicketBaseFragment extends BaseFragment implements SwipeRefreshLayo
     @BindView(R.id.rlEmpty)
     RelativeLayout rlEmpty;
     private Unbinder unbinder;
-    private TicketAdapter mTicketAdapter;
+    private MyTicketAdapter mTicketAdapter;
     private int type;
     private LinearLayoutManager layoutManager;
 
@@ -65,10 +68,10 @@ public class TicketBaseFragment extends BaseFragment implements SwipeRefreshLayo
         layoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(layoutManager);
         mRecyclerView.setHasFixedSize(true);
-        DividerItemDecoration divider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
-        divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg));
-        mRecyclerView.addItemDecoration(divider);
-        mTicketAdapter = new TicketAdapter(getActivity(), type);
+        /*DividerItemDecoration divider = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
+        divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg));*/
+        mRecyclerView.addItemDecoration(new SpacesItemDecoration(getActivity(), MeasureUtil.dip2px(getActivity(),12)));
+        mTicketAdapter = new MyTicketAdapter(getActivity(), type);
         mRecyclerView.setAdapter(mTicketAdapter);
         mRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override

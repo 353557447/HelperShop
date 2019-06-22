@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.shuiwangzhijia.shuidian.ui.WaterShareActivity;
 import com.socks.library.KLog;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.base.BaseLazyFragment;
@@ -271,6 +272,7 @@ public class PersonalFragment extends BaseLazyFragment implements ServiceFunctio
                 skipActivity(SetActivity.class);
                 break;
             case R.id.check_qrcode:
+                WaterShareActivity.startAct(getActivity());
                 break;
         }
     }

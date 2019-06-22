@@ -12,6 +12,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
+import com.shuiwangzhijia.shuidian.newmodule.activity.DiscountsWaterCouponActivity;
+import com.shuiwangzhijia.shuidian.newmodule.activity.RechargeCenterNewActivity;
 import com.socks.library.KLog;
 import com.shuiwangzhijia.shuidian.R;
 import com.shuiwangzhijia.shuidian.adapter.CenterAdapter;
@@ -33,15 +35,16 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClickListener {
-
     @BindView(R.id.mRecyclerView)
     RecyclerView mMRecyclerView;
-//    @BindView(R.id.swipeRefreshLayout)
+    //    @BindView(R.id.swipeRefreshLayout)
 //    SwipeRefreshLayout mSwipeRefreshLayout;
     @BindView(R.id.back)
     ImageView mBack;
     @BindView(R.id.shopcart)
     ImageView mShopcart;
+    @BindView(R.id.goumaishuipiao)
+    ImageView mGoumaishuipiao;
     @BindView(R.id.center_title)
     TextView mTitle;
     private LinearLayoutManager layoutManager;
@@ -60,10 +63,10 @@ public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClick
         setContentView(R.layout.activity_center);
         type = getIntent().getIntExtra("type", -1);
         ButterKnife.bind(this);
-        if (type == 1){
+        if (type == 1) {
             mTitle.setText("我的水厂");
             mShopcart.setVisibility(View.GONE);
-        }else {
+        } else {
             mTitle.setText("优惠活动");
             mShopcart.setVisibility(View.VISIBLE);
         }
@@ -102,7 +105,7 @@ public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClick
         DividerItemDecoration divider = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg_tran));
         mMRecyclerView.addItemDecoration(divider);
-        mCenterAdapter = new CenterAdapter(this,type);
+        mCenterAdapter = new CenterAdapter(this, type);
         mCenterAdapter.setOnSaleClickListener(this);
         mMRecyclerView.setAdapter(mCenterAdapter);
         mMRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -130,11 +133,14 @@ public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClick
 //
 //    }
 
-    @OnClick({R.id.back, R.id.shopcart})
+    @OnClick({R.id.back, R.id.shopcart,R.id.goumaishuipiao})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.back:
                 finish();
+                break;
+            case R.id.goumaishuipiao:
+                skipActivity(DiscountsWaterCouponActivity.class);
                 break;
             case R.id.shopcart:
                 finish();
@@ -146,6 +152,6 @@ public class CenterActivity extends BaseAct implements CenterAdapter.OnSaleClick
 
     @Override
     public void onTopUpClick(int position) {
-        skipActivity(RechargeCenterActivity.class);
+        skipActivity(RechargeCenterNewActivity.class);
     }
 }

@@ -19,6 +19,9 @@ import com.shuiwangzhijia.shuidian.base.BaseFragment;
 import com.shuiwangzhijia.shuidian.bean.MycouBean;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
+import com.shuiwangzhijia.shuidian.utils.MeasureUtil;
+import com.shuiwangzhijia.shuidian.view.CouponDecoration;
+import com.shuiwangzhijia.shuidian.view.SpacesItemDecoration;
 import com.socks.library.KLog;
 
 import java.util.List;
@@ -165,9 +168,9 @@ public class MycouFragment extends BaseFragment implements SwipeRefreshLayout.On
         mMRecyclerView.setLayoutManager(layoutManager);
         mMRecyclerView.setHasFixedSize(true);
         if (mMRecyclerView.getItemDecorationCount() == 0){
-            DividerItemDecoration divider = new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL);
-            divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg_tran));
-            mMRecyclerView.addItemDecoration(divider);
+          /*  DividerItemDecoration divider = new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL);
+            divider.setDrawable(getResources().getDrawable(R.drawable.divider_bg_tran));*/
+            mMRecyclerView.addItemDecoration(new CouponDecoration(getContext(), MeasureUtil.dip2px(getContext(),12)));
         }
         mAdapter = new MycouAdapter(mContext);
         mMRecyclerView.setAdapter(mAdapter);

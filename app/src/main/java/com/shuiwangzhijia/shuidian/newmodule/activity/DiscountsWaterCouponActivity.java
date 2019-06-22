@@ -32,7 +32,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-@FndViewInject(contentViewId = R.layout.activity_discounts_water_coupon,title = "优惠水票")
+@FndViewInject(contentViewId = R.layout.activity_discounts_water_coupon,title = "折扣水票")
 public class DiscountsWaterCouponActivity extends BaseActivity implements SwipeRefreshLayout.OnRefreshListener, DiscountsWaterCouponAdapter.OnItemBuyClickListener {
     @BindView(R.id.rv)
     RecyclerView mRv;
@@ -96,7 +96,7 @@ public class DiscountsWaterCouponActivity extends BaseActivity implements SwipeR
                         if(!isLoadMore) {
                             mList.clear();
                             if(data.isEmpty()){
-                                setCentreViewShow(R.drawable.wushuipiao,"暂无水票~");
+                                setCentreViewShow(R.drawable.wudingdan,"暂无水票~");
                             }else{
                                 setCentreViewDismiss();
                             }
@@ -105,7 +105,7 @@ public class DiscountsWaterCouponActivity extends BaseActivity implements SwipeR
                         mDiscountsWaterCouponAdapter.notifyDataSetChanged();
                     }else{
                         if(!isLoadMore)
-                            setCentreViewShow(R.drawable.wushuipiao,"暂无水票~");
+                            setCentreViewShow(R.drawable.wudingdan,"暂无水票~");
                     }
                 } catch (Exception e) {
                     KLog.e(e.getMessage());

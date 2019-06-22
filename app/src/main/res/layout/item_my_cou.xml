@@ -1,93 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="102dp"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="5dp"
-    android:padding="5dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp">
+    android:layout_width="351dp"
+    android:layout_height="102dp"
+    android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="271dp"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:background="@drawable/my_coupon_bg_begin"
+        android:paddingLeft="@dimen/padding10">
+
+        <FrameLayout
+            android:id="@+id/fm"
+            android:layout_width="@dimen/d81"
+            android:layout_height="@dimen/d81"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:id="@+id/goods_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#50eeeeee" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_marginLeft="@dimen/margin10"
+            android:layout_alignTop="@id/fm"
+            android:layout_toRightOf="@id/fm"
+            android:id="@+id/ticketname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000000"
+            android:textSize="@dimen/d14"
+             />
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/shopname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:textColor="#00A2FF"
+            android:textSize="13sp" />
+
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_below="@id/ticketname"
+            android:layout_marginLeft="@dimen/margin8"
+            android:layout_toRightOf="@id/fm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="￥"
                     android:textColor="@color/textRed"
                     android:textSize="17sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:id="@+id/money"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="20"
                     android:textColor="@color/textRed"
-                    android:textSize="29sp"
-                    android:textStyle="bold"/>
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin20"
                 android:id="@+id/remark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="满199元可用"
-                android:textSize="10sp"
-                android:textColor="#999999"/>
+                android:textColor="#999999"
+                android:textSize="10sp" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_marginLeft="10dp">
-            <TextView
-                android:id="@+id/ticketname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:text="娃哈哈水厂优惠券"/>
-            <TextView
-                android:id="@+id/shopname"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:text="天晶水厂 · 全部商品可用"
-                android:textSize="13sp"
-                android:textColor="#00A2FF"/>
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="7dp"
-                android:text="有效期：2018.09.11~2018.10.07"
-                android:textSize="10sp"
-                android:textColor="#999999"/>
-        </LinearLayout>
+        <TextView
+            android:layout_marginLeft="@dimen/margin10"
+            android:layout_alignBottom="@id/fm"
+            android:layout_toRightOf="@id/fm"
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:text="有效期：2018.09.11~2018.10.07"
+            android:textColor="@color/textGray"
+            android:textSize="10sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/end_rl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/my_coupon_bg_endone">
+
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/tupian_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/yishiyong_wenzi" />
+
+        <TextView
+            android:visibility="gone"
+            android:id="@+id/wenzi_hint"
+            style="@style/textWhite14"
+            android:layout_centerInParent="true"
+            android:text="未使用" />
 
         <ImageView
             android:id="@+id/image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/already_use"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="10dp"
-            android:visibility="gone"/>
-
-    </LinearLayout>
-</android.support.v7.widget.CardView>
+            android:src="@drawable/already_use"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>

@@ -12,6 +12,7 @@ import com.shuiwangzhijia.shuidian.event.WechatPayResultEvent;
 import com.shuiwangzhijia.shuidian.newmodule.activity.MyWalletNewActivity;
 import com.shuiwangzhijia.shuidian.ui.OrderPayActivity;
 import com.shuiwangzhijia.shuidian.ui.PurchaseOrderActivity;
+import com.shuiwangzhijia.shuidian.ui.TicketActivity;
 import com.shuiwangzhijia.shuidian.utils.ToastUitl;
 import com.socks.library.KLog;
 import com.tencent.mm.opensdk.constants.ConstantsAPI;
@@ -20,6 +21,7 @@ import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 
+import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 import de.greenrobot.event.Subscribe;
 import de.greenrobot.event.ThreadMode;
@@ -32,8 +34,10 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EventBus.getDefault().register(this);
         api = App.getIwxapi();
         api.handleIntent(getIntent(), this);
+
     }
 
     @Override
@@ -56,13 +60,28 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
             KLog.e("baseResp.errCode:" + baseResp.errCode);
             if ("RechargeCouponPayActivity".equals(fromWhich)) {
                 if (baseResp.errCode == 0) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(1));
                     ToastUitl.showToastCustom("充值成功");
                     Intent intent = new Intent(this, MyWalletNewActivity.class);
                     startActivity(intent);
                 } else if (baseResp.errCode == -1) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(0));
                     ToastUitl.showToastCustom("充值失败");
                 } else if (baseResp.errCode == -2) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(2));
                     ToastUitl.showToastCustom("充值失败");
+                }
+            }else if("TicketPayActivity".equals(fromWhich)){
+                if (baseResp.errCode == 0) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(1));
+                    ToastUitl.showToastCustom("购买成功");
+                    TicketActivity.startAtc(this,null);
+                } else if (baseResp.errCode == -1) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(0));
+                    ToastUitl.showToastCustom("购买失败");
+                } else if (baseResp.errCode == -2) {
+                    EventBus.getDefault().post(new WechatPayResultEvent(2));
+                    ToastUitl.showToastCustom("购买失败");
                 }
             } else {
                 if (baseResp.errCode == 0) {
@@ -87,10 +106,12 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        EventBus.getDefault().unregister(this);
     }
 
     @Subscribe(threadMode = ThreadMode.MainThread, sticky = true)
     public void fromWhich(WechatPayFromWhichEvent event) {
         fromWhich = event.getFromWhich();
+        KLog.e(fromWhich);
     }
 }

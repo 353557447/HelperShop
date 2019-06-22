@@ -78,6 +78,15 @@ public class DiscountsWaterCouponBean {
         private int did;
         private long start;
         private long end;
+        private String picturl;
+
+        public String getPicturl() {
+            return picturl;
+        }
+
+        public void setPicturl(String picturl) {
+            this.picturl = picturl;
+        }
 
         public String getSname() {
             return sname;

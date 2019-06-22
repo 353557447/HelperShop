@@ -46,12 +46,27 @@
         <!--android:layout_marginRight="11dp"-->
         <!--android:layout_marginLeft="11dp">-->
 
+    <RelativeLayout
+        android:background="@color/bgColor"
+        android:layout_marginTop="@dimen/d80"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <ImageView
+            android:layout_alignParentBottom="true"
+            android:id="@+id/goumaishuipiao"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/goumaishuipiao"
+            android:layout_marginRight="@dimen/d12"
+            android:layout_marginLeft="@dimen/d12"
+            android:layout_width="match_parent"
+            android:layout_height="110dp" />
+    </RelativeLayout>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/mRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="80dp"></android.support.v7.widget.RecyclerView>
+            android:layout_marginTop="190dp"></android.support.v7.widget.RecyclerView>
 
     <!--</android.support.v4.widget.SwipeRefreshLayout>-->
 

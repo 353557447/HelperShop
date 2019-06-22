@@ -1,9 +1,12 @@
 package com.shuiwangzhijia.shuidian.ui;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.text.Spannable;
 import android.text.SpannableString;
@@ -12,7 +15,9 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
+import com.alipay.sdk.app.PayTask;
 import com.shuiwangzhijia.shuidian.R;
+import com.shuiwangzhijia.shuidian.base.App;
 import com.shuiwangzhijia.shuidian.base.BaseAct;
 
 import com.shuiwangzhijia.shuidian.bean.BucketOrderBean;
@@ -20,6 +25,8 @@ import com.shuiwangzhijia.shuidian.bean.PayBean;
 import com.shuiwangzhijia.shuidian.bean.TicketBean;
 import com.shuiwangzhijia.shuidian.bean.TicketOrderBean;
 import com.shuiwangzhijia.shuidian.event.PayFinishEvent;
+import com.shuiwangzhijia.shuidian.event.WechatPayFromWhichEvent;
+import com.shuiwangzhijia.shuidian.event.WechatPayResultEvent;
 import com.shuiwangzhijia.shuidian.http.EntityObject;
 import com.shuiwangzhijia.shuidian.http.RetrofitUtils;
 
@@ -27,21 +34,24 @@ import com.shuiwangzhijia.shuidian.utils.DateUtils;
 import com.shuiwangzhijia.shuidian.utils.ToastUitl;
 import com.google.gson.Gson;
 import com.pingplusplus.android.Pingpp;
+import com.socks.library.KLog;
+import com.tencent.mm.opensdk.modelpay.PayReq;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-/**
- * 购买水票支付页面
- * created by wangsuli on 2018/8/22.
- */
+
 public class TicketPayActivity extends BaseAct {
+    private static final int SDK_PAY_FLAG = 100;
     @BindView(R.id.money)
     TextView money;
     @BindView(R.id.weChatBtn)
@@ -66,6 +76,35 @@ public class TicketPayActivity extends BaseAct {
     @BindView(R.id.can_use_yuer)
     TextView mCanUseYuer;
     private String mOrder_no;
+    private String mUnifyOrderAliDataBean;
+    private PayBean mSubmitOrderWxData;
+
+    @SuppressLint("HandlerLeak")
+    private Handler mHandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 100:
+                    try {
+                        String aliPayResult = (String) msg.obj;
+                        KLog.e(aliPayResult);
+                        if (aliPayResult.contains("resultStatus=9000")) {
+                            ToastUitl.showToastCustom("购买成功");
+                            finish();
+                        } else {
+                            finish();
+
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        KLog.e(e.getMessage());
+                    }
+
+                    break;
+            }
+        }
+    };
 
 
     public static void startAtc(Context context, TicketOrderBean data) {
@@ -79,17 +118,17 @@ public class TicketPayActivity extends BaseAct {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ticket_pay);
         ButterKnife.bind(this);
-        setTitle("购买水票");
+        setTitle("支付");
         data = ((TicketOrderBean) getIntent().getSerializableExtra("data"));
         mOrder_no = data.getOrder_no();
         ticketBean = this.data.getData();
-        setTextStyle(shopName, "水厂名称:", this.ticketBean.getSname());
-        setTextStyle(goodsName, "可用商品:", this.ticketBean.getGname());
-        setTextStyle(limitNum, "可用数量:", this.ticketBean.getSnum() + "张");
+        shopName.setText("发行水厂:"+this.ticketBean.getSname());
+        goodsName.setText("可用商品:"+this.ticketBean.getGname());
+        limitNum.setText("购买数量:"+this.ticketBean.getSnum() + "张");
         if (this.ticketBean.getStart() > 0 && this.ticketBean.getEnd() > 0) {
-            setTextStyle(limitDate, "有限期限:", DateUtils.getYMDTime(this.ticketBean.getStart()) + "~" + DateUtils.getYMDTime(this.ticketBean.getEnd()));
+            limitDate.setText("有限期限:"+DateUtils.getYMDTime(this.ticketBean.getStart()) + "~" + DateUtils.getYMDTime(this.ticketBean.getEnd()));
         } else {
-            setTextStyle(limitDate, "有效期限:", "永久有效");
+            limitDate.setText("有效期限:"+"永久有效");
         }
         money.setText("￥" + this.ticketBean.getSprice());
         getList();
@@ -103,7 +142,7 @@ public class TicketPayActivity extends BaseAct {
                 if (body.getCode() == 200) {
                     BucketOrderBean result = body.getResult();
                     String balance = result.getBalance();
-                    mCanUseYuer.setText("可用余额：￥"+balance);
+                    mCanUseYuer.setText("余额：￥"+balance);
                 }
             }
 
@@ -176,21 +215,46 @@ public class TicketPayActivity extends BaseAct {
     }
 
     private void getChannelInfo() {
-        showLoad();
-        RetrofitUtils.getInstances().create().getPayChannelInfo(data.getOrder_no(), pay_type == 1 ? "wx" : "alipay").enqueue(new Callback<EntityObject<PayBean>>() {
-            @Override
-            public void onResponse(Call<EntityObject<PayBean>> call, Response<EntityObject<PayBean>> response) {
-                hintLoad();
-                EntityObject<PayBean> body = response.body();
-                hint(body.getMsg());
-                Pingpp.createPayment(TicketPayActivity.this, new Gson().toJson(body.getResult()));
-            }
 
-            @Override
-            public void onFailure(Call<EntityObject<PayBean>> call, Throwable t) {
+        if(pay_type==1){
+            //微信支付
+            showLoad();
+            RetrofitUtils.getInstances().create().getPayChannelInfo(data.getOrder_no(), "wx" ).enqueue(new Callback<EntityObject<PayBean>>() {
+                @Override
+                public void onResponse(Call<EntityObject<PayBean>> call, Response<EntityObject<PayBean>> response) {
+                    hintLoad();
+                    EntityObject<PayBean> body = response.body();
+                    KLog.e(new Gson().toJson(body.getResult()));
+                    mSubmitOrderWxData = body.getResult();
+                    toWXPay();
+            /*    hint(body.getMsg());
+                Pingpp.createPayment(OrderPayActivity.this, new Gson().toJson(body.getResult()));*/
+                }
 
-            }
-        });
+                @Override
+                public void onFailure(Call<EntityObject<PayBean>> call, Throwable t) {
+
+                }
+            });
+        }else{
+            //支付宝支付
+            showLoad();
+            RetrofitUtils.getInstances().create().getAliPayChannelInfo(data.getOrder_no(), "alipay").enqueue(new Callback<EntityObject<String>>() {
+                @Override
+                public void onResponse(Call<EntityObject<String>> call, Response<EntityObject<String>> response) {
+                    hintLoad();
+                    EntityObject<String> body = response.body();
+                    KLog.e(new Gson().toJson(body.getResult()));
+                    mUnifyOrderAliDataBean = body.getResult();
+                    toAliPay();
+                }
+
+                @Override
+                public void onFailure(Call<EntityObject<String>> call, Throwable t) {
+                    KLog.e(t.getMessage());
+                }
+            });
+        }
 
 
     }
@@ -230,5 +294,45 @@ public class TicketPayActivity extends BaseAct {
         }
     }
 
+    //调起支付宝支付的方法
+    private void toAliPay() {
+        final String orderInfo = mUnifyOrderAliDataBean; // 订单信息（app支付请求参数字符串，主要包含商户的订单信息，key=value形式，以&连接。）
+        Runnable payRunnable = new Runnable() {
+            @Override
+            public void run() {
+                PayTask alipay = new PayTask(TicketPayActivity.this);
+                String result = String.valueOf(alipay.payV2(orderInfo, true));
+                Message msg = Message.obtain();
+                msg.what = SDK_PAY_FLAG;
+                msg.obj = result;
+                mHandler.sendMessage(msg);
+            }
+        };
+        // 必须异步调用
+        Thread payThread = new Thread(payRunnable);
+        payThread.start();
+    }
 
+    /**
+     * 调起微信支付的方法
+     **/
+    private void toWXPay() {
+        IWXAPI wxapi = App.getIwxapi(); //应用ID 即微信开放平台审核通过的应用APPID
+        PayReq request = new PayReq(); //调起微信APP的对象
+        //下面是设置必要的参数，也就是前面说的参数,这几个参数从何而来请看上面说明
+        request.appId = mSubmitOrderWxData.getAppid();
+        request.partnerId = mSubmitOrderWxData.getPartnerid();
+        request.prepayId = mSubmitOrderWxData.getPrepayid();
+        request.packageValue = "Sign=WXPay";
+        request.nonceStr = mSubmitOrderWxData.getNoncestr();
+        request.timeStamp = mSubmitOrderWxData.getTimestamp() + "";
+        request.sign = mSubmitOrderWxData.getSign();
+        EventBus.getDefault().postSticky(new WechatPayFromWhichEvent("TicketPayActivity"));
+        wxapi.sendReq(request);//发送调起微信的请求
+    }
+
+    @Subscribe(threadMode = ThreadMode.MainThread)
+    public void  wxPayResult(WechatPayResultEvent event){
+        finish();
+    }
 }

@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bgColor"
     android:orientation="vertical">
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -12,12 +13,17 @@
         android:layout_above="@+id/sureBtn"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_marginTop="@dimen/margin10"
-            android:id="@+id/mRecyclerView"
+        <RelativeLayout
             android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_centerHorizontal="true"
+            android:id="@+id/mRecyclerView"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             ></android.support.v7.widget.RecyclerView>
+        </RelativeLayout>
 
     </android.support.v4.widget.SwipeRefreshLayout>
 
@@ -40,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/iv"
             android:gravity="center"
-            android:text="暂无水票"
+            android:text="暂无优惠券"
             android:textColor="@color/color_999999"
             android:textSize="@dimen/font_12" />
     </RelativeLayout>

@@ -2,9 +2,7 @@ package com.shuiwangzhijia.shuidian.bean;
 
 import java.io.Serializable;
 
-/**
- * created by wangsuli on 2018/9/26.
- */
+
 public class TicketBean implements Serializable {
 
     /**
@@ -118,6 +116,15 @@ public class TicketBean implements Serializable {
 
     private int sum;
     private String total;
+    private String picturl;
+
+    public String getPicturl() {
+        return picturl;
+    }
+
+    public void setPicturl(String picturl) {
+        this.picturl = picturl;
+    }
 
     public String getTotal_num() {
         return total_num;

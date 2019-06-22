@@ -64,6 +64,25 @@ public class MycouBean implements Serializable{
         private String cname;
         private String dname;
         private int ctype;
+        private int coupon_type;
+        private String picturl;
+
+        public int getCoupon_type() {
+            return coupon_type;
+        }
+
+        public void setCoupon_type(int coupon_type) {
+            this.coupon_type = coupon_type;
+        }
+
+        public String getPicturl() {
+            return picturl;
+        }
+
+        public void setPicturl(String picturl) {
+            this.picturl = picturl;
+        }
+
         public int getCtype() {
 
             return ctype;

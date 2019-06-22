@@ -48,7 +48,7 @@ public class OrderManageActivity extends BaseAct implements ViewPager.OnPageChan
         setContentView(R.layout.activity_order_manage);
         ButterKnife.bind(this);
         index = getIntent().getIntExtra("index", -1);
-        setTitle("零售订单");
+        setTitle("店铺订单");
         titles = Arrays.asList(new String[]{"新订单", "待配送", "配送中", "已完成"});
         initData();
         initView();

@@ -13,7 +13,6 @@ import com.shuiwangzhijia.shuidian.bean.DiscountsWaterCouponBean;
 import com.shuiwangzhijia.shuidian.utils.CalculateUtils;
 import com.shuiwangzhijia.shuidian.utils.DateUtils;
 import com.shuiwangzhijia.shuidian.utils.MyUtils;
-import com.tencent.tencentmap.mapsdk.maps.model.HeatOverlay;
 
 import java.util.List;
 
@@ -21,17 +20,17 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 
-public class DiscountsWaterCouponAdapter extends RecyclerView.Adapter<DiscountsWaterCouponAdapter.ViewHolder> {
+public class MyTicketNewAdapter extends RecyclerView.Adapter<MyTicketNewAdapter.ViewHolder> {
     private Context mContext;
     private List<DiscountsWaterCouponBean.DataBean> data;
 
-    public DiscountsWaterCouponAdapter(Context context) {
+    public MyTicketNewAdapter(Context context) {
         this.mContext = context;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_discounts_water_coupon, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_my_water_ticket_new, parent, false);
         return new ViewHolder(view);
     }
 

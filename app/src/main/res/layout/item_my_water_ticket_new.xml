@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="351dp"
+        android:layout_height="102dp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="271dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_coupon_bg_begin"
+            android:paddingLeft="@dimen/padding10">
+
+
+            <FrameLayout
+                android:id="@+id/fm"
+                android:layout_width="@dimen/d81"
+                android:layout_height="@dimen/d81"
+                android:layout_centerVertical="true">
+
+                <ImageView
+                    android:id="@+id/goods_iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#50eeeeee" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/fm"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_toRightOf="@id/fm"
+                android:textColor="#000000"
+                android:textSize="@dimen/d14" />
+
+            <TextView
+                android:id="@+id/water_factory_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/d1"
+                android:text="天晶水厂"
+                android:textColor="@color/textSkyBlue"
+                android:textSize="@dimen/d13"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/name"
+                android:layout_marginLeft="@dimen/margin8"
+                android:layout_marginTop="@dimen/margin5"
+                android:layout_toRightOf="@id/fm"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥"
+                        android:textColor="@color/textRed"
+                        android:textSize="@dimen/d12"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="20"
+                        android:textColor="@color/textRed"
+                        android:textSize="@dimen/d14"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/remark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/margin10"
+                    android:text="满199元可用"
+                    android:textColor="#999999"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/period_of_validity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/fm"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@id/fm"
+                android:text="有效期：2018.09.11~2018.10.07"
+                android:textColor="@color/textGray"
+                android:textSize="10sp" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/end_rl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/my_coupon_bg_endthree">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/current_price"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="￥10.00"
+                        android:textColor="@color/common_red"
+                        android:textSize="@dimen/d16"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/coupon_counts"
+                        style="@style/textGray10"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/margin5"
+                        android:text="共265张" />
+
+                    <TextView
+                        android:id="@+id/purchase_immediately"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/d20"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/margin8"
+                        android:background="@drawable/yellow_solid_big_radius_bg"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/padding10"
+                        android:paddingRight="@dimen/padding10"
+                        android:text="购买"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/d12"
+                        android:visibility="gone" />
+                </LinearLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>
